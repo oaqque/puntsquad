@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223022351) do
+ActiveRecord::Schema.define(version: 20160223042157) do
 
   create_table "bets", force: :cascade do |t|
     t.string   "game"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160223022351) do
     t.string   "profit_or_loss"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "bet_placed"
   end
 
 end
