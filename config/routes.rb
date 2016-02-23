@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  get '/results' => 'results#index'
+  get '/results/by_year_and_month/:year/:month' => 'results#by_year_and_month', :as=> :results_by_year_and_month
   resources :bets
 
   root 'home#index'

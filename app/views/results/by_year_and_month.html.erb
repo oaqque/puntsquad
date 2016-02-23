@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <ul class="list-item">
+        <% @bets_by_month.each do |month, bets| %>
+          <h2><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h2>
+          <ul class="list-group">
+          <% for bet in bets %>
+            <li class="list-group-item">
+              <strong><%= bet.game %></strong>
+              <ul class="list-unstyled">
+                <li>Bet Placed: <%= bet.bet_placed %></li>
+                <li>Units Placed: <%= bet.units_placed %></li>
+                <li>Odds: <%= bet.odds %></li>
+                <li>Profit/Loss: <%= bet.profit_or_loss %></li>
+              </ul>
+            </li>
+          <% end %>
+          </ul>
+        <% end %>
+    </div>
+  </div>
+</div>

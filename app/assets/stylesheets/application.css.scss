@@ -35,20 +35,19 @@
 
  /************** JUMBOTRON ***************/
 
- .jumbotron {
+ .jumbotron.home-page {
    background-image: url('hero-bg.jpg');
    background-position: center center;
    background-repeat: no-repeat;
    background-size: cover;
    height: 50vh;
    border-radius: 0px;
-   margin-bottom: 0px;
  }
 
  /************** FOOTER ***************/
 
  .footer {
-
+   margin-top: 50px;
  }
 
 
