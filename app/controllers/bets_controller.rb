@@ -15,6 +15,25 @@ class BetsController < ApplicationController
       end
   end
 
+  def show
+    @bet = Bet.find(params[:id])
+  end
+
+  def edit
+    @bet = Bet.find(params[:id])
+  end
+
+  def update
+    @bet = Bet.find(params[:id])
+
+        if @bet.update_attributes(bet_params)
+            flash[:success] = "Bet Updated!"
+            redirect_to bet_path(params[:id])
+        else
+            render action: :edit
+        end
+  end
+
   private
 
     def bet_params

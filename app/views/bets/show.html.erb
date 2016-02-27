@@ -1,0 +1,13 @@
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1><%= @bet.game %></h1>
+    <ul class="list-unstyled">
+      <li>Bet Placed: <%= @bet.bet_placed %></li>
+      <li>Units Placed: <%= @bet.units_placed %></li>
+      <li>Odds: <%= @bet.odds %></li>
+      <li>Profit/Loss: <%= @bet.profit_or_loss %></li>
+    </ul>
+    <%= link_to "Edit", edit_bet_path(:id => @bet.id), class: "btn btn-default" %>
+  </div>
+</div>

@@ -7,7 +7,7 @@
           <ul class="list-group">
           <% for bet in bets %>
             <li class="list-group-item">
-              <strong><%= bet.game %></strong>
+              <strong><%= link_to "#{bet.game}", bet_path(:id => bet.id) %></strong>
               <ul class="list-unstyled">
                 <li>Bet Placed: <%= bet.bet_placed %></li>
                 <li>Units Placed: <%= bet.units_placed %></li>
