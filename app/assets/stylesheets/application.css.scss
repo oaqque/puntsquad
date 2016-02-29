@@ -60,8 +60,15 @@
    background-color: #44618c;
  }
 
+ .navbar-nav li {
+   -webkit-transition: background-color 0.5s;
+   transition: background-color 0.5s;
+ }
+
  .navbar-nav li:hover {
    background-color: #f8f8f8;
+   -webkit-transition: background-color 0.5s;
+   transition: background-color 0.5s;
  }
 
  .navbar-default .navbar-nav > li > a {
