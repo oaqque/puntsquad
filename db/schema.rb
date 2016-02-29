@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229064942) do
+ActiveRecord::Schema.define(version: 20160229080827) do
 
   create_table "bets", force: :cascade do |t|
     t.string   "game"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160229064942) do
     t.datetime "updated_at",                             null: false
     t.integer  "plan_id"
     t.boolean  "admin",                  default: false
+    t.string   "stripe_customer_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
