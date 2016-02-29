@@ -7,23 +7,23 @@
   <div class="row">
     <div class="col-md-4 text-center">
       <div class="well">
-        <h3> Join Now! </h3>
+        <h3>Weekly Plan</h3>
         <h4>Sign up now for a cheap monthly fee of $15 per Week.</h4>
-        <%= link_to "Sign Up for $15/week", new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' %>
+        <%= link_to "Sign Up for $15/week", new_user_registration_path(plan: @weekly_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
       </div>
     </div>
     <div class="col-md-4 text-center">
       <div class="well">
-        <h3> Join Now! </h3>
+        <h3>Monthly Plan</h3>
         <h4>Sign up now for a cheap monthly fee of $50 per month.</h4>
-        <%= link_to "Sign Up for $50/month", new_user_registration_path, class: 'btn btn-success btn-lg btn-block' %>
+        <%= link_to "Sign Up for $50/month", new_user_registration_path(plan: @monthly_plan.id), class: 'btn btn-success btn-lg btn-block' %>
       </div>
     </div>
     <div class="col-md-4 text-center">
       <div class="well">
-        <h3> Join Now! </h3>
+        <h3>Yearly Plan</h3>
         <h4>Sign up now for a cheap monthly fee of $500 per year.</h4>
-        <%= link_to "Sign Up for $500/year", new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' %>
+        <%= link_to "Sign Up for $500/year", new_user_registration_path(plan: @yearly_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
       </div>
     </div>
   </div>
