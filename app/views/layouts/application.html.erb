@@ -49,15 +49,13 @@
           </div>
           <div class="col-md-2">
             <h4>Social Media</h4>
-            <ul class="list-unstyled">
+            <ul class="list-unstyled social-media">
             <li><%= link_to "http://www.facebook.com", class: 'social-icon' do%>
-              <i class="fa fa-facebook fa-lg"></i>
-              Facebook
+              <i class="fa fa-facebook fa-lg fa-4x"></i>
             <% end %></li>
 
             <li><%= link_to "http://www.twitter.com", class: 'social-icon' do%>
-              <i class="fa fa-twitter fa-lg"></i>
-              Twitter
+              <i class="fa fa-twitter fa-lg fa-4x"></i>
             <% end %></li>
           </div>
           <div class="col-md-1">
@@ -74,6 +72,21 @@
           </div>
           <div class="col-md-4">
             <h4>Send Us a Message</h4>
+            <%= form_for "" do |f| %>
+              <div class="form-group">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :comments %>
+                <%= f.text_area :comments, class: 'form-control' %>
+              </div>
+              <%= f.submit 'Submit', class: 'btn btn-default' %>
+            <% end %>
 
           </div>
         </div>
