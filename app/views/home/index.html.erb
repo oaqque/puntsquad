@@ -3,28 +3,21 @@
   <p class="text-center">Your home for Sports Betting tips.</p>
 </div>
 
-<div class="container">
+<div class="container">\
   <div class="row">
-    <div class="col-md-4 text-center">
-      <div class="well">
-        <h3>Weekly Plan</h3>
-        <h4>Sign up now for a cheap monthly fee of $15 per Week.</h4>
-        <%= link_to "Sign Up for $15/week", new_user_registration_path(plan: @weekly_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
-      </div>
-    </div>
-    <div class="col-md-4 text-center">
-      <div class="well">
-        <h3>Monthly Plan</h3>
-        <h4>Sign up now for a cheap monthly fee of $50 per month.</h4>
-        <%= link_to "Sign Up for $50/month", new_user_registration_path(plan: @monthly_plan.id), class: 'btn btn-success btn-lg btn-block' %>
-      </div>
-    </div>
-    <div class="col-md-4 text-center">
-      <div class="well">
-        <h3>Yearly Plan</h3>
-        <h4>Sign up now for a cheap monthly fee of $500 per year.</h4>
-        <%= link_to "Sign Up for $500/year", new_user_registration_path(plan: @yearly_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+    <div class="col-md-12">
+      <div class="well text-center">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h1>What we do.</h1>
+            <h4>Here at puntsquad we provide +EV tips on sports that are guaranteed to turn you a profit in the long run. Subscribe to follow our tips daily and start betting smarter.</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <% if current_user %>
+  <% else %>
+    <%= render "plan_info" %>
+  <% end %>
 </div>

@@ -14,6 +14,7 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
 
 
 /************** NAVIGATION ***************/
@@ -44,14 +45,32 @@
    border-radius: 0px;
  }
 
+ /************** PLAN INFO ***************/
+
+ .line-break {
+   width: 100%;
+   border-top: 1px solid #555;
+   margin-bottom: 10px;
+ }
+
+ .plan-info-list li {
+   margin-top: 15px;
+   margin-bottom: 15px;
+ }
+
+
+
  /************** FOOTER ***************/
 
  .footer {
    margin-top: 50px;
+   padding-top: 50px;
+   padding-bottom: 50px;
  }
 
 
  /************** COLORS ***************/
+
  body {
    background-color: #f8f8f8;
  }
@@ -75,6 +94,22 @@
    color: #fff;
  }
 
+ .navbar-default .navbar-brand {
+   color: #fff;
+   padding-top: 25px;
+   padding-bottom: 25px;
+   height: 70px;
+ }
+
+ .navbar-default .navbar-brand:hover {
+   color: #000;
+   padding-top: 25px;
+   padding-bottom: 25px;
+   background-color: #fff;
+   -webkit-transition: background-color 0.5s;
+   transition: background-color 0.5s;
+ }
+
  .jumbotron {
    color: #44618c;
  }
@@ -83,3 +118,53 @@
    background-color: #44618c;
    color: #fff;
  }
+
+ .social-icon {
+   color: #fff;
+ }
+ .social-icon:hover {
+   color: #eee;
+   text-decoration: none;
+ }
+
+.plan-info-title {
+  color: #337ab7;
+}
+
+.recommended-value .well{
+  background-color: #44618c;
+  color: #fff;
+}
+
+.recommended-value .plan-info-title {
+  color: #fff;
+}
+
+.recommended-value .line-break {
+  border-color: #fff;
+}
+
+.recommended-value .btn-primary {
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+
+}
+
+.recommended-value .btn-primary:hover {
+  transition: 0.5s;
+  background-color: #ddd;
+}
+
+.recommended-value .label {
+  background-color: #fff;
+  color: #000;
+}
+
+/************** EXTRA ***************/
+.btn:hover {
+  transition: 0.5s;
+}
+.btn {
+  transition: 0.5s;
+}

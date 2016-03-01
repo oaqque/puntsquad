@@ -18,7 +18,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to "Punt Squad", root_path, class: 'navbar-brand' %>
+          <%= link_to "puntsquad", root_path, class: 'navbar-brand' %>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
@@ -45,8 +45,36 @@
     <div class="footer">
       <div class="container">
         <div class="row">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-2">
+            <h4>Social Media</h4>
+            <ul class="list-unstyled">
+            <li><%= link_to "http://www.facebook.com", class: 'social-icon' do%>
+              <i class="fa fa-facebook fa-lg"></i>
+              Facebook
+            <% end %></li>
+
+            <li><%= link_to "http://www.twitter.com", class: 'social-icon' do%>
+              <i class="fa fa-twitter fa-lg"></i>
+              Twitter
+            <% end %></li>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-3">
+            <h4>Contact Us</h4>
+            <p>Feel free to send us an email or give us a call if you want more information on our services or just want to have a chat.</p>
+            <ul class="list-unstyled">
+              <li>Email: contact@puntsquad.com</li>
+              <li>Phone: XXXX-XXXX</li>
+            </ul>
+          </div>
+          <div class="col-md-1">
+          </div>
           <div class="col-md-4">
-            <h2>footer</h2>
+            <h4>Send Us a Message</h4>
+
           </div>
         </div>
       </div>
