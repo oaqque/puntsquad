@@ -72,11 +72,11 @@
  /************** COLORS ***************/
 
  body {
-   background-color: #f8f8f8;
+   background-color: #fff;
  }
 
  .navbar {
-   background-color: #44618c;
+   background-color: #337ab7;
  }
 
  .navbar-nav li {
@@ -111,11 +111,11 @@
  }
 
  .jumbotron {
-   color: #44618c;
+   color: #337ab7;
  }
 
  .footer {
-   background-color: #44618c;
+   background-color: #337ab7;
    color: #fff;
  }
 
@@ -127,16 +127,20 @@
    text-decoration: none;
  }
 
-.plan-info-title {
-  color: #337ab7;
-}
+ .plan-info-title {
+   color: #44618c;
+ }
 
 .recommended-value .well{
-  background-color: #44618c;
+  background-color: #337ab7;
   color: #fff;
 }
 
 .recommended-value .plan-info-title {
+  color: #fff;
+}
+
+.recommended-value h4 {
   color: #fff;
 }
 
@@ -160,6 +164,11 @@
   background-color: #fff;
   color: #000;
 }
+
+.blue-title {
+  color: #44618c;
+}
+
 
 /************** EXTRA ***************/
 .btn:hover {
