@@ -70,7 +70,7 @@
 
  .social-media li {
    display: inline-block;
-   margin: 15px 5px; 
+   margin: 15px 5px;
  }
 
 
@@ -184,4 +184,9 @@
 }
 .btn {
   transition: 0.5s;
+}
+
+.alert {
+  margin-bottom: 0;
+  text-align: center;
 }
