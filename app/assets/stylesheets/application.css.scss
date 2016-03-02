@@ -30,7 +30,7 @@
 
  .navbar-nav li a {
    padding-top: 25px;
-   padding-bottom: 25px;
+   padding-bottom: 15px;
  }
 
 
@@ -81,26 +81,32 @@
  }
 
  .navbar {
-   background-color: #337ab7;
+   background-color: #fff;
+   border-bottom: 1px solid #dce9f4;
  }
 
  .navbar-nav li {
-   -webkit-transition: background-color 0.5s;
-   transition: background-color 0.5s;
+   -webkit-transition: 0.5s;
+   transition: 0.5s;
+   border-bottom: 10px solid #fff;
  }
 
  .navbar-nav li:hover {
-   background-color: #f8f8f8;
-   -webkit-transition: background-color 0.5s;
-   transition: background-color 0.5s;
+   border-bottom: 10px solid #337ab7;
+   -webkit-transition: 0.5s;
+   transition: 0.5s;
  }
 
- .navbar-default .navbar-nav > li > a {
-   color: #fff;
+ .navbar-default .navbar-nav > li > a  {
+   color: #337ab7;
+ }
+
+ .navbar-default .navbar-nav > li > a:hover  {
+   color: #337ab7;
  }
 
  .navbar-default .navbar-brand {
-   color: #fff;
+   color: #000;
    padding-top: 25px;
    padding-bottom: 25px;
    height: 70px;
@@ -126,10 +132,14 @@
 
  .social-icon {
    color: #fff;
+   transition: 0.2s;
+   -webkit-transition: 0.2s;
  }
  .social-icon:hover {
-   color: #eee;
+   color: #2e6da4;
    text-decoration: none;
+   transition: 0.2s;
+   -webkit-transition: 0.2s;
  }
 
  .plan-info-title {
