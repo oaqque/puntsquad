@@ -6,8 +6,8 @@ class ContactsController < ApplicationController
       name = params[:contact][:name]
       email = params[:contact][:name]
       body = params[:contact][:comments]
-      
-      ContactMailer.contact_email(@contact.name, @contact.email, @contact.body).deliver
+
+      ContactMailer.contact_email(name, email, body).deliver
 
       flash[:success] = 'Message sent.'
       redirect_to :back
