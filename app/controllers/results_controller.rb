@@ -7,8 +7,17 @@ class ResultsController < ApplicationController
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM created_at) = ?", params[:year])
     @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM created_at) = ?", params[:month])
     @bets_by_month = @bets_by_month.order("created_at DESC")
+
+    @totals = 0
+
+    @bets_by_month.each do |x|
+      @totals += x.profit_or_loss
+    end
+
     @bets_by_day = @bets_by_month.all.group_by { |bet| bet.created_at.beginning_of_day }
     @bets_by_month = @bets_by_month.all.group_by { |bet| bet.created_at.beginning_of_month }
+
+
 
     @archive = Bet.all.group_by { |bet| bet.created_at.beginning_of_month }
   end
