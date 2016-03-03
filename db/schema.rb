@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301083849) do
+ActiveRecord::Schema.define(version: 20160303003628) do
 
   create_table "bets", force: :cascade do |t|
     t.string   "game"
     t.string   "units_placed"
     t.string   "odds"
-    t.string   "profit_or_loss"
+    t.decimal  "profit_or_loss"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "bet_placed"

@@ -1,12 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-9">
-      <% @bets_by_month.each do |month, bets| %>
-        <h2><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h2>
-      <% end %>
+
 
       <div class="jumbotron">
         <h2>This Month's Stats</h2>
+
+        <% @bets_by_month.each do |month, bets| %>
+          <h2><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h2>
+          <h3>Total Profit/Loss: <%= @total %></h3>
+        <% end %>
+
+
       </div>
 
       <ul class="list-group">
