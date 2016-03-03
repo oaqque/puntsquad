@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <% @bets_by_day.each do |day, bets| %>
+        <h2><%= day.strftime('%d') %> <%= day.strftime('%B') %> <%= day.strftime('%Y') %></h2>
+      <% end %>
+
+      <div class="jumbotron">
+        <h2>Overall Stat's for the Day</h2>
+      </div>
+
+      <% @bets_by_day.each do |day, bets| %>
+
+        <table class="table">
+          <tr>
+            <th>Game</th>
+            <th>Bet Placed</th>
+            <th>Units Placed</th>
+            <th>Odds</th>
+            <th>Profit/Loss</th>
+          </tr>
+          <% for bet in bets do %>
+            <tr>
+              <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
+              <td><%= bet.bet_placed %></td>
+              <td><%= bet.units_placed %></td>
+              <td><%= bet.odds %></td>
+              <td><%= bet.profit_or_loss %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+
+
+    </div>
+
+    <div class="col-md-3">
+      <%= render 'archive' %>
+    </div>
+  </div>
+</div>

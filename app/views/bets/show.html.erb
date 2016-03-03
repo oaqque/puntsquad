@@ -10,7 +10,7 @@
           <li>Odds: <%= @bet.odds %></li>
           <li>Profit/Loss: <%= @bet.profit_or_loss %></li>
         </ul>
-        <%= link_to "Back to Results", results_path, class: "btn btn-default" %>
+        <%= link_to "Back to Results", :back, class: "btn btn-default" %>
         <% if current_user.try(:admin?) %>
           <%= link_to "Edit", edit_bet_path(:id => @bet.id), class: "btn btn-default" %>
         <% end %>

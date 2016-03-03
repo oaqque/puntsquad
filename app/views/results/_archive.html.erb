@@ -1,6 +1,6 @@
 <h2>Archive</h2>
 <ul class="list-group">
-  <% @bets_by_month.each do |month, posts| %>
+  <% @archive.each do |month, posts| %>
     <li class="list-group-item"><%= link_to "#{month.strftime('%B %Y')}", results_by_year_and_month_path(:year=> month.strftime('%Y'), :month => month.strftime('%-m')) %></li>
   <% end %>
 </ul>

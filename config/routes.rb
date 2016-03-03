@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations'}
   get '/results' => 'results#index'
   get '/results/by_year_and_month/:year/:month' => 'results#by_year_and_month', :as=> :results_by_year_and_month
+  get '/results/by_year_and_month/:year/:month/:day' => 'results#by_year_and_month_and_day', :as=> :results_by_year_and_month_and_day
   resources :bets
   resources :contacts
 

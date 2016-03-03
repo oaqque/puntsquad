@@ -3,21 +3,26 @@
     <div class="col-md-9">
       <% @bets_by_month.each do |month, bets| %>
         <h2><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h2>
-        <ul class="list-group">
-        <% for bet in bets %>
-          <li class="list-group-item">
-            <strong><%= link_to "#{bet.game} ", bet_path(:id => bet.id) %></strong>
-            <br />
-            <%= bet.created_at.strftime('%d/%m/%Y') %>
-          </li>
-        <% end %>
-        </ul>
       <% end %>
 
+      <div class="jumbotron">
+        <h2>This Month's Stats</h2>
+      </div>
+
+      <ul class="list-group">
+      <% @bets_by_day.each do |day, bets| %>
+        <li class="list-group-item">
+          <%= link_to results_by_year_and_month_and_day_path(:year=> day.strftime('%Y'), :month => day.strftime('%-m'), :day => day.strftime('%d')) do %>
+            <%= day.strftime('%d')%> <%= day.strftime('%B')%> <%= day.strftime('%Y')%>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
 
     </div>
+
     <div class="col-md-3">
-      <%= render "archive" %>
+      <%= render 'archive' %>
     </div>
   </div>
 </div>
