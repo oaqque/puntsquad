@@ -10,12 +10,6 @@ class ResultsController < ApplicationController
     @bets_by_day = @bets_by_month.all.group_by { |bet| bet.created_at.beginning_of_day }
     @bets_by_month = @bets_by_month.all.group_by { |bet| bet.created_at.beginning_of_month }
 
-    @totals = 0
-
-    @bets_by_month.each do |x|
-      @totals += x.profit_or_loss
-    end
-
     @archive = Bet.all.group_by { |bet| bet.created_at.beginning_of_month }
   end
 
