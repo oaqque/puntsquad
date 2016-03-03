@@ -3,16 +3,19 @@
     <div class="col-md-9">
 
 
-      <div class="jumbotron">
-        <h2>This Month's Stats</h2>
+      <div class="jumbotron margin-top">
+        <h2>This Month's Statistics</h2>
 
         <% @bets_by_month.each do |month, bets| %>
           <h2><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h2>
         <% end %>
 
+        <h3>Totals Profit/Loss: <%= @totals %></h3>
+
 
       </div>
-      <%= @totals %>
+
+      <h2>This Month Statistics</h2>
       <ul class="list-group">
       <% @bets_by_day.each do |day, bets| %>
         <li class="list-group-item">
