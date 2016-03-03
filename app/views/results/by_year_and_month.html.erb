@@ -8,11 +8,11 @@
           <h2><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h2>
         <% end %>
 
-        <h3>Totals Profit/Loss:</h3>
+
         <% if @totals > 0 %>
-          <h4 class="label label-success"><%= @totals %></h4>
+          <h3>Totals Profit/Loss: <span class="label label-success"><%= @totals %></span></h3>
         <% else %>
-          <h4 class="label label-danger"><%= @totals %></h4>
+          <h3>Totals Profit/Loss: <span class="label label-danger"><%= @totals %></span></h3>
         <% end %>
 
 
