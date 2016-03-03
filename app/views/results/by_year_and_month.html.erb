@@ -8,7 +8,6 @@
 
         <% @bets_by_month.each do |month, bets| %>
           <h2><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h2>
-          <h3>Total Profit/Loss: <%= @total %></h3>
         <% end %>
 
 
