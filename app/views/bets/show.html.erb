@@ -1,19 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <br /><br />
-
-        <h1><%= @bet.game %></h1>
-        <ul class="list-unstyled">
-          <li>Bet Placed: <%= @bet.bet_placed %></li>
-          <li>Units Placed: <%= @bet.units_placed %></li>
-          <li>Odds: <%= @bet.odds %></li>
-          <li>Profit/Loss: <%= @bet.profit_or_loss %></li>
-        </ul>
-        <%= link_to "Back to Results", :back, class: "btn btn-default" %>
-        <% if current_user.try(:admin?) %>
-          <%= link_to "Edit", edit_bet_path(:id => @bet.id), class: "btn btn-default" %>
-        <% end %>
+    <div class="col-md-6 col-md-offset-3">
+      <br />
+        <div class="well">
+          <h1 class="no-top-margin text-center"><%= @bet.game %></h1>
+          <ul class="list-unstyled list-group">
+            <li class="list-group-item"><strong>Bet Placed:</strong> <%= @bet.bet_placed %></li>
+            <li class="list-group-item"><strong>Units Placed:</strong> <%= @bet.units_placed %></li>
+            <li class="list-group-item"><strong>Odds:</strong> <%= @bet.odds %></li>
+            <li class="list-group-item"><strong>Profit/Loss:</strong> <%= @bet.profit_or_loss %></li>
+          </ul>
+          <%= link_to "Back to Results", :back, class: "btn btn-default" %>
+          <% if current_user.try(:admin?) %>
+            <%= link_to "Edit", edit_bet_path(:id => @bet.id), class: "btn btn-default" %>
+          <% end %>
+        </div>
     </div>
 
   </div>
