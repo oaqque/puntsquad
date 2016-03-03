@@ -1,21 +1,17 @@
 <div class="container">
   <div class="row">
+    <div class="page-header">
+      <% @bets_by_month.each do |month, bets| %>
+        <h1><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h1>
+      <% end %>
+    </div>
     <div class="col-md-9">
-
-
       <div class="jumbotron margin-top">
-        <% @bets_by_month.each do |month, bets| %>
-          <h2><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h2>
-        <% end %>
-
-
         <% if @totals > 0 %>
           <h3>Total Profit/Loss: <span class="label label-success"><%= @totals %></span></h3>
         <% else %>
           <h3>Total Profit/Loss: <span class="label label-danger"><%= @totals %></span></h3>
         <% end %>
-
-
       </div>
 
       <h2>More Info</h2>

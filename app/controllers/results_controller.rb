@@ -1,6 +1,13 @@
 class ResultsController < ApplicationController
   def index
     @archive = Bet.all.group_by { |bet| bet.created_at.beginning_of_month }
+    @total = 0
+    @bets = Bet.all
+
+    @bets.each do |x|
+      @total += x.profit_or_loss
+    end
+
   end
 
   def by_year_and_month

@@ -5,7 +5,11 @@
     </div>
     <div class="col-md-10">
       <div class="jumbotron">
-        <h1>Total Results</h1>
+        <% if @total > 0 %>
+          <h3>Total Profit/Loss: <span class="label label-success"><%= @total %></span></h3>
+        <% else %>
+          <h3>Total Profit/Loss: <span class="label label-danger"><%= @total %></span></h3>
+        <% end %>
       </div>
     </div>
     <div class="col-md-2">
