@@ -24,13 +24,13 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">About Us</a></li>
             <li><%= link_to 'Results', results_path %></li>
+            <% if current_user.try(:admin?) %>
+              <li><%= link_to 'New Bet', new_bet_path %></li>
+            <% end %>
             <% if current_user %>
               <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to 'Sign In', new_user_session_path, method: :get %></li>
-            <% end %>
-            <% if current_user.try(:admin?) %>
-              <li><%= link_to 'New Bet', new_bet_path %></li>
             <% end %>
           </ul>
         </div>

@@ -1,29 +1,32 @@
 <div class="row">
   <div class="col-md-12">
     <h2 class="blue-title text-center">Hey <%= current_user.email %></h2>
-    <h4 class="text-center">Get started with Today's Tips</h4>
-    <div class="col-md-6 col-md-offset-3">
+
+    <div class="col-md-8">
       <div class="well">
-        <h5 class="text-center"><%= Date.today %></h5>
-        <table class="table">
+      <h4 class="text-center">Get started with Today's Tips</h4>
+      <h5 class="text-center"><%= Date.today %></h5>
+      <table class="table">
+        <tr>
+          <th>Game</th>
+          <th>Bet Placed</th>
+          <th>Units Placed</th>
+          <th>Odds</th>
+        </tr>
+        <% for bet in @today_bets do %>
           <tr>
-            <th>Game</th>
-            <th>Bet Placed</th>
-            <th>Units Placed</th>
-            <th>Odds</th>
-            <th>Profit/Loss</th>
+            <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
+            <td><%= bet.bet_placed %></td>
+            <td><%= bet.units_placed %></td>
+            <td><%= bet.odds %></td>
           </tr>
-          <% for bet in @today_bets do %>
-            <tr>
-              <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
-              <td><%= bet.bet_placed %></td>
-              <td><%= bet.units_placed %></td>
-              <td><%= bet.odds %></td>
-              <td><%= bet.profit_or_loss %></td>
-            </tr>
-          <% end %>
-        </table>
+        <% end %>
+      </table>
       </div>
+    </div>
+
+    <div class="col-md-4">
+      <h4 class="text-center">Read our Punters Guide</h4>
     </div>
 
   </div>

@@ -1,16 +1,18 @@
-<div class="container">
-  <% if current_user %>
+
+<% if current_user %>
   <div class="jumbotron margin-top">
-    <h1 class="text-center">Welcome to Puntsquad</h1>
-    <p class="text-center">Your home for Sports Betting tips.</p>
-  </div>
-  <% else %>
-    <div class="jumbotron home-page">
+    <div class="container">
       <h1 class="text-center">Welcome to Puntsquad</h1>
       <p class="text-center">Your home for Sports Betting tips.</p>
     </div>
-  <% end %>
-</div>
+  </div>
+<% else %>
+  <div class="jumbotron home-page">
+    <h1 class="text-center">Welcome to Puntsquad</h1>
+    <p class="text-center">Your home for Sports Betting tips.</p>
+  </div>
+<% end %>
+
 
 <div class="container">
   <% if current_user %>
