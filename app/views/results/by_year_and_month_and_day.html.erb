@@ -6,7 +6,11 @@
       <% end %>
 
       <div class="jumbotron">
-        <h2>Overall Stat's for the Day</h2>
+        <% if @totals > 0 %>
+          <h3>Total Profit/Loss: <span class="label label-success"><%= @totals %></span></h3>
+        <% else %>
+          <h3>Total Profit/Loss: <span class="label label-danger"><%= @totals %></span></h3>
+        <% end %>
       </div>
 
       <% @bets_by_day.each do |day, bets| %>

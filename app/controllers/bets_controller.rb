@@ -1,4 +1,7 @@
 class BetsController < ApplicationController
+
+  before_action :authenticate_user!
+  
   def new
     @bet = Bet.new
   end

@@ -1,3 +1,5 @@
+<% if current_user.try(:admin?) %>
+
 <h1 class="text-center">Edit Bet</h1>
 
 <div class="container">
@@ -10,3 +12,10 @@
   </div>
 
 </div>
+
+<% else %>
+  <div class="jumbotron">
+    <h1 class="text-center"> Access Denied </h1>
+  </div>
+
+<% end %>

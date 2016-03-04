@@ -188,6 +188,13 @@
   background-color: #dce9f4;
 }
 
+.alert-notice {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    margin-bottom: 0px;
+}
+
 /************** EXTRA ***************/
 .btn:hover {
   transition: 0.5s;
@@ -214,5 +221,9 @@
 }
 
 .container .jumbotron {
+  border-radius: 0px;
+}
+
+.alert {
   border-radius: 0px;
 }
