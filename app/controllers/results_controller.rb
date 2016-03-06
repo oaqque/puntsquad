@@ -12,20 +12,21 @@ class ResultsController < ApplicationController
   end
 
   def by_year_and_month
+    #Generate All Categories
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", params[:year])
     @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM date_of_bet) = ?", params[:month])
     @bets_by_month = @bets_by_month.order("date_of_bet DESC")
 
-    @totals = 0
+    #Totals
+    @monthly_total = 0
 
     @bets_by_month.each do |x|
-      @totals += x.profit_or_loss
+      @monthly_total += x.profit_or_loss
     end
 
+    #Group Categories
     @bets_by_day = @bets_by_month.all.group_by { |bet| bet.date_of_bet.beginning_of_day }
     @bets_by_month = @bets_by_month.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
-
-
 
     @archive = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
   end

@@ -7,10 +7,10 @@
     </div>
     <div class="col-md-9">
       <div class="jumbotron margin-top">
-        <% if @totals > 0 %>
-          <h3>Total Profit/Loss: <span class="label label-success"><%= @totals %></span></h3>
+        <% if @monthly_total > 0 %>
+          <h3>Total Profit/Loss: <span class="label label-success"><%= @monthly_total %></span></h3>
         <% else %>
-          <h3>Total Profit/Loss: <span class="label label-danger"><%= @totals %></span></h3>
+          <h3>Total Profit/Loss: <span class="label label-danger"><%= @monthly_total %></span></h3>
         <% end %>
       </div>
 
@@ -21,6 +21,7 @@
           <%= link_to results_by_year_and_month_and_day_path(:year=> day.strftime('%Y'), :month => day.strftime('%-m'), :day => day.strftime('%d')) do %>
             <%= day.strftime('%d')%> <%= day.strftime('%B')%> <%= day.strftime('%Y')%>
           <% end %>
+          <%= @daily_total %>
         </li>
       <% end %>
       </ul>
