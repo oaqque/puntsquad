@@ -29,7 +29,15 @@
               <td><%= bet.bet_placed %></td>
               <td><%= bet.units_placed %></td>
               <td><%= bet.odds %></td>
-              <td><%= bet.profit_or_loss %></td>
+              <td>
+                <% if bet.profit_or_loss > 0 %>
+                  <span class="label label-success">+<%= bet.profit_or_loss %></span>
+                <% elsif bet.profit_or_loss == 0 %>
+                  <span class="label label-default"><%= bet.profit_or_loss %></span>
+                <% else %>
+                  <span class="label label-danger"><%= bet.profit_or_loss %></span>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </table>
