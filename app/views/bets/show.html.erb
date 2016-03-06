@@ -7,10 +7,19 @@
           <ul class="list-unstyled list-group">
             <li class="list-group-item"><strong>Bet Placed:</strong> <%= @bet.bet_placed %></li>
             <li class="list-group-item"><strong>Units Placed:</strong> <%= @bet.units_placed %></li>
+            <li class="list-group-item"><strong>Date Of Game:</strong> <%= @bet.date_of_bet %></li>
             <li class="list-group-item"><strong>Odds:</strong> <%= @bet.odds %></li>
-            <li class="list-group-item"><strong>Profit/Loss:</strong> <%= @bet.profit_or_loss %></li>
+            <li class="list-group-item"><strong>Profit/Loss:</strong>
+              <% if @bet.profit_or_loss > 0 %>
+                <span class="label label-success">+<%=@bet.profit_or_loss%></span>
+              <% elsif @bet.profit_or_loss == 0 %>
+                <span class="label label-default"><%=@bet.profit_or_loss%></span>
+              <% else %>
+                <span class="label label-danger"><%=@bet.profit_or_loss%></span>
+              <% end %>
+            </li>
           </ul>
-          <%= link_to "Back to Results", :back, class: "btn btn-default" %>
+          <%= link_to "Back to Results", results_path, class: "btn btn-default" %>
           <% if current_user.try(:admin?) %>
             <%= link_to "Edit", edit_bet_path(:id => @bet.id), class: "btn btn-default" %>
           <% end %>
