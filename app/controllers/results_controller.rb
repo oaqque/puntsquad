@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
 
   def index
-    @archive = Bet.all.group_by { |bet| bet.created_at.beginning_of_month }
+    @archive = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
     @total = 0
     @bets = Bet.all
 
@@ -12,9 +12,9 @@ class ResultsController < ApplicationController
   end
 
   def by_year_and_month
-    @bets_by_year = Bet.where("EXTRACT(YEAR FROM created_at) = ?", params[:year])
-    @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM created_at) = ?", params[:month])
-    @bets_by_month = @bets_by_month.order("created_at DESC")
+    @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", params[:year])
+    @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM date_of_bet) = ?", params[:month])
+    @bets_by_month = @bets_by_month.order("date_of_bet DESC")
 
     @totals = 0
 
@@ -22,21 +22,21 @@ class ResultsController < ApplicationController
       @totals += x.profit_or_loss
     end
 
-    @bets_by_day = @bets_by_month.all.group_by { |bet| bet.created_at.beginning_of_day }
-    @bets_by_month = @bets_by_month.all.group_by { |bet| bet.created_at.beginning_of_month }
+    @bets_by_day = @bets_by_month.all.group_by { |bet| bet.date_of_bet.beginning_of_day }
+    @bets_by_month = @bets_by_month.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
 
 
 
-    @archive = Bet.all.group_by { |bet| bet.created_at.beginning_of_month }
+    @archive = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
   end
 
   def by_year_and_month_and_day
-    @archive = Bet.all.group_by { |bet| bet.created_at.beginning_of_month }
+    @archive = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
 
-    @bets_by_year = Bet.where("EXTRACT(YEAR FROM created_at) = ?", params[:year])
-    @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM created_at) = ?", params[:month])
-    @bets_by_day = @bets_by_month.where("EXTRACT(DAY FROM created_at) = ?", params[:day])
-    @bets_by_day = @bets_by_day.order("created_at DESC")
+    @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", params[:year])
+    @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM date_of_bet) = ?", params[:month])
+    @bets_by_day = @bets_by_month.where("EXTRACT(DAY FROM date_of_bet) = ?", params[:day])
+    @bets_by_day = @bets_by_day.order("date_of_bet DESC")
 
     @totals = 0
 
@@ -45,7 +45,7 @@ class ResultsController < ApplicationController
     end
 
 
-    @bets_by_day = @bets_by_day.all.group_by { |bet| bet.created_at.beginning_of_day }
+    @bets_by_day = @bets_by_day.all.group_by { |bet| bet.date_of_bet.beginning_of_day }
 
   end
 end

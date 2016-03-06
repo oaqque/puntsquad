@@ -26,7 +26,17 @@
     </div>
 
     <div class="col-md-4">
-      <h4 class="text-center">Read our Punters Guide</h4>
+      <div class="well text-center">
+        <h4>This Month's Totals</h4>
+        <% if @monthly_total > 0 %>
+          <h1><span class="label label-success">+<%=@monthly_total%></span></h1>
+        <% elsif @monthly_total == 0 %>
+          <h1><span class="label label-default"><%=@monthly_total%></span></h1>
+        <% else %>
+          <h1><span class="label label-danger"><%=@monthly_total%></span></h1>
+        <% end %>
+        <%= link_to "This Month's Results", "", class: 'btn btn-default btn-lg btn-block margin-top' %>
+      </div>
     </div>
 
   </div>

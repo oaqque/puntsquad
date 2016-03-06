@@ -4,6 +4,19 @@ class HomeController < ApplicationController
     @monthly_plan = Plan.find(5)
     @yearly_plan = Plan.find(6)
 
-    @today_bets = Bet.where("created_at >= ?", Time.zone.now.beginning_of_day)
+    #Locate Today's Bets
+    @today_bets = Bet.where("date_of_bet >= ?", Time.zone.now.beginning_of_day)
+
+    #Target This Month's Bets
+    @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", Time.now.year)
+    @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM date_of_bet) = ?", Time.now.month)
+    @bets_by_month = @bets_by_month.order("date_of_bet DESC")
+
+    #Monthly Total
+    @monthly_total = 0
+    @bets_by_month.each do |x|
+      @monthly_total += x.profit_or_loss
+    end
+
   end
 end
