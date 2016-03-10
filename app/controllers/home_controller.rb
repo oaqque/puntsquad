@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @yearly_plan = Plan.find(6)
 
     #Locate Today's Bets
-    @today_bets = Bet.where("date_of_bet = ?", Date.today)
+    @today_bets = Bet.where("profit_or_loss = ?", -999)
 
     #Target This Month's Bets
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", Time.now.year)
@@ -15,7 +15,9 @@ class HomeController < ApplicationController
     #Monthly Total
     @monthly_total = 0
     @bets_by_month.each do |x|
-      @monthly_total += x.profit_or_loss
+      if x.profit_or_loss > -100 && x.profit_or_loss < 100
+        @monthly_total += x.profit_or_loss
+      end
     end
 
   end

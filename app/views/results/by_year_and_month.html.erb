@@ -31,7 +31,9 @@
               <td>
                 <% @daily_total = 0 %>
                 <% for bet in bets do %>
-                  <% @daily_total += bet.profit_or_loss %>
+                  <% if bet.profit_or_loss > -100 && bet.profit_or_loss < 100 %>
+                    <% @daily_total += bet.profit_or_loss %>
+                  <% end %>
                 <% end %>
 
                 <% if @daily_total > 0 %>

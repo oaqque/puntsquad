@@ -34,6 +34,8 @@
                   <span class="label label-success">+<%= bet.profit_or_loss %></span>
                 <% elsif bet.profit_or_loss == 0 %>
                   <span class="label label-default"><%= bet.profit_or_loss %></span>
+                <% elsif bet.profit_or_loss == -1000 %>
+                  <span class="label label-default">push</span>
                 <% else %>
                   <span class="label label-danger"><%= bet.profit_or_loss %></span>
                 <% end %>

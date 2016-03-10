@@ -6,7 +6,9 @@ class ResultsController < ApplicationController
     @bets = Bet.all
 
     @bets.each do |x|
-      @total += x.profit_or_loss
+      if x.profit_or_loss > -100 && x.profit_or_loss < 100
+        @total += x.profit_or_loss
+      end
     end
 
   end
@@ -21,7 +23,9 @@ class ResultsController < ApplicationController
     @monthly_total = 0
 
     @bets_by_month.each do |x|
-      @monthly_total += x.profit_or_loss
+      if x.profit_or_loss > -100 && x.profit_or_loss < 100
+        @monthly_total += x.profit_or_loss
+      end
     end
 
     #Group Categories
@@ -44,7 +48,9 @@ class ResultsController < ApplicationController
     @totals = 0
 
     @bets_by_day.each do |x|
-      @totals += x.profit_or_loss
+      if x.profit_or_loss > -100 && x.profit_or_loss < 100
+        @totals += x.profit_or_loss
+      end
     end
 
 
