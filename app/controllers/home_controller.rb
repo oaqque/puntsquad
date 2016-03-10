@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @yearly_plan = Plan.find(6)
 
     #Locate Today's Bets
-    @today_bets = Bet.where("date_of_bet >= ?", Time.zone.now.beginning_of_day)
+    @today_bets = Bet.where("date_of_bet = ?", Date.today)
 
     #Target This Month's Bets
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", Time.now.year)
