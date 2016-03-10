@@ -15,17 +15,36 @@
       </div>
 
       <h2>More Info</h2>
-      <ul class="list-group">
-      <% @bets_by_day.each do |day, bets| %>
-        <li class="list-group-item">
-          <%= link_to results_by_year_and_month_and_day_path(:year=> day.strftime('%Y'), :month => day.strftime('%-m'), :day => day.strftime('%d')) do %>
-            <%= day.strftime('%d')%> <%= day.strftime('%B')%> <%= day.strftime('%Y')%>
-          <% end %>
-          <%= @daily_total %>
-        </li>
-      <% end %>
-      </ul>
 
+        <table class="table">
+          <tr>
+            <th>Day</th>
+            <th>Number of Bets</th>
+            <th>Profit/Loss</th>
+          </tr>
+          <% @bets_by_day.each do |day, bets| %>
+            <tr>
+              <td><strong><%= link_to results_by_year_and_month_and_day_path(:year=> day.strftime('%Y'), :month => day.strftime('%-m'), :day => day.strftime('%d')) do %>
+                <%= day.strftime('%d')%> <%= day.strftime('%B')%> <%= day.strftime('%Y')%>
+              <% end %></strong></td>
+              <td><%= bets.count %></td>
+              <td>
+                <% @daily_total = 0 %>
+                <% for bet in bets do %>
+                  <% @daily_total += bet.profit_or_loss %>
+                <% end %>
+
+                <% if @daily_total > 0 %>
+                  <span class="label label-success"><%= @daily_total %></span>
+                <% elsif @daily_total == 0 %>
+                  <span class="label label-default"><%= @daily_total %></span>
+                <% else %>
+                  <span class="label label-danger"><%= @daily_total %></span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
     </div>
 
     <div class="col-md-3">
