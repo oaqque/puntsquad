@@ -37,6 +37,10 @@ gem 'stripe'
 gem 'figaro'
 # Fontawesome
 gem 'font-awesome-rails'
+# Chartkick for Charts and Graphs
+gem 'chartkick'
+# Groupdate
+gem 'groupdate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

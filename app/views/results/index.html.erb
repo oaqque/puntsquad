@@ -10,6 +10,7 @@
         <% else %>
           <h3>Total Profit/Loss: <span class="label label-danger"><%= @total %></span></h3>
         <% end %>
+        <%= area_chart Bet.group_by_month(:date_of_bet).sum(:profit_or_loss) %>
       </div>
     </div>
     <div class="col-md-2">
