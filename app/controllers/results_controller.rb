@@ -39,6 +39,7 @@ class ResultsController < ApplicationController
     @bets_by_day = @bets_by_month.all.group_by { |bet| bet.date_of_bet.beginning_of_day }
     @bets_by_month = @bets_by_month.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
 
+    #archive
     @archive = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
 
 
