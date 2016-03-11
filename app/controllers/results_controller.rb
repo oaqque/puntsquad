@@ -11,6 +11,7 @@ class ResultsController < ApplicationController
       end
     end
 
+    @sum = 0 #for graph
   end
 
   def admin
@@ -25,6 +26,22 @@ class ResultsController < ApplicationController
     @this_month_bets = @bets_by_month
     @bets_by_month = @bets_by_month.order("date_of_bet DESC")
     @sum = 0
+
+    #This Month
+    @year = params[:year].to_i
+    @month = params[:month].to_i
+
+    @month_start = Date.new(@year, @month, 1)
+
+    if @month == 1 || @month == 3 || @month == 5 || @month == 7 || @month == 8 || @month == 10 || @month == 12
+      @month_end = Date.new(@year, @month, 31)
+    elsif @month == 2 && @year%4 == 0
+      @month_end = Date.new(@year, @month, 29)
+    elsif @month == 2 && @year%4 != 0
+      @month_end = Date.new(@year, @month, 28)
+    elsif @month == 4 || @month == 6 || @month == 9 || @month == 11
+      @month_end = Date.new(@year, @month, 30)
+    end
 
     #Totals
     @monthly_total = 0

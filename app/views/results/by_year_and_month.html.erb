@@ -12,7 +12,7 @@
         <% else %>
           <h3>Total Profit/Loss: <span class="label label-danger"><%= @monthly_total %></span></h3>
         <% end %>
-        <%= area_chart @this_month_bets.group_by_day(:date_of_bet).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge) %>
+        <%= area_chart @this_month_bets.group_by_day(:date_of_bet, range: @month_start..@month_end).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge), xtitle: "Date", ytitle: "Units", colors: ["337ab7", "#000"] %>
       </div>
 
       <h2>More Info</h2>
