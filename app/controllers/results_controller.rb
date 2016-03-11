@@ -22,8 +22,9 @@ class ResultsController < ApplicationController
     #Generate All Categories
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", params[:year])
     @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM date_of_bet) = ?", params[:month])
-    @bets_by_month = @bets_by_month.order("date_of_bet DESC")
     @this_month_bets = @bets_by_month
+    @bets_by_month = @bets_by_month.order("date_of_bet DESC")
+    @sum = 0
 
     #Totals
     @monthly_total = 0
