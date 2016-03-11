@@ -13,6 +13,11 @@ class ResultsController < ApplicationController
 
   end
 
+  def admin
+    @bets = Bet.all
+    @bets = @bets.order("date_of_bet DESC")
+  end
+
   def by_year_and_month
     #Generate All Categories
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", params[:year])

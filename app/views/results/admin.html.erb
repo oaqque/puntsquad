@@ -1,0 +1,30 @@
+<div class="container">
+    <table class="table">
+      <tr>
+        <th>Game</th>
+        <th>Bet Placed</th>
+        <th>Units Placed</th>
+        <th>Odds</th>
+        <th>Profit/Loss</th>
+      </tr>
+      <% for bet in @bets do %>
+        <tr>
+          <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
+          <td><%= bet.bet_placed %></td>
+          <td><%= bet.units_placed %></td>
+          <td><%= bet.odds %></td>
+          <td>
+            <% if bet.profit_or_loss > 0 %>
+              <span class="label label-success">+<%= bet.profit_or_loss %></span>
+            <% elsif bet.profit_or_loss == 0 %>
+              <span class="label label-default"><%= bet.profit_or_loss %></span>
+            <% elsif bet.profit_or_loss == -1000 %>
+              <span class="label label-default">push</span>
+            <% else %>
+              <span class="label label-danger"><%= bet.profit_or_loss %></span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+</div>

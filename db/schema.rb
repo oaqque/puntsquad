@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310141746) do
+ActiveRecord::Schema.define(version: 20160310235506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bets", force: :cascade do |t|
     t.string   "game"
-    t.string   "units_placed"
-    t.string   "odds"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.string   "bet_placed"
     t.decimal  "profit_or_loss", default: -999.0
     t.date     "date_of_bet",    default: '2016-03-11'
+    t.decimal  "odds",           default: 0.0
+    t.decimal  "units_placed",   default: 0.0
   end
 
   create_table "contacts", force: :cascade do |t|
