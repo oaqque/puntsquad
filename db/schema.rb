@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310235506) do
+ActiveRecord::Schema.define(version: 20160311011502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,10 +21,12 @@ ActiveRecord::Schema.define(version: 20160310235506) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.string   "bet_placed"
-    t.decimal  "profit_or_loss", default: -999.0
+    t.decimal  "profit_or_loss", default: 0.0
     t.date     "date_of_bet",    default: '2016-03-11'
     t.decimal  "odds",           default: 0.0
     t.decimal  "units_placed",   default: 0.0
+    t.boolean  "push",           default: false
+    t.boolean  "resolved",       default: false
   end
 
   create_table "contacts", force: :cascade do |t|

@@ -30,6 +30,17 @@
     <%= f.text_field :profit_or_loss, class: 'form-control' %>
   </p>
 
+  <p class="form-group">
+    <div class="checkbox-inline">
+      <%= f.check_box :resolved, class: 'checkbox' %>
+      <%= f.label :resolved %>
+    </div>
+    <div class="checkbox-inline">
+      <%= f.check_box :push, class: 'checkbox' %>
+      <%= f.label :push %>
+    </div>
+  </p>
+
   <%= f.submit 'Update', class: 'btn btn-default' %>
 
 <% end %>
