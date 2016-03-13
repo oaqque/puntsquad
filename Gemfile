@@ -41,6 +41,8 @@ gem 'font-awesome-rails'
 gem 'chartkick'
 # Groupdate
 gem 'groupdate'
+#Default Value
+gem 'default_value_for'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
