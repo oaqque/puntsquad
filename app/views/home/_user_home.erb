@@ -14,6 +14,7 @@
               <th>Bet Placed</th>
               <th>Units Placed</th>
               <th>Odds</th>
+              <th>Bookmaker</th>
             </tr>
             <% for bet in @today_bets do %>
               <tr>
@@ -42,6 +43,27 @@
                 <td><%= bet.bet_placed %></td>
                 <td><%= bet.units_placed %></td>
                 <td><%= bet.odds %></td>
+                <td>
+                  <% if bet.bookmaker == 1 %>
+                    Sportsbet
+                  <% elsif bet.bookmaker == 2 %>
+                    William Hill
+                  <% elsif bet.bookmaker == 3 %>
+                    CrownBet
+                  <% elsif bet.bookmaker == 4 %>
+                    Unibet
+                  <% elsif bet.bookmaker == 5 %>
+                    Centrebet
+                  <% elsif bet.bookmaker == 6 %>
+                    Tom Waterhouse
+                  <% elsif bet.bookmaker == 7 %>
+                    bet365
+                  <% elsif bet.bookmaker == 8 %>
+                    TAB
+                  <% elsif bet.bookmaker == 9 %>
+                    Pinnacle
+                  <% end %>
+                </td>
               </tr>
             <% end %>
           </table>
