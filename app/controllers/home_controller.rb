@@ -21,4 +21,7 @@ class HomeController < ApplicationController
     end
 
   end
+
+  def betting_guide
+  end
 end

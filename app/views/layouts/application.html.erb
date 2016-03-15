@@ -23,7 +23,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">About Us</a></li>
+            <li><%= link_to 'Learn To Bet', bettingguide_path %></li>
             <li><%= link_to 'Results', results_path %></li>
             <% if current_user.try(:admin?) %>
               <li><%= link_to 'New Bet', new_bet_path %></li>

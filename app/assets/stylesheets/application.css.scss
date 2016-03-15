@@ -41,8 +41,27 @@
    background-position: center center;
    background-repeat: no-repeat;
    background-size: cover;
-   height: 70vh;
+   height: 65vh;
    border-radius: 0px;
+ }
+
+ .jumbotron.user-home {
+   background-image: url('user-home-hero-bg.jpg');
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 0px;
+   color: #fff;
+ }
+
+ .jumbotron.faq {
+   background-image: url('understanding-hero-bg.jpg');
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 0px;
+   color: #fff;
+   opacity: 0.8;
  }
 
  /************** PLAN INFO ***************/
@@ -128,7 +147,9 @@
 
  .jumbotron {
    color: #337ab7;
+   background-color: #fafafa;
  }
+
 
  .footer {
    background-color: #337ab7;

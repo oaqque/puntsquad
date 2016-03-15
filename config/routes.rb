@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/results/admin' => 'results#admin'
   resources :bets
   resources :contacts
+  get '/bettingguide' => 'home#betting_guide'
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
