@@ -4,8 +4,48 @@
       <br />
         <div class="well">
           <h1 class="no-top-margin text-center"><%= @bet.game %></h1>
+          <% if @bet.sport == 1 %>
+            <h3 class="text-center">Basketball</h3>
+          <% elsif @bet.sport == 2 %>
+            <h3 class="text-center">NRL</h3>
+          <% elsif @bet.sport == 3 %>
+            <h3 class="text-center">Super Rugby</h3>
+          <% elsif @bet.sport == 4 %>
+            <h3 class="text-center">AFL</h3>
+          <% elsif @bet.sport == 5 %>
+            <h3 class="text-center">eSports</h3>
+          <% elsif @bet.sport == 6 %>
+            <h3 class="text-center">Ice Hockey</h3>
+          <% elsif @bet.sport == 7 %>
+            <h3 class="text-center">Horse Racing</h3>
+          <% elsif @bet.sport == 8 %>
+            <h3 class="text-center">Tennis</h3>
+          <% elsif @bet.sport == 9 %>
+            <h3 class="text-center">NFL</h3>
+          <% end %>
           <ul class="list-unstyled list-group">
             <li class="list-group-item"><strong>Bet Placed:</strong> <%= @bet.bet_placed %></li>
+            <li class="list-group-item"><strong>Bookmaker:</strong>
+              <% if @bet.bookmaker == 1 %>
+                Sportsbet
+              <% elsif @bet.bookmaker == 2 %>
+                William Hill
+              <% elsif @bet.bookmaker == 3 %>
+                CrownBet
+              <% elsif @bet.bookmaker == 4 %>
+                Unibet
+              <% elsif @bet.bookmaker == 5 %>
+                Centrebet
+              <% elsif @bet.bookmaker == 6 %>
+                Tom Waterhouse
+              <% elsif @bet.bookmaker == 7 %>
+                bet365
+              <% elsif @bet.bookmaker == 8 %>
+                TAB
+              <% elsif @bet.bookmaker == 9 %>
+                Pinnacle
+              <% end %>
+            </li>
             <li class="list-group-item"><strong>Units Placed:</strong> <%= @bet.units_placed %></li>
             <li class="list-group-item"><strong>Date Of Game:</strong> <%= @bet.date_of_bet %></li>
             <li class="list-group-item"><strong>Odds:</strong> <%= @bet.odds %></li>
@@ -19,7 +59,7 @@
               <% end %>
             </li>
           </ul>
-          <%= link_to "Back to Results", results_admin_path, class: "btn btn-default" %>
+          <%= link_to "Back to Results", results_path, class: "btn btn-default" %>
           <% if current_user.try(:admin?) %>
             <%= link_to "Edit", edit_bet_path(:id => @bet.id), class: "btn btn-default" %>
           <% end %>

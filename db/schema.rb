@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311011502) do
+ActiveRecord::Schema.define(version: 20160315111211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20160311011502) do
     t.decimal  "units_placed",   default: 0.0
     t.boolean  "push",           default: false
     t.boolean  "resolved",       default: false
+    t.integer  "bookmaker"
+    t.integer  "sport"
   end
 
   create_table "contacts", force: :cascade do |t|

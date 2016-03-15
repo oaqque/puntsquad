@@ -1,7 +1,5 @@
 class BetsController < ApplicationController
 
-  before_action :authenticate_user!
-
   def new
     @bet = Bet.new
   end
@@ -40,7 +38,7 @@ class BetsController < ApplicationController
   private
 
     def bet_params
-      params.require(:bet).permit(:bet_placed, :game, :units_placed, :odds, :profit_or_loss, :date_of_bet, :resolved, :push)
+      params.require(:bet).permit(:bet_placed, :game, :units_placed, :odds, :profit_or_loss, :date_of_bet, :resolved, :push, :sport, :bookmaker)
     end
 
 end

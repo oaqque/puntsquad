@@ -1,53 +1,77 @@
 <div class="container">
   <div class="row">
-    <div class="page-header">
-      <% @bets_by_month.each do |month, bets| %>
-        <h1><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h1>
-      <% end %>
-    </div>
-    <div class="col-md-9">
-      <div class="jumbotron margin-top">
-        <% if @monthly_total > 0 %>
-          <h3>Total Profit/Loss: <span class="label label-success"><%= @monthly_total %></span></h3>
-        <% else %>
-          <h3>Total Profit/Loss: <span class="label label-danger"><%= @monthly_total %></span></h3>
+    <div class="col-md-12">
+      <div class="page-header">
+        <% @bets_by_month.each do |month, bets| %>
+          <h1><%= month.strftime('%B') %> <%= month.strftime('%Y') %></h1>
         <% end %>
-        <%= area_chart @this_month_bets.group_by_day(:date_of_bet, range: @month_start..@month_end).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge), xtitle: "Date", ytitle: "Units", colors: ["337ab7", "#000"] %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+
+      <div class="well margin-top">
+        <div class="row text-center">
+          <div class="col-md-3">
+            <% if @monthly_total > 0 %>
+              <h4>Total Profit/Loss</h4>
+              <h3><span class="label label-success"><%= @monthly_total %></span></h3>
+            <% else %>
+            <h4>Total Profit/Loss</h4>
+            <h3><span class="label label-danger"><%= @monthly_total %></span></h3>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <h4>Units Staked</h4>
+            <h3><span class="label label-default"><%= @total_units %></span></h3>
+          </div>
+          <div class="col-md-3">
+            <h4>Units Returned</h4>
+            <h3><span class="label label-default"><%= @units_returned %></span></h3>
+          </div>
+          <div class="col-md-3">
+            <h4>ROI</h4>
+            <h3><span class="label label-default"><%= @return_on_investment %>%</span></h3>
+          </div>
+        </div>
       </div>
 
+      <%= area_chart @this_month_bets.group_by_day(:date_of_bet, range: @month_start..@month_end).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge), xtitle: "Date", ytitle: "Units", colors: ["337ab7", "#000"], id: "result-graph" %>
       <h2>More Info</h2>
-
-        <table class="table">
-          <tr>
-            <th>Day</th>
-            <th>Number of Bets</th>
-            <th>Profit/Loss</th>
-          </tr>
-          <% @bets_by_day.each do |day, bets| %>
+        <div class="table-responsive">
+          <table class="table table-hover">
             <tr>
-              <td><strong><%= link_to results_by_year_and_month_and_day_path(:year=> day.strftime('%Y'), :month => day.strftime('%-m'), :day => day.strftime('%d')) do %>
-                <%= day.strftime('%d')%> <%= day.strftime('%B')%> <%= day.strftime('%Y')%>
-              <% end %></strong></td>
-              <td><%= bets.count %></td>
-              <td>
-                <% @daily_total = 0 %>
-                <% for bet in bets do %>
-                  <% if bet.profit_or_loss > -100 && bet.profit_or_loss < 100 %>
-                    <% @daily_total += bet.profit_or_loss %>
-                  <% end %>
-                <% end %>
-
-                <% if @daily_total > 0 %>
-                  <span class="label label-success"><%= @daily_total %></span>
-                <% elsif @daily_total == 0 %>
-                  <span class="label label-default"><%= @daily_total %></span>
-                <% else %>
-                  <span class="label label-danger"><%= @daily_total %></span>
-                <% end %>
-              </td>
+              <th>Day</th>
+              <th>Number of Bets</th>
+              <th>Profit/Loss</th>
             </tr>
-          <% end %>
-        </table>
+            <% @bets_by_day.each do |day, bets| %>
+              <tr>
+                <td><strong><%= link_to results_by_year_and_month_and_day_path(:year=> day.strftime('%Y'), :month => day.strftime('%-m'), :day => day.strftime('%d')) do %>
+                  <%= day.strftime('%d')%> <%= day.strftime('%B')%> <%= day.strftime('%Y')%>
+                <% end %></strong></td>
+                <td><%= bets.count %></td>
+                <td>
+                  <% @daily_total = 0 %>
+                  <% for bet in bets do %>
+                    <% if bet.profit_or_loss > -100 && bet.profit_or_loss < 100 %>
+                      <% @daily_total += bet.profit_or_loss %>
+                    <% end %>
+                  <% end %>
+
+                  <% if @daily_total > 0 %>
+                    <span class="label label-success"><%= @daily_total %></span>
+                  <% elsif @daily_total == 0 %>
+                    <span class="label label-default"><%= @daily_total %></span>
+                  <% else %>
+                    <span class="label label-danger"><%= @daily_total %></span>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
     </div>
 
     <div class="col-md-3">

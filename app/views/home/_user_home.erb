@@ -4,24 +4,48 @@
 
     <div class="col-md-8">
       <div class="well">
-      <h4 class="text-center">Current Bets</h4>
-      <h5 class="text-center"><%= Date.today %></h5>
-      <table class="table">
-        <tr>
-          <th>Game</th>
-          <th>Bet Placed</th>
-          <th>Units Placed</th>
-          <th>Odds</th>
-        </tr>
-        <% for bet in @today_bets do %>
-          <tr>
-            <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
-            <td><%= bet.bet_placed %></td>
-            <td><%= bet.units_placed %></td>
-            <td><%= bet.odds %></td>
-          </tr>
-        <% end %>
-      </table>
+        <h4 class="text-center">Current Bets</h4>
+        <h5 class="text-center"><%= Date.today %></h5>
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <th>Game</th>
+              <th>Sport</th>
+              <th>Bet Placed</th>
+              <th>Units Placed</th>
+              <th>Odds</th>
+            </tr>
+            <% for bet in @today_bets do %>
+              <tr>
+                <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
+                <td>
+                  <% if bet.sport == 1 %>
+                    Basketball
+                  <% elsif bet.sport == 2 %>
+                    NRL
+                  <% elsif bet.sport == 3 %>
+                    Super Rugby
+                  <% elsif bet.sport == 4 %>
+                    AFL
+                  <% elsif bet.sport == 5 %>
+                    eSports
+                  <% elsif bet.sport == 6 %>
+                    Ice Hockey
+                  <% elsif bet.sport == 7 %>
+                    Horse Racing
+                  <% elsif bet.sport == 8 %>
+                    Tennis
+                  <% elsif bet.sport == 9 %>
+                    NFL
+                  <% end %>
+                </td>
+                <td><%= bet.bet_placed %></td>
+                <td><%= bet.units_placed %></td>
+                <td><%= bet.odds %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
       </div>
     </div>
 

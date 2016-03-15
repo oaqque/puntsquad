@@ -61,6 +61,11 @@ class ResultsController < ApplicationController
       end
     end
 
+    #Units Outlayed
+    @total_units = @bets_by_month.sum(:units_placed)
+    @units_returned = @monthly_total + @total_units
+    @return_on_investment = (@monthly_total / @total_units * 100).round(2)
+
     #Group Categories
     @bets_by_day = @bets_by_month.all.group_by { |bet| bet.date_of_bet.beginning_of_day }
     @bets_by_month = @bets_by_month.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
