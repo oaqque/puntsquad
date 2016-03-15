@@ -12,6 +12,15 @@ class ResultsController < ApplicationController
     end
 
     @sum = 0 #for graph
+
+    #This Year
+    @year_start = Date.new(2016, 1, 1)
+    @year_end = Date.new(2016, 12, 31)
+
+    #Units Outlayed
+    @total_units = Bet.all.sum(:units_placed)
+    @units_returned = @total + @total_units
+    @return_on_investment = (@total / @total_units * 100).round(2)
   end
 
   def admin

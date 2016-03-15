@@ -73,6 +73,11 @@
    margin: 15px 5px;
  }
 
+ /************** RESULTS ***************/
+
+ #result-graph {
+   border: solid #dce9f4 1px;
+ }
 
  /************** COLORS ***************/
 
@@ -186,6 +191,7 @@
 
 .well {
   background-color: #dce9f4;
+  border-color: #dce9f4;
 }
 
 .alert-notice {
