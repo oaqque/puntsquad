@@ -27,8 +27,7 @@
             <li><%= link_to 'Results', results_path %></li>
             <li><%= link_to 'Blog', posts_path %></li>
             <% if current_user.try(:admin?) %>
-              <li><%= link_to 'New Bet', new_bet_path %></li>
-              <li><%= link_to 'List All Bets', results_admin_path %></li>
+              <li><%= link_to 'Bets', results_admin_path %></li>
             <% end %>
             <% if current_user %>
               <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
