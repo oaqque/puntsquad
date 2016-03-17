@@ -6,6 +6,7 @@
         <table class="table">
           <tr>
             <th>Game</th>
+            <th></th>
             <th>Sport</th>
             <th>Bet Placed</th>
             <th>Units Placed</th>
@@ -15,7 +16,8 @@
           </tr>
           <% for bet in @bets do %>
             <tr>
-              <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
+              <td><strong> <%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
+              <td><%= link_to "Edit", edit_bet_path(:id => bet.id) %></td>
               <td>
                 <% if bet.sport == 1 %>
                   Basketball
