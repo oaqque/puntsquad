@@ -81,8 +81,8 @@ Rails.application.configure do
     :storage => :s3,
     :s3_credentials => {
       :bucket => ENV['puntsquad'],
-      :access_key_id => ENV['AKIAJNYCKKFW4Y3P65SA'],
-      :secret_access_key => ENV['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']
+      :access_key_id => ENV['AKIAIIQEDWDMOPYUK3IA'],
+      :secret_access_key => ENV['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']
     }
   }
 end
