@@ -10,10 +10,10 @@ class BetsController < ApplicationController
     if @bets.save
         flash[:success] = 'Bet Successfull Logged.'
         redirect_to new_bet_path
-      else
-        flash[:danger] = 'Error, Bet has not been logged. Try again mate.'
-        redirect_to new_bet_path
-      end
+    else
+      flash[:danger] = 'Error, Bet has not been logged. Try again mate.'
+      redirect_to new_bet_path
+    end
   end
 
   def show

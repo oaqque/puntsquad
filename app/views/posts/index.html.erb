@@ -1,0 +1,26 @@
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>House of Potatoes</h1>
+                    <hr class="small">
+                    <span class="subheading">A Detailed Analysis by Puntsquad</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <% for post in @posts do %>
+        <div class="post-preview">
+            <h2 class="page-header"><%= link_to post.title, post_path(:id => post.id)%></h2>
+            <p class="post-meta">Posted by <a href="#">PuntSquad</a> on <%= post.created_at.strftime('%d %B, %Y') %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

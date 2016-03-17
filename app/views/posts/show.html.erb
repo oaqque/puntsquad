@@ -1,0 +1,24 @@
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1><%= @post.title %></h1>
+                    <hr class="small">
+                    <span class="subheading"><%= @post.created_at.strftime('%d %B, %Y') %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <p><%= @post.text %></p>
+      <% if current_user.try(:admin?) %>
+        <%= link_to "Edit", edit_post_path(:id => @post.id) %>
+      <% end %>
+    </div>
+  </div>
+</div>
