@@ -1,7 +1,11 @@
 class ResultsController < ApplicationController
 
   def index
-    @archive = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
+
+    #ARCHIVING
+    @archive_by_month = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
+    @archive_by_sport = Bet.all.group_by { |bet| bet.sport }
+
     @total = 0
     @bets = Bet.all
 
