@@ -15,9 +15,10 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <p><%= @post.text %></p>
+      <%= markdown(@post.text) %>
       <% if current_user.try(:admin?) %>
-        <%= link_to "Edit", edit_post_path(:id => @post.id) %>
+        <%= link_to "Edit", edit_post_path(:id => @post.id), class: 'btn btn-default' %>
+        <%= link_to "Delete", post_path(:id => @post.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
       <% end %>
     </div>
   </div>

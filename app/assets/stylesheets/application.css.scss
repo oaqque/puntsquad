@@ -33,6 +33,10 @@
    padding-bottom: 15px;
  }
 
+ .navbar.navbar-default {
+   border: 0px;
+ }
+
  /************** BLOG ***************/
 
  .intro-header {
@@ -45,6 +49,7 @@
    -o-background-size: cover;
    margin-bottom: 50px;
    background-image: url('user-home-hero-bg.jpg');
+   margin-top: 0px;
  }
  .intro-header .site-heading,
  .intro-header .post-heading,

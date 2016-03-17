@@ -43,6 +43,8 @@ gem 'chartkick'
 gem 'groupdate'
 #Default Value
 gem 'default_value_for'
+# RedCarpet for HTML Markdown
+gem 'redcarpet'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
