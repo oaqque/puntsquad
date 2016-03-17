@@ -45,6 +45,8 @@ gem 'groupdate'
 gem 'default_value_for'
 # RedCarpet for HTML Markdown
 gem 'redcarpet'
+# Paperclip for image upload
+gem 'paperclip'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
