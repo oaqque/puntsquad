@@ -47,6 +47,8 @@ gem 'default_value_for'
 gem 'redcarpet'
 # Paperclip for image upload
 gem 'paperclip'
+# AWS for managing online storage.
+gem 'aws-sdk'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
