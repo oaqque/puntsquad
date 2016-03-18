@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+
   resources :posts
   devise_for :users, controllers: {registrations: 'users/registrations'}
+
   get '/results' => 'results#index'
   get '/results/by_year_and_month/:year/:month' => 'results#by_year_and_month', :as=> :results_by_year_and_month
   get '/results/by_year_and_month/:year/:month/:day' => 'results#by_year_and_month_and_day', :as=> :results_by_year_and_month_and_day
   get '/results/admin' => 'results#admin'
+  get '/results/by_sport/:sport' => 'results#by_sport', :as => :results_by_sport
+
   resources :bets
   resources :contacts
   get '/bettingguide' => 'home#betting_guide'

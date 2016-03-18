@@ -1,0 +1,127 @@
+<div class="container">
+  <div class="row>">
+    <div class="col-md-12">
+      <% if @sport == 1 %>
+        <h1 class="page-header">Basketball</h1>
+      <% elsif @sport == 2 %>
+        <h1 class="page-header">NRL</h1>
+      <% elsif @sport == 3 %>
+        <h1 class="page-header">Super Rugby</h1>
+      <% elsif @sport == 4 %>
+        <h1 class="page-header">AFL</h1>
+      <% elsif @sport == 5 %>
+        <h1 class="page-header">eSports</h1>
+      <% elsif @sport == 6 %>
+        <h1 class="page-header">Ice Hockey</h1>
+      <% elsif @sport == 7 %>
+        <h1 class="page-header">Horse Racing</h1>
+      <% elsif @sport == 8 %>
+        <h1 class="page-header">Tennis</h1>
+      <% elsif @sport == 9 %>
+        <h1 class="page-header">NFL</h1>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+      <div class="well margin-top">
+        <div class="row text-center">
+          <div class="col-md-3">
+            <% if @sport_total > 0 %>
+              <h4>Total Profit/Loss</h4>
+              <h3><span class="label label-success"><%= @sport_total %></span></h3>
+            <% else %>
+              <h4>Total Profit/Loss</h4>
+              <h3><span class="label label-danger"><%= @sport_total %></span></h3>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <h4>Units Staked</h4>
+            <h3><span class="label label-default"><%= @total_units %></span></h3>
+          </div>
+          <div class="col-md-3">
+            <h4>Units Returned</h4>
+            <h3><span class="label label-default"><%= @units_returned %></span></h3>
+          </div>
+          <div class="col-md-3">
+            <h4>ROI</h4>
+            <h3><span class="label label-default"><%= @return_on_investment %>%</span></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="well">
+        <%= area_chart @bets_by_sport.group_by_day(:date_of_bet).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge), xtitle: "Date", ytitle: "Units", colors: ["337ab7", "#000"], id: "result-graph", height: "400px", library: {backgroundColor: "fff"} %>
+      </div>
+
+      <h2 class="page-header">Last 10 Bets</h2>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <tr>
+              <th>Game</th>
+              <th>Date</th>
+              <th>Bet Placed</th>
+              <th>Units Placed</th>
+              <th>Odds</th>
+              <th>Profit/Loss</th>
+              <th>Bookmaker</th>
+
+            </tr>
+            <% for bet in @bets_by_sport_last_10 do %>
+              <tr>
+                <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
+                <td><%= link_to bet.date_of_bet.strftime('%d/%m/%Y'), results_by_year_and_month_and_day_path(:year=> bet.date_of_bet.strftime('%Y'), :month => bet.date_of_bet.strftime('%-m'), :day => bet.date_of_bet.strftime('%d')) %></td>
+                <td><%= bet.bet_placed %></td>
+                <td><%= bet.units_placed %></td>
+                <td><%= bet.odds %></td>
+                <td>
+                  <% if bet.profit_or_loss > 0 %>
+                    <span class="label label-success">+<%= bet.profit_or_loss %></span>
+                  <% elsif bet.push == true %>
+                    <span class="label label-default">push</span>
+                  <% elsif bet.profit_or_loss == 0 %>
+                    <span class="label label-default"><%= bet.profit_or_loss %></span>
+                  <% else %>
+                    <span class="label label-danger"><%= bet.profit_or_loss %></span>
+                  <% end %>
+                </td>
+                <td>
+                  <% if bet.bookmaker == 1 %>
+                    Sportsbet
+                  <% elsif bet.bookmaker == 2 %>
+                    William Hill
+                  <% elsif bet.bookmaker == 3 %>
+                    CrownBet
+                  <% elsif bet.bookmaker == 4 %>
+                    Unibet
+                  <% elsif bet.bookmaker == 5 %>
+                    Centrebet
+                  <% elsif bet.bookmaker == 6 %>
+                    UBet
+                  <% elsif bet.bookmaker == 7 %>
+                    bet365
+                  <% elsif bet.bookmaker == 8 %>
+                    TAB
+                  <% elsif bet.bookmaker == 9 %>
+                    Pinnacle
+                  <% elsif bet.bookmaker == 10 %>
+                    Ladbrokes
+                  <% elsif bet.bookmaker == 11 %>
+                    Bookmaker
+                  <% elsif bet.bookmaker == 12 %>
+                    MadBookie
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+      <%= render 'archive' %>
+    </div>
+  </div>
+
+</div>

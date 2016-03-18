@@ -5,26 +5,26 @@
   <% end %>
 </ul>
 <h2>Sports</h2>
-<ul class="list-group">'
+<ul class="list-group">
   <% @archive_by_sport.each do |sport, posts| %>
     <% if sport == 1 %>
-      <li class="list-group-item"><%= link_to "Basketball", "" %></li>
+      <li class="list-group-item"><%= link_to "Basketball", results_by_sport_path(:sport=>sport) %></li>
     <% elsif sport == 2 %>
-      <li class="list-group-item"><%= link_to "NRL", "" %></li>
+      <li class="list-group-item"><%= link_to "NRL", results_by_sport_path(:sport=>sport) %></li>
     <% elsif sport == 3 %>
-      <li class="list-group-item"><%= link_to "Super Rugby", "" %></li>
+      <li class="list-group-item"><%= link_to "Super Rugby", results_by_sport_path(:sport=>sport) %></li>
     <% elsif sport == 4 %>
-      <li class="list-group-item"><%= link_to "AFL", "" %></li>
+      <li class="list-group-item"><%= link_to "AFL", results_by_sport_path(:sport=>sport) %></li>
     <% elsif sport == 5 %>
-      <li class="list-group-item"><%= link_to "eSports", "" %></li>
+      <li class="list-group-item"><%= link_to "eSports", results_by_sport_path(:sport=>sport) %></li>
     <% elsif sport == 6 %>
-      <li class="list-group-item"><%= link_to "Ice Hockey", "" %></li>
+      <li class="list-group-item"><%= link_to "Ice Hockey", results_by_sport_path(:sport=>sport) %></li>
     <% elsif sport == 7 %>
-      <li class="list-group-item"><%= link_to "Horse Racing", "" %></li>
+      <li class="list-group-item"><%= link_to "Horse Racing", results_by_sport_path(:sport=>sport) %></li>
     <% elsif sport == 8 %>
-      <li class="list-group-item"><%= link_to "Tennis", "" %></li>
+      <li class="list-group-item"><%= link_to "Tennis", results_by_sport_path(:sport=>sport) %></li>
     <% elsif sport == 9 %>
-      <li class="list-group-item"><%= link_to "NFL", "" %></li>
+      <li class="list-group-item"><%= link_to "NFL", results_by_sport_path(:sport=>sport) %></li>
     <% end %>
   <% end %>
 </ul>

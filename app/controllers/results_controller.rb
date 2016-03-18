@@ -106,4 +106,34 @@ class ResultsController < ApplicationController
 
 
   end
+
+  def by_sport
+
+    #Grab the Bet containing the sport
+    @bets_by_sport = Bet.where("sport = ?", params[:sport])
+    @sport = params[:sport].to_i
+
+    #Display the Unit Stats at top
+    @sport_total = 0
+    @bets_by_sport.each do |x|
+      if x.profit_or_loss > -100 && x.profit_or_loss < 100
+        @sport_total += x.profit_or_loss
+      end
+    end
+
+    @total_units = @bets_by_sport.sum(:units_placed)
+    @units_returned = @total_units + @sport_total
+    @return_on_investment = (@sport_total / @total_units * 100).round(2)
+
+    #ARCHIVE
+    @archive_by_month = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
+    @archive_by_sport = Bet.all.group_by { |bet| bet.sport }
+
+    #graph
+    @sum = 0
+
+    #Listing Last 10 bets_by_sport
+    @bets_by_sport_last_10 = @bets_by_sport.order('date_of_bet DESC').first(10)
+
+  end
 end
