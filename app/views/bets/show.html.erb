@@ -44,6 +44,12 @@
                 TAB
               <% elsif @bet.bookmaker == 9 %>
                 Pinnacle
+              <% elsif @bet.bookmaker == 10 %>
+                Ladbrokes
+              <% elsif @bet.bookmaker == 11 %>
+                Bookmaker
+              <% elsif @bet.bookmaker == 12 %>
+                MadBookie
               <% end %>
             </li>
             <li class="list-group-item"><strong>Units Placed:</strong> <%= @bet.units_placed %></li>
