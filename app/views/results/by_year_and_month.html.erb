@@ -37,7 +37,9 @@
         </div>
       </div>
 
-      <%= area_chart @this_month_bets.group_by_day(:date_of_bet, range: @month_start..@month_end).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge), xtitle: "Date", ytitle: "Units", colors: ["337ab7", "#000"], id: "result-graph" %>
+      <div class="well">
+        <%= area_chart @this_month_bets.group_by_day(:date_of_bet, range: @month_start..@month_end).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge), xtitle: "Date", ytitle: "Units", colors: ["337ab7", "#000"], id: "result-graph", height: "400px", library: {backgroundColor: "fff"} %>
+      </div>
       <h2>More Info</h2>
         <div class="table-responsive">
           <table class="table table-hover">
