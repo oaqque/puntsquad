@@ -7,27 +7,17 @@
     </div>
   </div>
 <% else %>
-  <div class="jumbotron home-page no-bottom-margin">
+  <div class="jumbotron home-page">
     <h1 class="text-center">Welcome to Puntsquad</h1>
     <p class="text-center">Your home for Sports Betting tips.</p>
   </div>
 <% end %>
 
 
-
+<div class="container">
   <% if current_user %>
-    <div class="container">
-      <%= render "user_home" %>
-    </div>
+    <%= render "user_home" %>
   <% else %>
-    <div class="row what-we-do text-center">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="blue-title">What we do.</h1>
-        <p>Here at puntsquad we provide +EV tips on sports that are guaranteed to turn you a profit in the long run. We want you to learn to be a smarter and more objective punter by learning the statistical outlook. We've even prepared a comprehensive guide to get you started.<p>
-
-        <%= link_to "Learn More", bettingguide_path, class: 'btn btn-lg btn-primary' %>
-      </div>
-    </div>
-    <br /> <br />
     <%= render "no_user_home" %>
   <% end %>
+</div>
