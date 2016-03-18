@@ -5,7 +5,7 @@
     <div class="col-md-8">
       <div class="well">
         <h4 class="text-center">Current Bets</h4>
-        <h5 class="text-center"><%= Date.today %></h5>
+        <h5 class="text-center"><%= Time.current %></h5>
         <div class="table-responsive">
           <table class="table">
             <tr>
@@ -21,23 +21,23 @@
                 <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
                 <td>
                   <% if bet.sport == 1 %>
-                    Basketball
+                    <%= link_to "Basketball", results_by_sport_path(:sport=>bet.sport) %>
                   <% elsif bet.sport == 2 %>
-                    NRL
+                    <%= link_to "NRL", results_by_sport_path(:sport=>bet.sport) %>
                   <% elsif bet.sport == 3 %>
-                    Super Rugby
+                    <%= link_to "Super Rugby", results_by_sport_path(:sport=>bet.sport) %>
                   <% elsif bet.sport == 4 %>
-                    AFL
+                    <%= link_to "AFL", results_by_sport_path(:sport=>bet.sport) %>
                   <% elsif bet.sport == 5 %>
-                    eSports
+                    <%= link_to "eSports", results_by_sport_path(:sport=>bet.sport) %>
                   <% elsif bet.sport == 6 %>
-                    Ice Hockey
+                    <%= link_to "Ice Hockey", results_by_sport_path(:sport=>bet.sport) %>
                   <% elsif bet.sport == 7 %>
-                    Horse Racing
+                    <%= link_to "Horse Racing", results_by_sport_path(:sport=>bet.sport) %>
                   <% elsif bet.sport == 8 %>
-                    Tennis
+                    <%= link_to "Tennis", results_by_sport_path(:sport=>bet.sport) %>
                   <% elsif bet.sport == 9 %>
-                    NFL
+                    <%= link_to "NFL", results_by_sport_path(:sport=>bet.sport) %>
                   <% end %>
                 </td>
                 <td><%= bet.bet_placed %></td>
