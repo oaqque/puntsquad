@@ -189,6 +189,12 @@
    background-color: #fff;
  }
 
+ .what-we-do {
+   background-color: #363636;
+   color: #fff;
+   padding-bottom: 30px;
+ }
+
  .navbar {
    background-color: #fff;
    border-bottom: 1px solid #dce9f4;
@@ -322,6 +328,10 @@
 
 .no-top-margin {
   margin-top: 0px;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0px;
 }
 
 .margin-top {
