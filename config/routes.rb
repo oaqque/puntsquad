@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :contacts
   get '/bettingguide' => 'home#betting_guide'
 
+  default_url_options :host => "localhost:3000"
+
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

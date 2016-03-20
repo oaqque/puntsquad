@@ -77,6 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  # Paperclip Config
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
@@ -84,5 +85,17 @@ Rails.application.configure do
       :access_key_id => ENV['AKIAIIQEDWDMOPYUK3IA'],
       :secret_access_key => ENV['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']
     }
+  }
+
+  # SMTP Details
+
+  config.action_mailer.default_url_options = { :host => 'puntsquad.herokuapp.com' }
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :port           => "25",
+    :authentication => :plain,
+    :user_name      => ENV['app47743671@heroku.com'],
+    :password       => ENV['nz01xqhl2013'],
+    :domain         => ENV['puntsquad.herokuapp.com']
   }
 end

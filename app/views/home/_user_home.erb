@@ -4,7 +4,7 @@
 
     <div class="col-md-8">
       <div class="well">
-        <h4 class="text-center">Current Bets</h4>
+        <h3 class="text-center">Current Bets</h3>
         <h5 class="text-center"><%= Time.current %></h5>
         <div class="table-responsive">
           <table class="table">
@@ -79,7 +79,8 @@
 
     <div class="col-md-4">
       <div class="well text-center">
-        <h4>This Month's Totals</h4>
+        <h3><%= Time.now.strftime('%B') %></h3>
+        <h4>Total Profit/Loss</h4>
         <% if @monthly_total > 0 %>
           <h1><span class="label label-success">+<%=@monthly_total%></span></h1>
         <% elsif @monthly_total == 0 %>
@@ -87,7 +88,18 @@
         <% else %>
           <h1><span class="label label-danger"><%=@monthly_total%></span></h1>
         <% end %>
-        <%= link_to "#{Time.now.strftime('%B')} Results", results_by_year_and_month_path(:year => Time.now.year, :month => Time.now.month), class: 'btn btn-default btn-lg btn-block margin-top' %>
+        <br />
+        <%= link_to "See More", results_by_year_and_month_path(:year => Time.now.year, :month => Time.now.month), class: 'btn btn-default btn-lg btn-block margin-top' %>
+      </div>
+      <div class="well text-center">
+        <h4>Current Plan</h4>
+        <% if current_user.plan_id == 4 %>
+          <p>You're currently signed up with our Weekly plan</p>
+        <% elsif current_user.plan_id == 5 %>
+          <p>You're currently signed up with our Monthly plan</p>
+        <% elsif current_user.plan_id == 6 %>
+          <p>You're currently signed up with our Yearly plan</p>
+        <% end %>
       </div>
     </div>
 

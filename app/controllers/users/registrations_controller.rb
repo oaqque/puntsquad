@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_filter :select_plan, only: :new
+  before_filter :select_plan, only: [:new, :create]
 
   def create
     super do |resource|
@@ -8,7 +8,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         if resource.plan_id == 4 || resource.plan_id == 5 || resource.plan_id == 6
           resource.save_with_payment
         else
-          resource.save
+          redirect_to root_url
+          flash[:Danger] = "There was an error with processing your payment. Please try again."
         end
       end
     end

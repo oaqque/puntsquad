@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
     @weekly_plan = Plan.find(4)
     @monthly_plan = Plan.find(5)
@@ -24,4 +25,5 @@ class HomeController < ApplicationController
 
   def betting_guide
   end
+
 end
