@@ -44,7 +44,7 @@
         <li><i class="fa fa-line-chart"></i> All Sports</li>
         <li><i class="fa fa-usd"></i> Low Commitment</li>
       </ul>
-      <%= link_to new_user_registration_path(plan: @weekly_plan.id), class: 'btn btn-primary btn-lg btn-block' do %>
+      <%= link_to new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' do %>
        <h1>$15 <sup>/ week</sup></h1>
       <% end %>
     </div>
@@ -61,7 +61,7 @@
         <li><i class="fa fa-line-chart"></i> All Sports</li>
         <li><i class="fa fa-usd"></i> <strong>Save 20% Per Month!</strong></li>
       </ul>
-      <%= link_to new_user_registration_path(plan: @monthly_plan.id), class: 'btn btn-primary btn-lg btn-block' do %>
+      <%= link_to new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' do %>
         <h1>$50 <sup>/ month</sup></h1>
       <% end %>
       <h3><span class="label label-default">Recommended Value!</span></h3>
@@ -79,7 +79,7 @@
         <li><i class="fa fa-line-chart"></i> All Sports</li>
         <li><i class="fa fa-usd"></i> <strong>Save 35% Per Year!</strong></li>
       </ul>
-      <%= link_to new_user_registration_path(plan: @yearly_plan.id), class: 'btn btn-primary btn-lg btn-block' do %>
+      <%= link_to new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' do %>
         <h1>$500 <sup>/ year </sup></h1>
       <% end %>
     </div>
