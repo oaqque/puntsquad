@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/results/admin' => 'results#admin'
   get '/results/by_sport/:sport' => 'results#by_sport', :as => :results_by_sport
 
+  resources :subscribers
   resources :bets
   resources :contacts
   get '/bettingguide' => 'home#betting_guide'
