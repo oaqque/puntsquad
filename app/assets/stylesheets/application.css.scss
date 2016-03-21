@@ -235,6 +235,14 @@
    transition: background-color 0.5s;
  }
 
+ .dropdown-menu > li:hover {
+   border-bottom: solid 10px #fff;
+ }
+
+ .dropdown-menu {
+   border: 0;
+ }
+
  .jumbotron {
    color: #337ab7;
    background-color: #fafafa;

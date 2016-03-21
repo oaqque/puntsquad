@@ -1,81 +1,87 @@
 <div class="row">
   <div class="col-md-12">
-    <h2 class="blue-title text-center">Hey <%= current_user.email %></h2>
+    <h3 class="blue-title text-center page-header">Signed in as <%= current_user.email %></h3>
 
-    <div class="col-md-8">
-      <div class="well">
-        <h3 class="text-center">Current Bets</h3>
-        <h5 class="text-center"><%= Time.current %></h5>
-        <div class="table-responsive">
-          <table class="table">
-            <tr>
-              <th>Game</th>
-              <th>Sport</th>
-              <th>Bet Placed</th>
-              <th>Units Placed</th>
-              <th>Odds</th>
-              <th>Bookmaker</th>
-            </tr>
-            <% for bet in @today_bets do %>
-              <tr>
-                <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
-                <td>
-                  <% if bet.sport == 1 %>
-                    <%= link_to "Basketball", results_by_sport_path(:sport=>bet.sport) %>
-                  <% elsif bet.sport == 2 %>
-                    <%= link_to "NRL", results_by_sport_path(:sport=>bet.sport) %>
-                  <% elsif bet.sport == 3 %>
-                    <%= link_to "Super Rugby", results_by_sport_path(:sport=>bet.sport) %>
-                  <% elsif bet.sport == 4 %>
-                    <%= link_to "AFL", results_by_sport_path(:sport=>bet.sport) %>
-                  <% elsif bet.sport == 5 %>
-                    <%= link_to "eSports", results_by_sport_path(:sport=>bet.sport) %>
-                  <% elsif bet.sport == 6 %>
-                    <%= link_to "Ice Hockey", results_by_sport_path(:sport=>bet.sport) %>
-                  <% elsif bet.sport == 7 %>
-                    <%= link_to "Horse Racing", results_by_sport_path(:sport=>bet.sport) %>
-                  <% elsif bet.sport == 8 %>
-                    <%= link_to "Tennis", results_by_sport_path(:sport=>bet.sport) %>
-                  <% elsif bet.sport == 9 %>
-                    <%= link_to "NFL", results_by_sport_path(:sport=>bet.sport) %>
+
+        <% if current_user.subscribed == true %>
+          <div class="col-md-8">
+            <div class="well">
+              <h3 class="text-center">Current Bets</h3>
+              <h5 class="text-center"><%= Time.current %></h5>
+              <div class="table-responsive">
+                <table class="table">
+                  <tr>
+                    <th>Game</th>
+                    <th>Sport</th>
+                    <th>Bet Placed</th>
+                    <th>Units Placed</th>
+                    <th>Odds</th>
+                    <th>Bookmaker</th>
+                  </tr>
+                  <% for bet in @today_bets do %>
+                    <tr>
+                      <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
+                      <td>
+                        <% if bet.sport == 1 %>
+                          <%= link_to "Basketball", results_by_sport_path(:sport=>bet.sport) %>
+                        <% elsif bet.sport == 2 %>
+                          <%= link_to "NRL", results_by_sport_path(:sport=>bet.sport) %>
+                        <% elsif bet.sport == 3 %>
+                          <%= link_to "Super Rugby", results_by_sport_path(:sport=>bet.sport) %>
+                        <% elsif bet.sport == 4 %>
+                          <%= link_to "AFL", results_by_sport_path(:sport=>bet.sport) %>
+                        <% elsif bet.sport == 5 %>
+                          <%= link_to "eSports", results_by_sport_path(:sport=>bet.sport) %>
+                        <% elsif bet.sport == 6 %>
+                          <%= link_to "Ice Hockey", results_by_sport_path(:sport=>bet.sport) %>
+                        <% elsif bet.sport == 7 %>
+                          <%= link_to "Horse Racing", results_by_sport_path(:sport=>bet.sport) %>
+                        <% elsif bet.sport == 8 %>
+                          <%= link_to "Tennis", results_by_sport_path(:sport=>bet.sport) %>
+                        <% elsif bet.sport == 9 %>
+                          <%= link_to "NFL", results_by_sport_path(:sport=>bet.sport) %>
+                        <% end %>
+                      </td>
+                      <td><%= bet.bet_placed %></td>
+                      <td><%= bet.units_placed %></td>
+                      <td><%= bet.odds %></td>
+                      <td>
+                        <% if bet.bookmaker == 1 %>
+                          Sportsbet
+                        <% elsif bet.bookmaker == 2 %>
+                          William Hill
+                        <% elsif bet.bookmaker == 3 %>
+                          CrownBet
+                        <% elsif bet.bookmaker == 4 %>
+                          Unibet
+                        <% elsif bet.bookmaker == 5 %>
+                          Centrebet
+                        <% elsif bet.bookmaker == 6 %>
+                          UBet
+                        <% elsif bet.bookmaker == 7 %>
+                          bet365
+                        <% elsif bet.bookmaker == 8 %>
+                          TAB
+                        <% elsif bet.bookmaker == 9 %>
+                          Pinnacle
+                        <% elsif bet.bookmaker == 10 %>
+                          Ladbrokes
+                        <% elsif bet.bookmaker == 11 %>
+                          Bookmaker
+                        <% elsif bet.bookmaker == 12 %>
+                          MadBookie
+                        <% end %>
+                      </td>
+                    </tr>
                   <% end %>
-                </td>
-                <td><%= bet.bet_placed %></td>
-                <td><%= bet.units_placed %></td>
-                <td><%= bet.odds %></td>
-                <td>
-                  <% if bet.bookmaker == 1 %>
-                    Sportsbet
-                  <% elsif bet.bookmaker == 2 %>
-                    William Hill
-                  <% elsif bet.bookmaker == 3 %>
-                    CrownBet
-                  <% elsif bet.bookmaker == 4 %>
-                    Unibet
-                  <% elsif bet.bookmaker == 5 %>
-                    Centrebet
-                  <% elsif bet.bookmaker == 6 %>
-                    UBet
-                  <% elsif bet.bookmaker == 7 %>
-                    bet365
-                  <% elsif bet.bookmaker == 8 %>
-                    TAB
-                  <% elsif bet.bookmaker == 9 %>
-                    Pinnacle
-                  <% elsif bet.bookmaker == 10 %>
-                    Ladbrokes
-                  <% elsif bet.bookmaker == 11 %>
-                    Bookmaker
-                  <% elsif bet.bookmaker == 12 %>
-                    MadBookie
-                  <% end %>
-                </td>
-              </tr>
-            <% end %>
-          </table>
-        </div>
-      </div>
-    </div>
+                </table>
+              </div>
+            </div>
+          </div>
+        <% else %>
+
+        <% end %>
+
 
     <div class="col-md-4">
       <div class="well text-center">
