@@ -82,8 +82,8 @@ Rails.application.configure do
     :storage => :s3,
     :s3_credentials => {
       :bucket => ENV['puntsquad'],
-      :access_key_id => ENV['AKIAIIQEDWDMOPYUK3IA'],
-      :secret_access_key => ENV['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']
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
 
@@ -94,8 +94,8 @@ Rails.application.configure do
     :address        => "smtp.sendgrid.net",
     :port           => "25",
     :authentication => :plain,
-    :user_name      => ENV['app47743671@heroku.com'],
-    :password       => ENV['nz01xqhl2013'],
+    :user_name      => ENV['SMTP_USER_NAME'],
+    :password       => ENV['SMTP_PASSWORD'],
     :domain         => ENV['puntsquad.herokuapp.com']
   }
 end
