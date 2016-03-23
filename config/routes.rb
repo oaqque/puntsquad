@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post 'webhooks' => 'subscribers#webhooks'
   resources :posts
   devise_for :users, controllers: {registrations: 'users/registrations'}
 
@@ -9,9 +10,9 @@ Rails.application.routes.draw do
   get '/results/admin' => 'results#admin'
   get '/results/by_sport/:sport' => 'results#by_sport', :as => :results_by_sport
 
-  resources :subscribers
   resources :bets
   resources :contacts
+  resource :subscription
   get '/bettingguide' => 'home#betting_guide'
 
   root 'home#index'
