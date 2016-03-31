@@ -3,7 +3,8 @@ class ResultsController < ApplicationController
   def index
 
     #ARCHIVING
-    @archive_by_month = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
+    @archive_by_month = Bet.all.order("date_of_bet DESC")
+    @archive_by_month = @archive_by_month.group_by { |bet| bet.date_of_bet.beginning_of_month }
     @archive_by_sport = Bet.all.group_by { |bet| bet.sport }
 
     @total = 0
@@ -75,7 +76,8 @@ class ResultsController < ApplicationController
     @bets_by_month = @bets_by_month.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
 
     #ARCHIVE
-    @archive_by_month = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
+    @archive_by_month = Bet.all.order("date_of_bet DESC")
+    @archive_by_month = @archive_by_month.group_by { |bet| bet.date_of_bet.beginning_of_month }
     @archive_by_sport = Bet.all.group_by { |bet| bet.sport }
 
 
@@ -101,7 +103,8 @@ class ResultsController < ApplicationController
     @bets_by_day = @bets_by_day.all.group_by { |bet| bet.date_of_bet.beginning_of_day }
 
     #ARCHIVE
-    @archive_by_month = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
+    @archive_by_month = Bet.all.order("date_of_bet DESC")
+    @archive_by_month = @archive_by_month.group_by { |bet| bet.date_of_bet.beginning_of_month }
     @archive_by_sport = Bet.all.group_by { |bet| bet.sport }
 
 
@@ -126,7 +129,8 @@ class ResultsController < ApplicationController
     @return_on_investment = (@sport_total / @total_units * 100).round(2)
 
     #ARCHIVE
-    @archive_by_month = Bet.all.group_by { |bet| bet.date_of_bet.beginning_of_month }
+    @archive_by_month = Bet.all.order("date_of_bet DESC")
+    @archive_by_month = @archive_by_month.group_by { |bet| bet.date_of_bet.beginning_of_month }
     @archive_by_sport = Bet.all.group_by { |bet| bet.sport }
 
     #graph
