@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     #Locate Today's Bets
-    @today_bets = Bet.where("resolved = ?", false).order("date_of_bet ASC").order("sport DESC")
+    @today_bets = Bet.where("resolved = ?", false).order("date_of_bet ASC").order("sport DESC").order("game DESC")
 
     #Target This Month's Bets
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", Time.now.year)
