@@ -12,17 +12,16 @@
  *
  */
 
+@import "colors";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
 @import "posts";
 @import "bets";
 @import "home";
 @import "results";
 
-
-$primary-color: #337ab7;
-$alert-color: #3c763d;
 
 /************** NAVIGATION ***************/
 .navbar {
@@ -41,26 +40,6 @@ $alert-color: #3c763d;
   border: 0;
 }
 
-/************** FOOTER ***************/
-.footer {
-  margin-top: 50px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.social-media li {
-  display: inline-block;
-  margin: 15px 5px;
-}
-
-/************** COLORS ***************/
-body {
-  background-color: white;
-}
-
-.what-we-do {
-  background-color: white;
-  padding-bottom: 15px;
-}
 .navbar {
   background-color: white;
   border-bottom: 1px solid #dce9f4;
@@ -101,66 +80,112 @@ body {
 .dropdown-menu {
   border: 0;
 }
+
+.navbar-nav .sign-in {
+  background-color: $primary-color;
+  border-bottom: 10px solid $primary-color;
+}
+
+.navbar-nav .sign-in:hover {
+  background-color: $secondary-color;
+  border-bottom: 10px solid $secondary-color;
+}
+
+.navbar-default .navbar-nav > .sign-in > a {
+  color: white;
+}
+
+.navbar-default .navbar-nav > .sign-in > a:hover {
+  color: white;
+}
+
+
+
+/************** FOOTER ***************/
+.footer {
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.social-media li {
+  display: inline-block;
+  margin: 15px 5px;
+}
+
+/************** JUMBOTRON ***************/
+
 .jumbotron {
   color: $primary-color;
   background-color: #fafafa;
 }
+
+/************** FOOTER ***************/
+
 .footer {
-  background-color: $primary-color;
-  color: white;
+  background-color: $dark-grey;
+  color: $light-grey;
+  padding-bottom: 0px;
 }
+
+.footer h4 {
+  color: $primary-color;
+}
+
 .social-icon {
-  color: white;
+  color: $light-grey;
   transition: 0.2s;
   -webkit-transition: 0.2s;
 }
 .social-icon:hover {
-  color: #2e6da4;
+  color: white;
   text-decoration: none;
   transition: 0.2s;
   -webkit-transition: 0.2s;
 }
-.plan-info-title {
-  color: #44618c;
+
+.footer .form-control {
+  background: none;
+  border: none;
+  border-bottom: 1px white solid;
+  border-radius: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  outline: none;
+  color: white;
 }
-.recommended-value .well {
+
+.footer textarea {
+  resize: none;
+  outline: none;
+}
+
+.footer .form-control:focus {
+  outline: none;
+  border-bottom: 1px $primary-color solid;
+  box-shadow: none;
+}
+
+.footer .form-group .form-control input:focus {
+  outline: none;
+  color: white;
+}
+
+.footer-base {
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: right;
+}
+
+/*********** BUTTONS ************/
+
+.btn-primary {
   background-color: $primary-color;
-  color: white;
+  border: none;
 }
-.recommended-value .plan-info-title {
-  color: white;
-}
-.recommended-value h4 {
-  color: white;
-}
-.recommended-value .line-break {
-  border-color: white;
-}
-.recommended-value .btn-primary {
-  background-color: white;
-  color: black;
-  transition: 0.5s;
-}
-.recommended-value .btn-primary:hover {
-  transition: 0.5s;
-  background-color: #ddd;
-}
-.recommended-value .label {
-  background-color: white;
-  color: black;
-}
-.blue-title {
-  color: $primary-color;
-}
-.well {
-  background-color: #dce9f4;
-  border-color: #dce9f4;
-}
-.alert-notice {
-  color: $alert-color;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  margin-bottom: 0;
+
+.btn-primary:hover {
+  background-color: $secondary-color;
 }
 
 /************** EXTRA ***************/
@@ -197,4 +222,39 @@ body {
 }
 .border-bottom {
   border-bottom: 1px solid black;
+}
+
+body {
+  background-color: $background-grey;
+}
+
+h1, h2, h3 {
+  color: $primary-color;
+}
+
+//    WELLS
+
+.well {
+  background-color: white;
+  border-color: white;
+}
+
+//    ALERTS
+
+.alert-notice {
+  color: $alert-color;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  margin-bottom: 0;
+}
+
+a {
+  color: $primary-color;
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $secondary-color;
+  transition: 0.3s;
 }

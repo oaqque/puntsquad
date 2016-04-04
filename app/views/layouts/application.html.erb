@@ -39,7 +39,7 @@
               </ul>
             </li>
             <% else %>
-              <li><%= link_to 'Sign In', new_user_session_path, method: :get %></li>
+              <li class="sign-in"><%= link_to 'Sign In', new_user_session_path, method: :get %></li>
             <% end %>
           </ul>
         </div>
@@ -55,21 +55,17 @@
     <div class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-1">
+          <div class="col-md-4 text-center">
           </div>
-          <div class="col-md-2 text-center">
 
-          </div>
-          <div class="col-md-1">
-          </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <h4>Contact Us</h4>
             <p>Feel free to send us an email or give us a call if you want more information on our services or just want to have a chat.</p>
             <ul class="list-unstyled">
-              <li>Email: contact@puntsquad.com</li>
-              <li>Phone: XXXX-XXXX</li>
+              <li>Email: <a href="mailto:contact@puntsquad.com">contact@puntsquad.com</a></li>
+              <li>Phone: <a href="">XXXX-XXXX</a></li>
             </ul>
-            <br />
+
             <h4>Social Media</h4>
             <ul class="list-unstyled social-media">
             <li><%= link_to "http://www.facebook.com", class: 'social-icon' do%>
@@ -80,26 +76,29 @@
               <i class="fa fa-twitter fa-lg fa-4x"></i>
             <% end %></li>
           </div>
-          <div class="col-md-1">
-          </div>
+
           <div class="col-md-4">
             <h4>Send Us a Message</h4>
             <%= form_for @contact do |f| %>
               <div class="form-group">
-                <%= f.label :name %>
-                <%= f.text_field :name, class: 'form-control' %>
+                <%= f.text_field :name, class: 'form-control', placeholder: 'Name', autocomplete: 'off' %>
               </div>
               <div class="form-group">
-                <%= f.label :email %>
-                <%= f.email_field :email, class: 'form-control' %>
+                <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autocomplete: 'off'  %>
               </div>
               <div class="form-group">
-                <%= f.label :comments %>
-                <%= f.text_area :comments, class: 'form-control' %>
+                <%= f.text_area :comments, class: 'form-control', placeholder: 'Type your Message Here', rows: '5', autocomplete: 'off' %>
               </div>
-              <%= f.submit 'Submit', class: 'btn btn-default' %>
+              <%= f.submit 'Submit', class: 'btn btn-primary' %>
             <% end %>
 
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row footer-base">
+          <div class="col-md-12">
+            <small>Web Design by <a href="http://oaqque.me">William Ye</a></small>
           </div>
         </div>
       </div>

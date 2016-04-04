@@ -42,3 +42,11 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.plan-info > .panel-heading {
+  background-color: $dark-grey;
+}
+
+.plan-info h5, .plan-info h1 {
+  color: white;
+}

@@ -1,54 +1,73 @@
-<div class="row">
+<div class="row text-center">
+  <h1 class="page-header">Choose from our Plans</h1>
   <div class="col-md-4 text-center">
-    <div class="well">
-      <h3 class="plan-info-title">Weekly Plan</h3>
-      <h4>Sign up now for a cheap weekly fee of $15 per Week.</h4>
-      <div class="line-break"></div>
-      <ul class="list-unstyled plan-info-list">
-        <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
-        <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
-        <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
-        <li><i class="fa fa-line-chart"></i> All Sports</li>
-        <li><i class="fa fa-usd"></i> Low Commitment</li>
-      </ul>
-      <%= link_to new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' do %>
-       <h1>$15 <sup>/ week</sup></h1>
-      <% end %>
+    <div class="panel panel-default plan-info">
+
+      <div class="panel-heading">
+        <h1>Weekly Plan</h1>
+        <h1>$15</h1>
+        <h5>per week</h5>
+      </div>
+
+      <div class="panel-body">
+        <ul class="list-unstyled plan-info-list">
+          <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
+          <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
+          <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
+          <li><i class="fa fa-line-chart"></i> All Sports</li>
+          <li><i class="fa fa-usd"></i> Low Commitment</li>
+        </ul>
+        <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+      </div>
+
     </div>
   </div>
-  <div class="col-md-4 text-center recommended-value">
-    <div class="well">
-      <h3 class="plan-info-title">Monthly Plan</h3>
-      <h4>Sign up now for a cheap monthly fee of $49 per month.</h4>
-      <div class="line-break"></div>
-      <ul class="list-unstyled plan-info-list">
-        <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
-        <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
-        <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
-        <li><i class="fa fa-line-chart"></i> All Sports</li>
-        <li><i class="fa fa-usd"></i> <strong>Save 20% Per Month!</strong></li>
-      </ul>
-      <%= link_to new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' do %>
-        <h1>$49 <sup>/ month</sup></h1>
-      <% end %>
-      <h3><span class="label label-default">Recommended Value!</span></h3>
-    </div>
-  </div>
+
+
   <div class="col-md-4 text-center">
-    <div class="well">
-      <h3 class="plan-info-title">Yearly Plan</h3>
-      <h4>Sign up now for a cheap yearly fee of $499 per year.</h4>
-      <div class="line-break"></div>
-      <ul class="list-unstyled plan-info-list">
-        <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
-        <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
-        <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
-        <li><i class="fa fa-line-chart"></i> All Sports</li>
-        <li><i class="fa fa-usd"></i> <strong>Save 35% Per Year!</strong></li>
-      </ul>
-      <%= link_to new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' do %>
-        <h1>$499 <sup>/ year </sup></h1>
-      <% end %>
+    <div class="panel panel-default plan-info">
+
+      <div class="panel-heading">
+        <h1>Monthly Plan</h1>
+        <h1>$49</h1>
+        <h5>per month</h5>
+      </div>
+
+      <div class="panel-body">
+        <ul class="list-unstyled plan-info-list">
+          <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
+          <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
+          <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
+          <li><i class="fa fa-line-chart"></i> All Sports</li>
+          <li><i class="fa fa-usd"></i> <strong>Save 20% Per Month!</strong></li>
+        </ul>
+        <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+      </div>
+
     </div>
   </div>
+
+
+  <div class="col-md-4 text-center">
+    <div class="panel panel-default plan-info">
+      <div class="panel-heading">
+        <h1>Yearly Plan</h1>
+        <h1>$499</h1>
+        <h5>per year</h5>
+      </div>
+
+      <div class="panel-body">
+        <ul class="list-unstyled plan-info-list">
+          <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
+          <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
+          <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
+          <li><i class="fa fa-line-chart"></i> All Sports</li>
+          <li><i class="fa fa-usd"></i> <strong>Save 35% Per Year!</strong></li>
+        </ul>
+        <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+      </div>
+
+    </div>
+  </div>
+
 </div>
