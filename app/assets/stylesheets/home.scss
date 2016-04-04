@@ -50,3 +50,47 @@
 .plan-info h5, .plan-info h1 {
   color: white;
 }
+
+/************** PANEL SLIDE ***************/
+
+.panel-slide {
+  background-color: $background-grey;
+  height: 300px;
+  border: 0px;
+  border-radius: 0px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.panel-slide p {
+  color: white;
+}
+
+.panel-slide p, .panel-slide h3 {
+  transform: translate3d(0px, -365px, 0px);
+  transition: 0.3s;
+
+}
+
+.panel-slide:hover p, .panel-slide:hover h3 {
+  transform: translate3d(0px, -65px, 0px);
+  transition: 0.3s;
+}
+
+.panel-slide img {
+  transform: translate3d(0px, 65px, 0px);
+  transition: 0.3s;
+}
+
+.panel-slide:hover img {
+  transform: translate3d(0px, 365px, 0px);
+  transition: 0.3s;
+}
+
+.panel-slide:hover {
+  transition: 0.3s;
+  background-color: $dark-grey;
+}
