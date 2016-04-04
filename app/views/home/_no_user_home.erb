@@ -1,36 +1,44 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="text-center">
-      <div class="row">
-        <h1 class="page-header text-center">What we do</h1>
-        <div class="col-md-4">
-          <div class="panel-slide">
-            <br />
-            <%= image_tag("daily-tip.png", size: '100') %>
-            <h3>Tips Daily</h3>
-            <p>Tips are published daily straight to our Website by our professional tippers. As a bonus, these tips are also emailed straight to your inbox for a more on-the-go option.</p>
+    <h1 class="page-header text-center">What we do</h1>
+  </div>
+  <div class="what-we-do">
+    <div class="col-md-12">
+      <div class="text-center">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel-slide">
+              <br />
+              <%= image_tag("daily-tip.png", size: '100') %>
+              <h3>Tips Daily</h3>
+              <p>Tips are published daily straight to our Website by our professional tippers. As a bonus, these tips are also emailed straight to your inbox for a more on-the-go option.</p>
+              <%= link_to "Learn More", bettingguide_path, class: 'btn btn-primary' %>
+            </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <div class="panel-slide">
-            <br />
-            <%= image_tag("stats.png", size: '100')%>
-            <h3>Result Analysis</h3>
-            <p>Sportsbetting is a process that requires patience and dedication. We provide detailed weekly analysis and statistics on all of our bets so that our customers can better understand the process.</p>
+          <div class="col-md-4">
+            <div class="panel-slide">
+              <br />
+              <%= image_tag("stats.png", size: '100')%>
+              <h3>Result Analysis</h3>
+              <p>Sportsbetting is a process that requires patience and dedication. We provide detailed weekly analysis and statistics on all of our bets so that our customers can better understand the process.</p>
+              <%= link_to "Learn More", results_path, class: 'btn btn-primary' %>
+            </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <div class="panel-slide">
-            <br  />
-            <%= image_tag("basketball.png", size: '100')%>
-            <h3>All Sports</h3>
-            <p>Unlike other tipping sites out there, we charge a single subscription fee that encompasses all the sports which we tip on. No longer will you have to pay for multiple subscriptions for different sports.</p>
+          <div class="col-md-4">
+            <div class="panel-slide">
+              <br  />
+              <%= image_tag("basketball.png", size: '100')%>
+              <h3>All Sports</h3>
+              <p>Unlike other tipping sites out there, we charge a single subscription fee that encompasses all the sports which we tip on. No longer will you have to pay for multiple subscriptions for different sports.</p>
+              <%= link_to "Learn More", bettingguide_path, class: 'btn btn-primary' %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
 <%= render 'plans' %>

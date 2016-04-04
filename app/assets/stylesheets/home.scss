@@ -54,7 +54,6 @@
 /************** PANEL SLIDE ***************/
 
 .panel-slide {
-  background-color: $background-grey;
   height: 300px;
   border: 0px;
   border-radius: 0px;
@@ -63,34 +62,42 @@
   padding: 10px;
   margin-bottom: 10px;
   transition: 0.3s;
+  border-bottom: 15px solid $primary-color;
+}
+
+.what-we-do .col-md-12{
+  background-color: $dark-grey;
 }
 
 .panel-slide p {
   color: white;
 }
 
-.panel-slide p, .panel-slide h3 {
-  transform: translate3d(0px, -365px, 0px);
+.panel-slide p, .panel-slide a {
+  transform: translate3d(0px, -395px, 0px);
   transition: 0.3s;
 
 }
 
-.panel-slide:hover p, .panel-slide:hover h3 {
-  transform: translate3d(0px, -65px, 0px);
+.panel-slide:hover p, .panel-slide:hover a {
+  transform: translate3d(0px, -95px, 0px);
   transition: 0.3s;
 }
 
-.panel-slide img {
-  transform: translate3d(0px, 65px, 0px);
+.panel-slide img, .panel-slide h3 {
+  transform: translate3d(0px, 45px, 0px);
   transition: 0.3s;
+  color: white;
 }
 
-.panel-slide:hover img {
-  transform: translate3d(0px, 365px, 0px);
+.panel-slide:hover img, .panel-slide:hover h3 {
+  transform: translate3d(0px, 345px, 0px);
   transition: 0.3s;
 }
 
 .panel-slide:hover {
-  transition: 0.3s;
   background-color: $dark-grey;
+  transition: 0.3s;
+  background-image: none;
+  opacity: 0.99;
 }
