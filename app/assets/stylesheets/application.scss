@@ -81,26 +81,6 @@
   border: 0;
 }
 
-.navbar-nav .sign-in {
-  background-color: $primary-color;
-  border-bottom: 10px solid $primary-color;
-}
-
-.navbar-nav .sign-in:hover {
-  background-color: $secondary-color;
-  border-bottom: 10px solid $secondary-color;
-}
-
-.navbar-default .navbar-nav > .sign-in > a {
-  color: white;
-}
-
-.navbar-default .navbar-nav > .sign-in > a:hover {
-  color: white;
-}
-
-
-
 /************** FOOTER ***************/
 .footer {
   margin-top: 50px;
