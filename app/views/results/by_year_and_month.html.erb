@@ -11,8 +11,8 @@
   <div class="row">
     <div class="col-md-9">
 
-      <div class="well margin-top">
-        <div class="row text-center">
+      <div class="panel panel-default margin-top">
+        <div class="row text-center panel-body">
           <div class="col-md-3">
             <% if @monthly_total > 0 %>
               <h4>Total Profit/Loss</h4>
@@ -37,8 +37,10 @@
         </div>
       </div>
 
-      <div class="well">
-        <%= area_chart @this_month_bets.group_by_day(:date_of_bet, range: @month_start..@month_end).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge), xtitle: "Date", ytitle: "Units", colors: ["337ab7", "#000"], id: "result-graph", height: "400px", library: {backgroundColor: "fff"} %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= area_chart @this_month_bets.group_by_day(:date_of_bet, range: @month_start..@month_end).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge), xtitle: "Date", ytitle: "Units", colors: ["337ab7", "#000"], id: "result-graph", height: "400px", library: {backgroundColor: "fff"} %>
+        </div>
       </div>
       <h2>More Info</h2>
         <div class="table-responsive">

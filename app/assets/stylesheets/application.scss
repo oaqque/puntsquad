@@ -96,7 +96,7 @@
 
 .jumbotron {
   color: $primary-color;
-  background-color: #fafafa;
+  background-color: #fff;
 }
 
 /************** FOOTER ***************/
@@ -216,7 +216,7 @@ h1, h2, h3 {
 
 .well {
   background-color: white;
-  border-color: white;
+  border-color: $light-grey;
 }
 
 //    ALERTS
@@ -237,4 +237,8 @@ a:hover {
   text-decoration: none;
   color: $secondary-color;
   transition: 0.3s;
+}
+
+.list-group, .list-group-item {
+  background-color: white;
 }
