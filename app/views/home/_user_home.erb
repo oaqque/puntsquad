@@ -1,112 +1,129 @@
 <div class="row">
   <div class="col-md-12">
-    <h3 class="blue-title text-center page-header">Signed in as <%= current_user.email %></h3>
+    <h3 class="blue-title text-center page-header">Signed in as
+      <%= current_user.email %></h3>
 
-
-        <% if current_user.subscribed == true || current_user.admin == true %>
-          <div class="col-md-8">
-            <div class="panel panel-default">
-              <div class="panel-heading"><h3 class="text-center">Current Bets</h3>
-              <h5 class="text-center"><%= Time.current %></h5></div>
-              <div class="panel-body text-center">
-                <p>
-                  Our bets are fully released everyday at <strong>11am UTC+11 </strong>for Australian Sports and at <strong>6pm UTC+11 </strong>for US Sports. You may see bets added throughout the day.
-                </p>
-              </div>
-              <div class="table-responsive">
-                <table class="table">
-                  <tr>
-                    <th>Game</th>
-                    <th>Sport</th>
-                    <th>Bet Placed</th>
-                    <th>Units Placed</th>
-                    <th>Odds</th>
-                    <th>Bookmaker</th>
-                  </tr>
-                  <% for bet in @today_bets do %>
-                    <tr>
-                      <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
-                      <td>
-                        <% if bet.sport == 1 %>
-                          <%= link_to "Basketball", results_by_sport_path(:sport=>bet.sport) %>
-                        <% elsif bet.sport == 2 %>
-                          <%= link_to "NRL", results_by_sport_path(:sport=>bet.sport) %>
-                        <% elsif bet.sport == 3 %>
-                          <%= link_to "Super Rugby", results_by_sport_path(:sport=>bet.sport) %>
-                        <% elsif bet.sport == 4 %>
-                          <%= link_to "AFL", results_by_sport_path(:sport=>bet.sport) %>
-                        <% elsif bet.sport == 5 %>
-                          <%= link_to "eSports", results_by_sport_path(:sport=>bet.sport) %>
-                        <% elsif bet.sport == 6 %>
-                          <%= link_to "Ice Hockey", results_by_sport_path(:sport=>bet.sport) %>
-                        <% elsif bet.sport == 7 %>
-                          <%= link_to "Horse Racing", results_by_sport_path(:sport=>bet.sport) %>
-                        <% elsif bet.sport == 8 %>
-                          <%= link_to "Tennis", results_by_sport_path(:sport=>bet.sport) %>
-                        <% elsif bet.sport == 9 %>
-                          <%= link_to "NFL", results_by_sport_path(:sport=>bet.sport) %>
-                        <% end %>
-                      </td>
-                      <td><%= bet.bet_placed %></td>
-                      <td><%= bet.units_placed %></td>
-                      <td><%= bet.odds %></td>
-                      <td>
-                        <% if bet.bookmaker == 1 %>
-                          Sportsbet
-                        <% elsif bet.bookmaker == 2 %>
-                          William Hill
-                        <% elsif bet.bookmaker == 3 %>
-                          CrownBet
-                        <% elsif bet.bookmaker == 4 %>
-                          Unibet
-                        <% elsif bet.bookmaker == 5 %>
-                          Centrebet
-                        <% elsif bet.bookmaker == 6 %>
-                          UBet
-                        <% elsif bet.bookmaker == 7 %>
-                          bet365
-                        <% elsif bet.bookmaker == 8 %>
-                          TAB
-                        <% elsif bet.bookmaker == 9 %>
-                          Pinnacle
-                        <% elsif bet.bookmaker == 10 %>
-                          Ladbrokes
-                        <% elsif bet.bookmaker == 11 %>
-                          Bookmaker
-                        <% elsif bet.bookmaker == 12 %>
-                          MadBookie
-                        <% end %>
-                      </td>
-                    </tr>
-                  <% end %>
-                </table>
-              </div>
-            </div>
-          </div>
-        <% else %>
-          <div class="col-md-8">
-            <div class="panel panel-default text-center">
-              <div class="panel-heading"><h3 class="text-center">Current Bets</h3></div>
-              <p>Current bets are only available for paying subscribers.</p>
-              <%= link_to "Join Now", subscription_path, class: 'btn btn-lg btn-primary'%>
-            </div>
-          </div>
-        <% end %>
-
+    <% if current_user.subscribed == true || current_user.admin == true %>
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="text-center">Current Bets</h3>
+          <h5 class="text-center"><%= Time.current %></h5>
+        </div>
+        <div class="panel-body text-center">
+          <p>
+            Our bets are fully released everyday at
+            <strong>11am UTC+11
+            </strong>for Australian Sports and at
+            <strong>6pm UTC+11
+            </strong>for US Sports. You may see bets added throughout the day.
+          </p>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <th>Game</th>
+              <th>Sport</th>
+              <th>Bet Placed</th>
+              <th>Units Placed</th>
+              <th>Odds</th>
+              <th>Bookmaker</th>
+            </tr>
+            <% for bet in @today_bets do %>
+            <tr>
+              <td>
+                <strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong>
+              </td>
+              <td>
+                <% if bet.sport == 1 %>
+                <%= link_to "Basketball", results_by_sport_path(:sport=>bet.sport) %>
+                <% elsif bet.sport == 2 %>
+                <%= link_to "NRL", results_by_sport_path(:sport=>bet.sport) %>
+                <% elsif bet.sport == 3 %>
+                <%= link_to "Super Rugby", results_by_sport_path(:sport=>bet.sport) %>
+                <% elsif bet.sport == 4 %>
+                <%= link_to "AFL", results_by_sport_path(:sport=>bet.sport) %>
+                <% elsif bet.sport == 5 %>
+                <%= link_to "eSports", results_by_sport_path(:sport=>bet.sport) %>
+                <% elsif bet.sport == 6 %>
+                <%= link_to "Ice Hockey", results_by_sport_path(:sport=>bet.sport) %>
+                <% elsif bet.sport == 7 %>
+                <%= link_to "Horse Racing", results_by_sport_path(:sport=>bet.sport) %>
+                <% elsif bet.sport == 8 %>
+                <%= link_to "Tennis", results_by_sport_path(:sport=>bet.sport) %>
+                <% elsif bet.sport == 9 %>
+                <%= link_to "NFL", results_by_sport_path(:sport=>bet.sport) %>
+                <% end %>
+              </td>
+              <td><%= bet.bet_placed %></td>
+              <td><%= bet.units_placed %></td>
+              <td><%= bet.odds %></td>
+              <td>
+                <% if bet.bookmaker == 1 %>
+                Sportsbet
+                <% elsif bet.bookmaker == 2 %>
+                William Hill
+                <% elsif bet.bookmaker == 3 %>
+                CrownBet
+                <% elsif bet.bookmaker == 4 %>
+                Unibet
+                <% elsif bet.bookmaker == 5 %>
+                Centrebet
+                <% elsif bet.bookmaker == 6 %>
+                UBet
+                <% elsif bet.bookmaker == 7 %>
+                bet365
+                <% elsif bet.bookmaker == 8 %>
+                TAB
+                <% elsif bet.bookmaker == 9 %>
+                Pinnacle
+                <% elsif bet.bookmaker == 10 %>
+                Ladbrokes
+                <% elsif bet.bookmaker == 11 %>
+                Bookmaker
+                <% elsif bet.bookmaker == 12 %>
+                MadBookie
+                <% end %>
+              </td>
+            </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="col-md-8">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h3 class="text-center">Current Bets</h3>
+        </div>
+        <p>Current bets are only available for paying subscribers.</p>
+        <%= link_to "Join Now", subscription_path, class: 'btn btn-lg btn-primary'%>
+      </div>
+    </div>
+    <% end %>
 
     <div class="col-md-4">
       <div class="panel panel-default text-center">
-        <div class="panel-heading"><h3><%= Time.now.strftime('%B') %></h3></div>
+        <div class="panel-heading">
+          <h3><%= Time.now.strftime('%B') %></h3>
+        </div>
         <h4>Total Profit/Loss</h4>
         <% if @monthly_total > 0 %>
-          <h1><span class="label label-success">+<%=@monthly_total%></span></h1>
+        <h1>
+          <span class="label label-success">+<%=@monthly_total%></span>
+        </h1>
         <% elsif @monthly_total == 0 %>
-          <h1><span class="label label-default"><%=@monthly_total%></span></h1>
-        <% else %>
-          <h1><span class="label label-danger"><%=@monthly_total%></span></h1>
+        <h1>
+          <span class="label label-default"><%=@monthly_total%></span>
+        </h1>
+      <% else %>
+        <h1>
+          <span class="label label-danger"><%=@monthly_total%></span>
+        </h1>
         <% end %>
         <%= link_to "See More", results_by_year_and_month_path(:year => Time.now.year, :month => Time.now.month), class: 'btn btn-default margin-top' %>
-        <br /><br />
+        <br/><br/>
       </div>
     </div>
 

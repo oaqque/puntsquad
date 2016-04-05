@@ -11,18 +11,14 @@
  * file per style scope.
  *
  */
-
 @import "colors";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
 @import "posts";
 @import "bets";
 @import "home";
 @import "results";
-
-
 /************** NAVIGATION ***************/
 .navbar {
   border: 0;
@@ -39,7 +35,6 @@
 .navbar.navbar-default {
   border: 0;
 }
-
 .navbar {
   background-color: white;
   border-bottom: 1px solid #dce9f4;
@@ -80,7 +75,6 @@
 .dropdown-menu {
   border: 0;
 }
-
 /************** FOOTER ***************/
 .footer {
   margin-top: 50px;
@@ -91,26 +85,20 @@
   display: inline-block;
   margin: 15px 5px;
 }
-
 /************** JUMBOTRON ***************/
-
 .jumbotron {
   color: $primary-color;
   background-color: #fff;
 }
-
 /************** FOOTER ***************/
-
 .footer {
   background-color: $dark-grey;
   color: $light-grey;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
-
 .footer h4 {
   color: $primary-color;
 }
-
 .social-icon {
   color: $light-grey;
   transition: 0.2s;
@@ -122,52 +110,43 @@
   transition: 0.2s;
   -webkit-transition: 0.2s;
 }
-
 .footer .form-control {
   background: none;
   border: none;
   border-bottom: 1px white solid;
-  border-radius: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
   outline: none;
   color: white;
 }
-
 .footer textarea {
   resize: none;
   outline: none;
 }
-
 .footer .form-control:focus {
   outline: none;
   border-bottom: 1px $primary-color solid;
   box-shadow: none;
 }
-
 .footer .form-group .form-control input:focus {
   outline: none;
   color: white;
 }
-
 .footer-base {
   margin-top: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: right;
 }
-
 /*********** BUTTONS ************/
-
 .btn-primary {
   background-color: $primary-color;
   border: none;
 }
-
 .btn-primary:hover {
   background-color: $secondary-color;
 }
-
 /************** EXTRA ***************/
 .btn:hover {
   transition: 0.5s;
@@ -203,42 +182,37 @@
 .border-bottom {
   border-bottom: 1px solid black;
 }
-
 body {
   background-color: $background-grey;
 }
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: $primary-color;
 }
-
 //    WELLS
-
 .well {
   background-color: white;
   border-color: $light-grey;
 }
-
 //    ALERTS
-
 .alert-notice {
   color: $alert-color;
   background-color: #dff0d8;
   border-color: #d6e9c6;
   margin-bottom: 0;
 }
-
 a {
   color: $primary-color;
   transition: 0.3s;
 }
-
 a:hover {
   text-decoration: none;
   color: $secondary-color;
   transition: 0.3s;
 }
-
-.list-group, .list-group-item {
+.list-group,
+.list-group-item {
   background-color: white;
 }
+/*********** ALL FORMS *************/
