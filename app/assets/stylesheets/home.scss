@@ -5,13 +5,21 @@
 /************* JUMBOTRON **********/
 
 .jumbotron.home-page {
-  background-image: url('hero-bg.jpg');
+  background-image: url('hero-bg-2.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 65vh;
   border-radius: 0;
+  color: white;
+  background-color: $dark-grey;
 }
+
+.jumbotron.home-page img {
+  max-width: 70%;
+  max-height: 30vh;
+}
+
 .jumbotron.user-home {
   background-image: url('user-home-hero-bg.jpg');
   background-position: center center;

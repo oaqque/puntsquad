@@ -36,13 +36,12 @@
   border: 0;
 }
 .navbar {
-  background-color: white;
-  border-bottom: 1px solid #dce9f4;
+  background-color: $dark-grey;
 }
 .navbar-nav li {
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  border-bottom: 10px solid white;
+  border-bottom: 10px solid $dark-grey;
 }
 .navbar-nav li:hover {
   border-bottom: 10px solid $primary-color;
@@ -75,6 +74,20 @@
 .dropdown-menu {
   border: 0;
 }
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.navbar-default .navbar-brand:hover {
+   background-color: $dark-grey;
+   opacity: 0.9;
+ }
+.navbar-brand img {
+  max-height: 100%;
+}
+
 /************** FOOTER ***************/
 .footer {
   margin-top: 50px;
