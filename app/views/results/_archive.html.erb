@@ -1,30 +1,39 @@
-<h2>Archive</h2>
-<ul class="list-group">
-  <% @archive_by_month.each do |month, posts| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Archive</h3>
+  </div>
+  <ul class="list-group">
+    <% @archive_by_month.each do |month, posts| %>
     <li class="list-group-item"><%= link_to "#{month.strftime('%B %Y')}", results_by_year_and_month_path(:year=> month.strftime('%Y'), :month => month.strftime('%-m')) %></li>
-  <% end %>
-</ul>
-<h2>Sports</h2>
-<ul class="list-group">
-  <% @archive_by_sport.each do |sport, posts| %>
-    <% if sport == 1 %>
-      <li class="list-group-item"><%= link_to "Basketball", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 2 %>
-      <li class="list-group-item"><%= link_to "NRL", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 3 %>
-      <li class="list-group-item"><%= link_to "Super Rugby", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 4 %>
-      <li class="list-group-item"><%= link_to "AFL", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 5 %>
-      <li class="list-group-item"><%= link_to "eSports", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 6 %>
-      <li class="list-group-item"><%= link_to "Ice Hockey", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 7 %>
-      <li class="list-group-item"><%= link_to "Horse Racing", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 8 %>
-      <li class="list-group-item"><%= link_to "Tennis", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 9 %>
-      <li class="list-group-item"><%= link_to "NFL", results_by_sport_path(:sport=>sport) %></li>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Sports</h3>
+  </div>
+  <ul class="list-group">
+    <% @archive_by_sport.each do |sport, posts| %>
+    <% if sport == 1 %>
+    <li class="list-group-item"><%= link_to "Basketball", results_by_sport_path(:sport=>sport) %></li>
+    <% elsif sport == 2 %>
+    <li class="list-group-item"><%= link_to "NRL", results_by_sport_path(:sport=>sport) %></li>
+    <% elsif sport == 3 %>
+    <li class="list-group-item"><%= link_to "Super Rugby", results_by_sport_path(:sport=>sport) %></li>
+    <% elsif sport == 4 %>
+    <li class="list-group-item"><%= link_to "AFL", results_by_sport_path(:sport=>sport) %></li>
+    <% elsif sport == 5 %>
+    <li class="list-group-item"><%= link_to "eSports", results_by_sport_path(:sport=>sport) %></li>
+    <% elsif sport == 6 %>
+    <li class="list-group-item"><%= link_to "Ice Hockey", results_by_sport_path(:sport=>sport) %></li>
+    <% elsif sport == 7 %>
+    <li class="list-group-item"><%= link_to "Horse Racing", results_by_sport_path(:sport=>sport) %></li>
+    <% elsif sport == 8 %>
+    <li class="list-group-item"><%= link_to "Tennis", results_by_sport_path(:sport=>sport) %></li>
+    <% elsif sport == 9 %>
+    <li class="list-group-item"><%= link_to "NFL", results_by_sport_path(:sport=>sport) %></li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>

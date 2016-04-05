@@ -51,6 +51,10 @@
   color: white;
 }
 
+.plan-info {
+  background: url('plan-bg.jpg');
+}
+
 /************** PANEL SLIDE ***************/
 
 .panel-slide {
@@ -65,7 +69,7 @@
   border-bottom: 15px solid $primary-color;
 }
 
-.what-we-do .col-md-12{
+.what-we-do .col-md-12 {
   background-color: $dark-grey;
 }
 

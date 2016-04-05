@@ -1,20 +1,25 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12"><% @bets_by_day.each do |day, bets| %>
+      <h1><%= day.strftime('%d') %> <%= day.strftime('%B') %> <%= day.strftime('%Y') %></h1>
+    <% end %></div>
     <div class="col-md-9">
-      <% @bets_by_day.each do |day, bets| %>
-        <h2><%= day.strftime('%d') %> <%= day.strftime('%B') %> <%= day.strftime('%Y') %></h2>
-      <% end %>
 
-      <div class="jumbotron">
-        <% if @totals > 0 %>
+
+      <div class="panel panel-default">
+        <div class="panel-body"><% if @totals > 0 %>
           <h3>Total Profit/Loss: <span class="label label-success"><%= @totals %></span></h3>
         <% else %>
           <h3>Total Profit/Loss: <span class="label label-danger"><%= @totals %></span></h3>
-        <% end %>
+        <% end %></div>
       </div>
 
       <% @bets_by_day.each do |day, bets| %>
         <div class="table-responsive">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>Bets Placed</h3>
+            </div>
           <table class="table table-hover">
             <tr>
               <th>Game</th>
@@ -94,6 +99,7 @@
               </tr>
             <% end %>
           </table>
+          </div>
         </div>
       <% end %>
 
