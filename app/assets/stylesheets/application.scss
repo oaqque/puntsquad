@@ -49,7 +49,8 @@
   transition: 0.5s;
 }
 .navbar-default .navbar-nav > li > a {
-  color: $primary-color;
+  color: white;
+  font-weight: bold;
 }
 .navbar-default .navbar-nav > li > a:hover {
   color: $primary-color;
@@ -69,10 +70,15 @@
   transition: background-color 0.5s;
 }
 .dropdown-menu > li:hover {
-  border-bottom: solid 10px white;
+  border-bottom: solid 10px $dark-grey;
 }
 .dropdown-menu {
   border: 0;
+  background-color: $dark-grey;
+}
+
+.dropdown-menu > li > a {
+  color: white;
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
@@ -87,6 +93,10 @@
 .navbar-brand img {
   max-height: 100%;
   max-width: 50vh;
+}
+
+.dropdown a:visited {
+  background-color: white;
 }
 
 /************** FOOTER ***************/
@@ -161,6 +171,7 @@
 .btn-primary:hover {
   background-color: $secondary-color;
 }
+
 /************** EXTRA ***************/
 .btn:hover {
   transition: 0.5s;
@@ -229,4 +240,14 @@ a:hover {
 .list-group-item {
   background-color: white;
 }
-/*********** ALL FORMS *************/
+/*********** ALL PANELS *************/
+
+.panel-default .panel-heading,.panel-default .panel-heading h1, .panel-default .panel-heading h2, .panel-default .panel-heading h3, .panel-default .panel-heading h4, .panel-default .panel-heading h5 {
+  background-color: $dark-grey;
+  color: white;
+}
+
+.panel-default .panel-faded {
+  background-color: #f5f5f5;
+  color: black;
+}
