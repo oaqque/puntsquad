@@ -50,6 +50,8 @@
                 Bookmaker
               <% elsif @bet.bookmaker == 12 %>
                 MadBookie
+              <% elsif @bet.bookmaker == 13 %>
+                Luxbet
               <% end %>
             </li>
             <li class="list-group-item"><strong>Units Placed:</strong> <%= @bet.units_placed %></li>
