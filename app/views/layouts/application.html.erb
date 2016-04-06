@@ -59,17 +59,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 text-center">
-          </div>
-
-          <div class="col-md-4">
-            <h4>Contact Us</h4>
-            <p>Feel free to send us an email or give us a call if you want more information on our services or just want to have a chat.</p>
-            <ul class="list-unstyled">
-              <li>Email: <a href="mailto:contact@puntsquad.com">contact@puntsquad.com</a></li>
-              <li>Phone: <a href="">XXXX-XXXX</a></li>
-            </ul>
-
-            <h4>Social Media</h4>
+            <%= image_tag 'logo.png' %>
+            <br /><br />
+            <%= image_tag 'logo-dark-text.png' %>
+            <br /><br />
             <ul class="list-unstyled social-media">
             <li><%= link_to "http://www.facebook.com", class: 'social-icon' do%>
               <i class="fa fa-facebook fa-lg fa-4x"></i>
@@ -77,7 +70,10 @@
 
             <li><%= link_to "http://www.twitter.com", class: 'social-icon' do%>
               <i class="fa fa-twitter fa-lg fa-4x"></i>
-            <% end %></li>
+            <% end %></li></ul>
+          </div>
+
+          <div class="col-md-4">
           </div>
 
           <div class="col-md-4">
@@ -100,7 +96,10 @@
       </div>
       <div class="container">
         <div class="row footer-base">
-          <div class="col-md-12">
+          <div class="col-md-8">
+              <small>Email: <a href="mailto:contact@puntsquad.com">contact@puntsquad.com</a></small> <small>Phone: <a href="">XXXX-XXXX</a></small>
+          </div>
+          <div class="col-md-4">
             <small>Web Design by <a href="http://oaqque.me">William Ye</a></small>
           </div>
         </div>

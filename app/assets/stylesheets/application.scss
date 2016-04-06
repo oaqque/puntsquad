@@ -163,6 +163,20 @@
   padding-bottom: 20px;
   text-align: right;
 }
+
+.footer-base .col-md-8 {
+  text-align: left;
+}
+
+.contact-details {
+  display: inline-block;
+}
+
+.footer img {
+  max-width: 100%;
+  max-height: 150px;
+}
+
 /*********** BUTTONS ************/
 .btn-primary {
   background-color: $primary-color;
