@@ -35,6 +35,14 @@ class BetsController < ApplicationController
         end
   end
 
+  def destroy
+    @bet = Bet.find(params[:id])
+    @bet.destroy
+
+    flash[:danger] = "Bet Deleted"
+    redirect_to root_path
+  end
+
   private
 
     def bet_params

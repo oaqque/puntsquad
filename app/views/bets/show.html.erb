@@ -67,9 +67,10 @@
               <% end %>
             </li>
           </ul>
-          <%= link_to "Back to Results", results_path, class: "btn btn-default" %>
+          <%= link_to "Back to Results", results_path, class: "btn btn-primary" %>
           <% if current_user.try(:admin?) %>
-            <%= link_to "Edit", edit_bet_path(:id => @bet.id), class: "btn btn-default" %>
+            <%= link_to "Edit", edit_bet_path(:id => @bet.id), class: "btn btn-primary" %>
+            <%= link_to "Delete", bet_path, :method => :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"} %>
           <% end %>
         </div>
     </div>
