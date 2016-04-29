@@ -89,7 +89,7 @@ class ResultsController < ApplicationController
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", params[:year])
     @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM date_of_bet) = ?", params[:month])
     @bets_by_day = @bets_by_month.where("EXTRACT(DAY FROM date_of_bet) = ?", params[:day])
-    @bets_by_day = @bets_by_day.order("date_of_bet DESC, sport ASC, game ASC, resolved ASC")
+    @bets_by_day = @bets_by_day.order("resolved ASC, date_of_bet DESC, sport ASC, game ASC")
 
     @totals = 0
 
