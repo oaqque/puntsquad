@@ -85,7 +85,7 @@ class ResultsController < ApplicationController
 
   def by_year_and_month_and_day
 
-
+    
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", params[:year])
     @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM date_of_bet) = ?", params[:month])
     @bets_by_day = @bets_by_month.where("EXTRACT(DAY FROM date_of_bet) = ?", params[:day])
@@ -99,8 +99,11 @@ class ResultsController < ApplicationController
       end
     end
 
+    #Grab Bet's from Today
+    @bets_by_day = @bets_by_day.paginate(:page => params[:page], per_page: 10)
 
-    @bets_by_day = @bets_by_day.all.group_by { |bet| bet.date_of_bet.beginning_of_day }
+    #Find Today's Date
+    @today = @bets_by_day.first.date_of_bet
 
     #ARCHIVE
     @archive_by_month = Bet.all.order("date_of_bet DESC")

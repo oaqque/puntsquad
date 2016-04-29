@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12"><% @bets_by_day.each do |day, bets| %>
-      <h1><%= day.strftime('%d') %> <%= day.strftime('%B') %> <%= day.strftime('%Y') %></h1>
-    <% end %></div>
+    <div class="col-md-12">
+      <h1><%= @today.strftime('%d') %> <%= @today.strftime('%B') %> <%= @today.strftime('%Y') %></h1>
+    </div>
     <div class="col-md-9">
 
 
@@ -17,7 +17,7 @@
         <% end %></div>
       </div>
 
-      <% @bets_by_day.each do |day, bets| %>
+
         <div class="table-responsive">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -32,9 +32,8 @@
               <th>Odds</th>
               <th>Profit/Loss</th>
               <th>Bookmaker</th>
-
             </tr>
-            <% for bet in bets do %>
+            <% for bet in @bets_by_day %>
               <tr>
                 <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
                 <td>
@@ -102,11 +101,14 @@
                   <% end %>
                 </td>
               </tr>
-            <% end %>
+              <% end %>
+
           </table>
+          <div class="panel panel-body text-center">
+              <%= will_paginate @bets_by_day, renderer: BootstrapPagination::Rails %>
+          </div>
           </div>
         </div>
-      <% end %>
 
 
     </div>
