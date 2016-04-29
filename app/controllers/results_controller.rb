@@ -137,7 +137,7 @@ class ResultsController < ApplicationController
     @sum = 0
 
     #Listing Last 10 bets_by_sport
-    @bets_by_sport_last_10 = @bets_by_sport.order('date_of_bet DESC').first(10)
+    @latest_bets = @bets_by_sport.order('date_of_bet DESC').paginate(:page => params[:page], per_page: 10)
 
   end
 end

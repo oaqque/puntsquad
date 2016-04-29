@@ -51,6 +51,8 @@ gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 # Will_Paginate Gem for pagination
 gem 'will_paginate', '~> 3.1.0'
+# Bootstrap Gem for will_paginate
+gem 'will_paginate-bootstrap'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
