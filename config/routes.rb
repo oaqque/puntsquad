@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resource :subscription
   get '/bettingguide' => 'home#betting_guide'
 
+  get '/analysis' => 'home#analysis'
+
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
