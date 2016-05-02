@@ -81,6 +81,16 @@ class HomeController < ApplicationController
       @hu3place_pnl += bet.profit_or_loss
     end
 
+    # Total Place Bets
+    @horse_place = @bets.where("sport = ? AND bet_placed like ?", 7, "%to place")
+    @horse_place_total_staked = 0
+    @horse_place_pnl = 0
+    for bet in @horse_place
+      @horse_place_total_staked += bet.units_placed
+      @horse_place_pnl += bet.profit_or_loss
+    end
+
+
   end
 
 end
