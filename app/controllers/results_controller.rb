@@ -85,7 +85,7 @@ class ResultsController < ApplicationController
 
   def by_year_and_month_and_day
 
-    
+
     @bets_by_year = Bet.where("EXTRACT(YEAR FROM date_of_bet) = ?", params[:year])
     @bets_by_month = @bets_by_year.where("EXTRACT(MONTH FROM date_of_bet) = ?", params[:month])
     @bets_by_day = @bets_by_month.where("EXTRACT(DAY FROM date_of_bet) = ?", params[:day])
@@ -140,7 +140,7 @@ class ResultsController < ApplicationController
     @sum = 0
 
     #Listing Last 10 bets_by_sport
-    @latest_bets = @bets_by_sport.order('date_of_bet DESC').paginate(:page => params[:page], per_page: 10)
+    @latest_bets = @bets_by_sport.order('date_of_bet DESC').paginate(:page => params[:page], per_page: 10).order("resolved ASC, date_of_bet DESC, game ASC, updated_at ASC")
 
   end
 end
