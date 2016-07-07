@@ -8,7 +8,7 @@ class ResultsController < ApplicationController
     @archive_by_sport = Bet.all.group_by { |bet| bet.sport }
 
     @total = 0
-    @bets = Bet.all
+    @bets = Bet.where("sport != ?", 8)
 
     @bets.each do |x|
       if x.profit_or_loss > -100 && x.profit_or_loss < 100
@@ -23,7 +23,7 @@ class ResultsController < ApplicationController
     @year_end = Date.new(2016, 12, 31)
 
     #Units Outlayed
-    @total_units = Bet.all.sum(:units_placed)
+    @total_units = @bets.sum(:units_placed)
     @units_returned = @total + @total_units
     @return_on_investment = (@total / @total_units * 100).round(2)
   end
