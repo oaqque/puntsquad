@@ -7,16 +7,14 @@
     <div class="col-md-8">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="text-center">Current Sports Bets</h3>
+          <h3 class="text-center">Current Horse Bets</h3>
           <h5 class="text-center"><%= Time.current %></h5>
         </div>
         <div class="panel-body text-center">
           <p>
-            Our bets are fully released everyday at
-            <strong>11am UTC+11
-            </strong>for Australian Sports and at
-            <strong>6pm UTC+11
-            </strong>for US Sports. You may see bets added throughout the day.
+            Our Horse Racing Tips are fully released everyday at
+            <strong>11:30am UTC+11
+            </strong>. You may see other bets added throughout the day.
           </p>
         </div>
         <div class="table-responsive">
@@ -29,7 +27,7 @@
               <th>Odds</th>
               <th>Bookmaker</th>
             </tr>
-            <% for bet in @today_bets do %>
+            <% for bet in @today_horse_bets do %>
             <tr>
               <td>
                 <strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong>
@@ -94,14 +92,16 @@
       </div>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="text-center">Current Horse Bets</h3>
+          <h3 class="text-center">Current Sports Bets</h3>
           <h5 class="text-center"><%= Time.current %></h5>
         </div>
         <div class="panel-body text-center">
           <p>
-            Our Horse Racing Tips are fully released everyday at
-            <strong>11:30am UTC+11
-            </strong>. You may see other bets added throughout the day.
+            Our bets are fully released everyday at
+            <strong>11am UTC+11
+            </strong>for Australian Sports and at
+            <strong>6pm UTC+11
+            </strong>for US Sports. You may see bets added throughout the day.
           </p>
         </div>
         <div class="table-responsive">
@@ -114,7 +114,7 @@
               <th>Odds</th>
               <th>Bookmaker</th>
             </tr>
-            <% for bet in @today_horse_bets do %>
+            <% for bet in @today_bets do %>
             <tr>
               <td>
                 <strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong>
