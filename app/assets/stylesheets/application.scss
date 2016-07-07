@@ -26,7 +26,7 @@
   min-height: 70px;
 }
 .navbar {
-  margin-bottom: 0;
+  
 }
 .navbar-nav li a {
   padding-top: 25px;
@@ -39,6 +39,7 @@
 
 .navbar.navbar-default {
   border: 0;
+  border-bottom: 3px solid $primary-color;
 }
 .navbar {
   background-color: $dark-grey;
