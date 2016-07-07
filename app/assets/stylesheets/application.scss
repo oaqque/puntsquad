@@ -30,23 +30,24 @@
 }
 .navbar-nav li a {
   padding-top: 25px;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
 }
+
+.navbar-nav li {
+  margin-bottom: 0px;
+}
+
 .navbar.navbar-default {
   border: 0;
-  border-bottom: 3px solid $primary-color;
-
 }
 .navbar {
   background-color: $dark-grey;
 }
-.navbar-nav li {
+.navbar-nav li, .navbar-nav li:active {
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  border-bottom: 10px solid $dark-grey;
 }
 .navbar-nav li:hover {
-  border-bottom: 10px solid $primary-color;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -255,6 +256,17 @@ a:hover {
 .list-group,
 .list-group-item {
   background-color: white;
+}
+
+
+// To fix the dropdown disappearing
+.dropdown {
+    display: inherit !important;
+}
+
+.page-header {
+  border-bottom: none;
+  margin-bottom: 0px;
 }
 /*********** ALL PANELS *************/
 
