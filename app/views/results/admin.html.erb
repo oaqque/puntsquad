@@ -1,94 +1,118 @@
 <div class="container">
-  <% if current_user.try(:admin?) %>
-        <div class="row">
-          <div class="col-md-12">
-        <p class="text-center"><%= link_to 'New Bet', new_bet_path, class: 'btn btn-default text-center' %></p>
-        <table class="table">
-          <tr>
-            <th>Game</th>
-            <th></th>
-            <th>Sport</th>
-            <th>Bet Placed</th>
-            <th>Units Placed</th>
-            <th>Odds</th>
-            <th>Profit/Loss</th>
-            <th>Bookmaker</th>
-          </tr>
-          <% for bet in @bets do %>
-            <tr>
-              <td><strong> <%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
-              <td><%= link_to "Edit", edit_bet_path(:id => bet.id) %></td>
-              <td>
-                <% if bet.sport == 1 %>
-                  Basketball
-                <% elsif bet.sport == 2 %>
-                  NRL
-                <% elsif bet.sport == 3 %>
-                  Super Rugby
-                <% elsif bet.sport == 4 %>
-                  AFL
-                <% elsif bet.sport == 5 %>
-                  eSports
-                <% elsif bet.sport == 6 %>
-                  Ice Hockey
-                <% elsif bet.sport == 7 %>
-                  Horse Racing
-                <% elsif bet.sport == 8 %>
-                  Tennis
-                <% elsif bet.sport == 9 %>
-                  NFL
-                <% end %>
-              </td>
-              <td><%= bet.bet_placed %></td>
-              <td><%= bet.units_placed %></td>
-              <td><%= bet.odds %></td>
-              <td>
-                <% if bet.profit_or_loss > 0 %>
-                  <span class="label label-success">+<%= bet.profit_or_loss %></span>
-                <% elsif bet.push == true %>
-                  <span class="label label-default">push</span>
-                <% elsif bet.profit_or_loss == 0 %>
-                  <span class="label label-default"><%= bet.profit_or_loss %></span>
-                <% else %>
-                  <span class="label label-danger"><%= bet.profit_or_loss %></span>
-                <% end %>
-              </td>
-              <td>
-                <% if bet.bookmaker == 1 %>
-                  Sportsbet
-                <% elsif bet.bookmaker == 2 %>
-                  William Hill
-                <% elsif bet.bookmaker == 3 %>
-                  CrownBet
-                <% elsif bet.bookmaker == 4 %>
-                  Unibet
-                <% elsif bet.bookmaker == 5 %>
-                  Centrebet
-                <% elsif bet.bookmaker == 6 %>
-                  UBet
-                <% elsif bet.bookmaker == 7 %>
-                  bet365
-                <% elsif bet.bookmaker == 8 %>
-                  TAB
-                <% elsif bet.bookmaker == 9 %>
-                  Pinnacle
-                <% elsif bet.bookmaker == 10 %>
-                  Ladbrokes
-                <% elsif bet.bookmaker == 11 %>
-                  Bookmaker
-                <% elsif bet.bookmaker == 12 %>
-                  MadBookie
-                <% elsif bet.bookmaker == 13 %>
-                  Luxbet
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </table>
+    <% if current_user.try(:admin?) %>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Admin Control</h1>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
 
-      </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h3>All Bets</h3>
+                      </div>
+                      <div class="col-md-8">
+                        <p>
+                          <h3><%= link_to 'New Bet', new_bet_path, class: 'btn btn-default pull-right' %></h3>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <th>Game</th>
+                            <th></th>
+                            <th>Sport</th>
+                            <th>Bet Placed</th>
+                            <th>Units Placed</th>
+                            <th>Odds</th>
+                            <th>Profit/Loss</th>
+                            <th>Bookmaker</th>
+                        </tr>
+                        <% for bet in @bets do %>
+                        <tr>
+                            <td>
+                                <strong>
+                                    <%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong>
+                            </td>
+                            <td><%= link_to "Edit", edit_bet_path(:id => bet.id) %></td>
+                            <td>
+                                <% if bet.sport == 1 %>
+                                Basketball
+                                <% elsif bet.sport == 2 %>
+                                NRL
+                                <% elsif bet.sport == 3 %>
+                                Super Rugby
+                                <% elsif bet.sport == 4 %>
+                                AFL
+                                <% elsif bet.sport == 5 %>
+                                eSports
+                                <% elsif bet.sport == 6 %>
+                                Ice Hockey
+                                <% elsif bet.sport == 7 %>
+                                Horse Racing
+                                <% elsif bet.sport == 8 %>
+                                Tennis
+                                <% elsif bet.sport == 9 %>
+                                NFL
+                                <% end %>
+                            </td>
+                            <td><%= bet.bet_placed %></td>
+                            <td><%= bet.units_placed %></td>
+                            <td><%= bet.odds %></td>
+                            <td>
+                                <% if bet.profit_or_loss > 0 %>
+                                <span class="label label-success">+<%= bet.profit_or_loss %></span>
+                                <% elsif bet.push == true %>
+                                <span class="label label-default">push</span>
+                                <% elsif bet.profit_or_loss == 0 %>
+                                <span class="label label-default"><%= bet.profit_or_loss %></span>
+                            <% else %>
+                                <span class="label label-danger"><%= bet.profit_or_loss %></span>
+                                <% end %>
+                            </td>
+                            <td>
+                                <% if bet.bookmaker == 1 %>
+                                Sportsbet
+                                <% elsif bet.bookmaker == 2 %>
+                                William Hill
+                                <% elsif bet.bookmaker == 3 %>
+                                CrownBet
+                                <% elsif bet.bookmaker == 4 %>
+                                Unibet
+                                <% elsif bet.bookmaker == 5 %>
+                                Centrebet
+                                <% elsif bet.bookmaker == 6 %>
+                                UBet
+                                <% elsif bet.bookmaker == 7 %>
+                                bet365
+                                <% elsif bet.bookmaker == 8 %>
+                                TAB
+                                <% elsif bet.bookmaker == 9 %>
+                                Pinnacle
+                                <% elsif bet.bookmaker == 10 %>
+                                Ladbrokes
+                                <% elsif bet.bookmaker == 11 %>
+                                Bookmaker
+                                <% elsif bet.bookmaker == 12 %>
+                                MadBookie
+                                <% elsif bet.bookmaker == 13 %>
+                                Luxbet
+                                <% end %>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </table>
+                </div>
+            </div>
+
+        </div>
     </div>
-  <% else %>
-    <div class="jumbotron text-center"><h1>Admin Only</h1></div>
-  <% end %>
+    <% else %>
+    <div class="jumbotron text-center">
+        <h1>Admin Only</h1>
+    </div>
+    <% end %>
 </div>
