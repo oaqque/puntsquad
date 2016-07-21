@@ -99,9 +99,8 @@ class HomeController < ApplicationController
       @horse_win_pnl += bet.profit_or_loss
     end
 
-    @horse_packenham = @bets.where("sport = ? AND bet_placed like ?", 7, "Packenham")
-    @horse_packenham = @bets.where("sport = ? AND bet_placed like ?", 7, "Cessnock")
-    
+    @horse_packenham = @bets.where("sport = ? AND game like ?", 7, "Packenham")
+
 
   end
 
