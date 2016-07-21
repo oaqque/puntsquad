@@ -99,7 +99,21 @@ class HomeController < ApplicationController
       @horse_win_pnl += bet.profit_or_loss
     end
 
-    @horse_packenham = @bets.where("sport = ? AND game like ?", 7, "Packenham")
+    #ROI for each Meet
+    #Pakenham
+    @horse_pakenham = @bets.where("sport = ? AND game like ?", 7, "%Pakenham%")
+    @total_pakenham = 0
+    @pnl_pakenham = 0
+    @roi_pakenham = 0
+    for bet in @horse_pakenham
+      @total_pakenham += bet.units_placed
+      @pnl_pakenham += bet.profit_or_loss
+      @roi_pakenham = (@pnl_pakenham / @total_pakenham).round(2)
+    end
+
+
+
+
 
 
   end
