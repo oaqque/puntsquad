@@ -1,8 +1,5 @@
 <div class="row">
   <div class="col-md-12">
-    <h3 class="blue-title text-center page-header">Signed in as
-      <%= current_user.email %></h3>
-
     <% if current_user.subscribed == true || current_user.admin == true %>
     <div class="col-md-8">
       <div class="panel panel-default">
@@ -219,7 +216,23 @@
           <span class="label label-danger"><%=@monthly_total%></span>
         </h1>
         <% end %>
-        <%= link_to "See More", results_by_year_and_month_path(:year => Time.now.year, :month => Time.now.month), class: 'btn btn-default margin-top' %>
+        <br />
+        <%= link_to "View This Month", results_by_year_and_month_path(:year => Time.now.year, :month => Time.now.month), class: 'btn btn-default' %>
+        <br/><br/>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h3>User Settings</h3>
+        </div>
+        <h4><%= current_user.email %></h4>
+        <p>
+          Subscription:
+        </p>
+        <br />
+        <%= link_to "See More", "", class: 'btn btn-default' %>
         <br/><br/>
       </div>
     </div>
