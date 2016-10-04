@@ -31,6 +31,8 @@ class ResultsController < ApplicationController
   def admin
     @bets = Bet.all
     @bets = @bets.order("date_of_bet DESC")
+
+    @latest_bets = @bets.order('date_of_bet DESC').paginate(:page => params[:page], per_page: 10).order("resolved ASC, date_of_bet DESC, game ASC, updated_at ASC")
   end
 
   def by_year_and_month

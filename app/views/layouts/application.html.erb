@@ -30,7 +30,7 @@
             <li><%= link_to 'Results', results_path %></li>
             <li><%= link_to 'Blog', posts_path %></li>
             <% if current_user.try(:admin?) %>
-                <li><%= link_to 'Bets', results_admin_path %></li>
+                <li><%= link_to 'Admin', results_admin_path %></li>
             <% end %>
             <% if current_user %>
             <li class="dropdown">
