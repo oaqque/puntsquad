@@ -118,12 +118,7 @@
               <h4>Logging</h4>
               <h3><%= link_to 'New Bet', new_bet_path, class: 'btn btn-default btn-block' %></h3>
               <h4>Emails</h4>
-              <%= form_for @contact do |f| %>
-                <div class="form-group">
-                  <%= f.text_field :name, class: 'form-control', placeholder: 'Meet', autocomplete: 'off' %>
-                </div>
-              <% end %>
-              <h3><%= link_to 'Send Email', 'new_bet_path', class: 'btn btn-default btn-block' %></h3>
+              <h3><%= link_to 'Emails', new_meet_path, class: 'btn btn-default btn-block' %></h3>
             </div>
           </div>
         </div>
