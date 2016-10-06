@@ -29,9 +29,6 @@
             <li><%= link_to 'Betting Explained', bettingguide_path %></li>
             <li><%= link_to 'Results', results_path %></li>
             <li><%= link_to 'Blog', posts_path %></li>
-            <% if current_user.try(:admin?) %>
-                <li><%= link_to 'Admin', results_admin_path %></li>
-            <% end %>
             <% if current_user %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell"></i></a>
@@ -39,8 +36,10 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i><span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#"><i class="fa fa-envelope-o"></i> Email Settings</a></li>
-                <li><%= link_to "" do %><i class="fa fa-cogs"></i> Subscription<% end %></li>
+                <% if current_user.try(:admin?) %>
+                    <li><%= link_to results_admin_path do %><i class="fa fa-lock"></i> Admin<% end %></li>
+                <% end %>
+                <li><%= link_to edit_user_registration_path do %><i class="fa fa-cogs"></i> Settings<% end %></li>
                 <li><%= link_to destroy_user_session_path, method: :delete do%><i class='fa fa-sign-out'></i> Logout<% end %></li>
               </ul>
             </li>

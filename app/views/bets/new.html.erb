@@ -1,12 +1,17 @@
 <% if current_user.try(:admin?) %>
 
-  <h1 class="text-center">Add New Bet</h1>
+
 
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <div class="well">
-          <%= render 'form' %>
+        <div class="panel panel-default panel-top">
+          <div class="panel panel-heading">
+            <h1 class="text-center">Add New Bet</h1>
+          </div>
+          <div class="panel-body">
+            <%= render 'form' %>
+          </div>
         </div>
       </div>
     </div>

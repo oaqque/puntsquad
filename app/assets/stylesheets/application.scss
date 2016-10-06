@@ -26,7 +26,7 @@
   min-height: 70px;
 }
 .navbar {
-  
+
 }
 .navbar-nav li a {
   padding-top: 25px;
@@ -73,9 +73,7 @@
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
 }
-.dropdown-menu > li:hover {
-  border-bottom: solid 10px $dark-grey;
-}
+
 .dropdown-menu {
   border: 0;
   background-color: $dark-grey;
@@ -279,4 +277,8 @@ a:hover {
 .panel-default .panel-faded {
   background-color: #f5f5f5;
   color: black;
+}
+
+.panel-top {
+  margin-top: 30px;
 }
