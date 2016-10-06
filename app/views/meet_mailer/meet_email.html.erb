@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   </head>
   <body>
-    <p>
-      Hi, <%= @user.email %>
-    </p>
-    <p>Your bets from <%= "#{ @name }" %> are ready to be placed.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              <%= image_tag("logo-dark-text.png") %>
+            </div>
+            <div class="panel-body">
+              <h3>Hi, <%= @user.email %></h3>
+              <p>
+                This email was sent to notify you that the bets from <%= "#{ @name }" %> for <%= Date.today %> are now available and ready to be placed. Click <a href="http://www.puntsquad.com">here</a> for more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
