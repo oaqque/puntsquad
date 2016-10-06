@@ -1,14 +1,20 @@
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-    <h1 class="page-header">Send Email</h1>
-    <div class="well">
-      <%= form_for @meet do |f| %>
-        <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
-        </div>
-        <%= f.submit 'Send Email', class: 'btn btn-default' %>
-      <% end %>
+<% if current_user.try(:admin?) %>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1 class="page-header">Send Email</h1>
+      <div class="well">
+        <%= form_for @meet do |f| %>
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          <%= f.submit 'Send Email', class: 'btn btn-default' %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% else %>
+  <div class="jumbotron text-center">
+      <h1>Admin Only</h1>
+  </div>
+<% end %>
