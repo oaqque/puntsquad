@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <% if current_user.subscribed == true || current_user.admin == true %>
+    <!-- <% if current_user.subscribed == true || current_user.admin == true %> -->
     <div class="col-md-8">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -185,7 +185,7 @@
         </div>
       </div>
     </div>
-  <% else %>
+  <!-- <% else %> -->
     <div class="col-md-8">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
@@ -193,9 +193,10 @@
         </div>
         <p>Current bets are only available for paying subscribers.</p>
         <%= link_to "Join Now", subscription_path, class: 'btn btn-lg btn-primary'%>
+        <br />
       </div>
     </div>
-  <% end %>
+  <!-- <% end %> -- >
 
     <div class="col-md-4">
       <div class="panel panel-default text-center">
@@ -223,7 +224,7 @@
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 col-md-push-8">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
           <h3>User Settings</h3>
