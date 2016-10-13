@@ -4,6 +4,6 @@ class MeetMailer < ActionMailer::Base
   def meet_email(name, user)
     @name = name
     @user = user
-    mail(:to => user.email, :subject => "#{name} is ready")
+    mail(:to => user.email, :subject => "Your bets from #{name} are now ready")
   end
 end
