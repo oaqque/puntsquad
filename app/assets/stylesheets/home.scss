@@ -44,6 +44,33 @@
   color: white;
 }
 
+.betting_guide_row1 {
+  @media (min-width: $screen-sm-max) {
+    height: 475px;
+  }
+  @media (min-width: $screen-md-max) {
+    height: 400px;
+  }
+}
+
+.betting_guide_row2 {
+  @media (min-width: $screen-sm-max) {
+    height: 625px;
+  }
+  @media (min-width: $screen-md-max) {
+    height: 540px;
+  }
+}
+
+.betting_guide_row3 {
+  @media (min-width: $screen-sm-max) {
+    height: 525px;
+  }
+  @media (min-width: $screen-md-max) {
+    height: 500px;
+  }
+}
+
 /************** PLAN INFO ***************/
 .line-break {
   width: 100%;
