@@ -4,54 +4,63 @@
       <h1 class="page-header text-center">Select your Plan</h1>
     </div>
     <div class="col-md-4 text-center">
-      <div class="well">
-        <h3 class="plan-info-title">Weekly Plan</h3>
-        <h4>Sign up now for a cheap weekly fee of $15 per Week.</h4>
-        <div class="line-break"></div>
-        <ul class="list-unstyled plan-info-list">
-          <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
-          <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
-          <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
-          <li><i class="fa fa-line-chart"></i> All Sports</li>
-          <li><i class="fa fa-usd"></i> Low Commitment</li>
-        </ul>
-        <%= link_to new_subscription_path(:plan => 1040), class: 'btn btn-primary btn-lg btn-block' do %>
-         <h1>$15 <sup>/ week</sup></h1>
-        <% end %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="plan-info-title">Weekly Plan</h3>
+          <h4>Sign up now for a cheap weekly fee of $15 per Week.</h4>
+        </div>
+        <div class="panel-body">
+          <ul class="list-unstyled plan-info-list">
+            <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
+            <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
+            <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
+            <li><i class="fa fa-line-chart"></i> All Sports</li>
+            <li><i class="fa fa-usd"></i> Low Commitment</li>
+          </ul>
+          <%= link_to new_subscription_path(:plan => 1040), class: 'btn btn-primary btn-lg btn-block' do %>
+           <h1>$15 <sup>/ week</sup></h1>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col-md-4 text-center recommended-value">
-      <div class="well">
-        <h3 class="plan-info-title">Monthly Plan</h3>
-        <h4>Sign up now for a cheap monthly fee of $49 per month.</h4>
-        <div class="line-break"></div>
-        <ul class="list-unstyled plan-info-list">
-          <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
-          <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
-          <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
-          <li><i class="fa fa-line-chart"></i> All Sports</li>
-          <li><i class="fa fa-usd"></i> <strong>Save 20% Per Month!</strong></li>
-        </ul>
-        <%= link_to new_subscription_path(:plan => 1050), class: 'btn btn-primary btn-lg btn-block' do %>
-          <h1>$49 <sup>/ month</sup></h1>
-        <% end %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="plan-info-title">Monthly Plan</h3>
+          <h4>Sign up now for a cheap monthly fee of $49 per month.</h4>
+        </div>
+        <div class="panel-body">
+          <ul class="list-unstyled plan-info-list">
+            <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
+            <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
+            <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
+            <li><i class="fa fa-line-chart"></i> All Sports</li>
+            <li><i class="fa fa-usd"></i> <strong>Save 20% Per Month!</strong></li>
+          </ul>
+          <%= link_to new_subscription_path(:plan => 1050), class: 'btn btn-primary btn-lg btn-block' do %>
+            <h1>$49 <sup>/ month</sup></h1>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col-md-4 text-center">
-      <div class="well">
-        <h3 class="plan-info-title">Yearly Plan</h3>
-        <h4>Sign up now for a cheap yearly fee of $499 per year.</h4>
-        <div class="line-break"></div>
-        <ul class="list-unstyled plan-info-list">
-          <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
-          <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
-          <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
-          <li><i class="fa fa-line-chart"></i> All Sports</li>
-          <li><i class="fa fa-usd"></i> <strong>Save 35% Per Year!</strong></li>
-        </ul>
-        <%= link_to new_subscription_path(:plan => 1060), class: 'btn btn-primary btn-lg btn-block' do %>
-          <h1>$499 <sup>/ year </sup></h1>
-        <% end %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="plan-info-title">Yearly Plan</h3>
+          <h4>Sign up now for a cheap yearly fee of $499 per year.</h4>
+        </div>
+        <div class="panel-body">
+          <ul class="list-unstyled plan-info-list">
+            <li><i class="fa fa-trophy"></i> Daily Value Picks</li>
+            <li><i class="fa fa-bar-chart"></i> Detailed Result Analysis</li>
+            <li><i class="fa fa-envelope-o"></i> Daily Email Updates</li>
+            <li><i class="fa fa-line-chart"></i> All Sports</li>
+            <li><i class="fa fa-usd"></i> <strong>Save 35% Per Year!</strong></li>
+          </ul>
+          <%= link_to new_subscription_path(:plan => 1060), class: 'btn btn-primary btn-lg btn-block' do %>
+            <h1>$499 <sup>/ year </sup></h1>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
