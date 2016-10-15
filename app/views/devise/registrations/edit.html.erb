@@ -1,11 +1,12 @@
 <div class="container">
   <div clas="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-1">
       <div class="panel panel-default panel-top">
         <div class="panel-heading text-center">
           <h2>Account Settings</h2>
         </div>
         <div class="panel-body">
+          <h3>Update Account Details</h3>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= devise_error_messages! %>
 
@@ -36,8 +37,16 @@
             <div class="actions">
               <%= f.submit "Update", class: "btn btn-primary btn-block" %>
             </div>
+          </div>
           <% end %>
-
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default panel-top">
+        <div class="panel-heading text-center">
+          <h3>Subscription Details</h3>
+        </div>
+        <div class="panel-body">
           <% if current_user.card_last4? %>
             <h4>Your Current Card on File</h4>
             <div>
@@ -47,49 +56,51 @@
               Expires <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %>
             </div>
           <% end %>
-
           <% if current_user.subscribed? %>
             <h3>Update Card</h3>
             <%= form_tag card_path, method: :put, id: "payment-form" do %>
-                <span class="payment-errors"></span>
+              <span class="payment-errors"></span>
 
-                <div class="form-row form-group">
-                  <label>Card Number</label>
-                  <input type="text" data-stripe="number" class="form-control" placeholder="4242 4242 4242 4242" />
-                </div>
+              <div class="form-row form-group">
+                <label>Card Number</label>
+                <input type="text" data-stripe="number" class="form-control" placeholder="4242 4242 4242 4242" />
+              </div>
 
-                <div class="form-row form-group">
-                  <label>CVC</label>
-                  <input type="text" data-stripe="cvc" class="form-control" placeholder="123" />
-                </div>
+              <div class="form-row form-group">
+                <label>CVC</label>
+                <input type="text" data-stripe="cvc" class="form-control" placeholder="123" />
+              </div>
 
-                <div class="form-row form-group">
-                    <label>
-                      <span>Expiration (MM/YYYY)</span>
+              <div class="form-row form-group">
+                  <label>
+                    <span>Expiration (MM/YYYY)</span>
 
-                    </label>
-                    <div class="row">
-                      <div class="col-xs-3">
-                        <input type="text" data-stripe="exp-month" class="form-control" placeholder="MM" />
-                      </div>
-                      <div class="col-xs-4">
-                        <input type="text" data-stripe="exp-year" class="form-control" placeholder="YYYYY"/>
-                      </div>
+                  </label>
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <input type="text" data-stripe="exp-month" class="form-control" placeholder="MM" />
                     </div>
-                </div>
-                <input type="hidden" name="plan_id" value="<%= @plan_id %>" />
-                <button type="submit" class="btn btn-block btn-primary">Update Card</button>
+                    <div class="col-xs-4">
+                      <input type="text" data-stripe="exp-year" class="form-control" placeholder="YYYYY"/>
+                    </div>
+                  </div>
+              </div>
+              <input type="hidden" name="plan_id" value="<%= @plan_id %>" />
+              <button type="submit" class="btn btn-block btn-primary">Update Card</button>
 
-              <% end %>
+            <% end %>
+          <% end %>
         </div>
-        <div class="panel-footer">
-          <h4>Unhappy?</h4>
+        <% if current_user.subscribed? %>
+          <div class="panel-footer">
+            <h4>Unhappy?</h4>
 
-          <p><%= button_to "Cancel my Subscription", subscription_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
+            <p><%= button_to "Cancel my Subscription", subscription_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
 
-        </div>
+          </div>
         <% end %>
       </div>
     </div>
+
   </div>
 </div>

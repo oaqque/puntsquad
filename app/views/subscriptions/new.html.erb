@@ -8,20 +8,6 @@
           <h4>$<%= @data_amount %></h4>
         </div>
         <div class="panel-body">
-          <% if current_user.card_last4? %>
-            <div class="card-on-file">
-              <h4>Your Current Card on File</h4>
-              <div>
-                <%= current_user.card_type %> **** **** **** <%= current_user.card_last4 %>
-              </div>
-              <div>
-                Expires <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %>
-              </div>
-              <p>Leave form below empty and press submit payment to use current card on file.</p>
-            </div>
-
-          <% end %>
-
           <%= form_tag subscription_path, id: "payment-form" do %>
               <div class="card-fields">
                 <span class="payment-errors"></span>

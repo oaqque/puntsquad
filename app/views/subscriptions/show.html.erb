@@ -7,7 +7,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="plan-info-title">Weekly Plan</h3>
-          <h4>Sign up now for a cheap weekly fee of $15 per Week.</h4>
+          <h4>$15 per Week</h4>
         </div>
         <div class="panel-body">
           <ul class="list-unstyled plan-info-list">
@@ -17,9 +17,7 @@
             <li><i class="fa fa-line-chart"></i> All Sports</li>
             <li><i class="fa fa-usd"></i> Low Commitment</li>
           </ul>
-          <%= link_to new_subscription_path(:plan => 1040), class: 'btn btn-primary btn-lg btn-block' do %>
-           <h1>$15 <sup>/ week</sup></h1>
-          <% end %>
+          <%= link_to "Weekly Plan", new_subscription_path(:plan => 1040), class: 'btn btn-primary btn-lg btn-block' %>
         </div>
       </div>
     </div>
@@ -27,7 +25,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="plan-info-title">Monthly Plan</h3>
-          <h4>Sign up now for a cheap monthly fee of $49 per month.</h4>
+          <h4>$49 per Month</h4>
         </div>
         <div class="panel-body">
           <ul class="list-unstyled plan-info-list">
@@ -37,9 +35,7 @@
             <li><i class="fa fa-line-chart"></i> All Sports</li>
             <li><i class="fa fa-usd"></i> <strong>Save 20% Per Month!</strong></li>
           </ul>
-          <%= link_to new_subscription_path(:plan => 1050), class: 'btn btn-primary btn-lg btn-block' do %>
-            <h1>$49 <sup>/ month</sup></h1>
-          <% end %>
+          <%= link_to "Monthly Plan", new_subscription_path(:plan => 1050), class: 'btn btn-primary btn-lg btn-block' %>
         </div>
       </div>
     </div>
@@ -47,7 +43,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="plan-info-title">Yearly Plan</h3>
-          <h4>Sign up now for a cheap yearly fee of $499 per year.</h4>
+          <h4>$499 per Year</h4>
         </div>
         <div class="panel-body">
           <ul class="list-unstyled plan-info-list">
@@ -57,9 +53,7 @@
             <li><i class="fa fa-line-chart"></i> All Sports</li>
             <li><i class="fa fa-usd"></i> <strong>Save 35% Per Year!</strong></li>
           </ul>
-          <%= link_to new_subscription_path(:plan => 1060), class: 'btn btn-primary btn-lg btn-block' do %>
-            <h1>$499 <sup>/ year </sup></h1>
-          <% end %>
+          <%= link_to "Yearly Plan", new_subscription_path(:plan => 1060), class: 'btn btn-primary btn-lg btn-block' %>
         </div>
       </div>
     </div>

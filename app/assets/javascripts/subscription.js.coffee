@@ -4,13 +4,9 @@ jQuery ->
   $('#payment-form').submit (event) ->
     $form = $(this)
 
-    if $(".card-fields").hasClass("hidden")
-      # Use the default card
-      $form.get(0).submit()
-    else
-      # Disable the submit button to prevent repeated clicks
-      $form.find('button').prop 'disabled', true
-      Stripe.card.createToken $form, stripeResponseHandler
+    # Disable the submit button to prevent repeated clicks
+    $form.find('button').prop 'disabled', true
+    Stripe.card.createToken $form, stripeResponseHandler
 
     # Prevent the form from submitting with the default action
     false

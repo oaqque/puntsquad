@@ -220,22 +220,22 @@
         <%= link_to "View All Results", results_path, class: 'btn btn-default' %>
         <br/><br/>
       </div>
-    </div>
 
-    <div class="col-md-4">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h3>User Settings</h3>
+          <h3>Subscriptions</h3>
         </div>
         <h4><%= current_user.email %></h4>
         <p>
-          Subscription:
+          Subscription Status: <% if current_user.subscribed? %><span class="label label-success">Subscribed</span><% else %><span class="label label-danger">Unsubscribed</span><% end %>
         </p>
-        <br />
-        <%= link_to "See More", "", class: 'btn btn-default' %>
-        <br/><br/>
+        <% if current_user.subscribed? %>
+          <p><%= link_to "See More", edit_user_registration_path, class: 'btn btn-default' %></p>
+        </br/>
+        <% else %>
+          <p><%= link_to "Subscribe Now", "#", class: 'btn btn-success' %></p>
+        <% end %>
       </div>
     </div>
-
   </div>
 </div>
