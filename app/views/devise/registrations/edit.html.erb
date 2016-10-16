@@ -63,12 +63,12 @@
 
               <div class="form-row form-group">
                 <label>Card Number</label>
-                <input type="text" data-stripe="number" class="form-control" placeholder="4242 4242 4242 4242" />
+                <input type="text" maxlength="16" data-stripe="number" class="form-control" placeholder="4242 4242 4242 4242" />
               </div>
 
               <div class="form-row form-group">
                 <label>CVC</label>
-                <input type="text" data-stripe="cvc" class="form-control" placeholder="123" />
+                <input type="text" maxlength="3" data-stripe="cvc" class="form-control" placeholder="123" />
               </div>
 
               <div class="form-row form-group">
@@ -78,10 +78,10 @@
                   </label>
                   <div class="row">
                     <div class="col-xs-3">
-                      <input type="text" data-stripe="exp-month" class="form-control" placeholder="MM" />
+                      <input type="text" maxlength="2" data-stripe="exp-month" class="form-control" placeholder="MM" />
                     </div>
                     <div class="col-xs-4">
-                      <input type="text" data-stripe="exp-year" class="form-control" placeholder="YYYYY"/>
+                      <input type="text" maxlength="4" data-stripe="exp-year" class="form-control" placeholder="YYYYY"/>
                     </div>
                   </div>
               </div>
