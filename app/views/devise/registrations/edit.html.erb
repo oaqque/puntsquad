@@ -55,6 +55,8 @@
             <div>
               Expires <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %>
             </div>
+          <% else %>
+            <h4>No Current Subscription Data</h4>
           <% end %>
           <% if current_user.subscribed? %>
             <h3>Update Card</h3>
@@ -98,6 +100,13 @@
             <p><%= button_to "Cancel my Subscription", subscription_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
 
           </div>
+        <% else %>
+        <div class="panel-footer">
+          <h4>Unhappy?</h4>
+
+          <p><%= button_to "Delete my Account", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
+
+        </div>
         <% end %>
       </div>
     </div>
