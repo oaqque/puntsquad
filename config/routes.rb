@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :contacts
   resource :subscription
   resource :card
+  resource :package
   get '/bettingguide' => 'home#betting_guide'
 
   get '/analysis' => 'home#analysis'

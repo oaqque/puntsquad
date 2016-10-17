@@ -27,7 +27,7 @@ class HomeController < ApplicationController
   def analysis
     #Grab all the bets
     @bets = Bet.all
-    @sum = 0 
+    @sum = 0
 
     #Separate the bets into odds less than 3
     #Separate the bets into odds between 3 and 7

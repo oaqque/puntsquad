@@ -33,6 +33,37 @@
   max-height: 30vh;
 }
 
+/************** PLAN INFO ***************/
+
+.plans h1, .plans h2, .plans h3 {
+  color: $dark-grey;
+}
+
+.line-break {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+.plan-info-list li {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.plan-info > .panel-heading {
+  background-color: $dark-grey;
+}
+
+.plan-info .panel-heading h5, .plan-info .panel-heading h1 {
+  color: white;
+}
+
+.plan-info {
+}
+
+.plans .panel-body {
+}
+
+
 /************** FAQ ***************/
 
 .jumbotron.faq {
@@ -69,28 +100,6 @@
   @media (min-width: $screen-md-max) {
     height: 500px;
   }
-}
-
-/************** PLAN INFO ***************/
-.line-break {
-  width: 100%;
-  border-top: 1px solid #555;
-  margin-bottom: 10px;
-}
-.plan-info-list li {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.plan-info > .panel-heading {
-  background-color: $dark-grey;
-}
-
-.plan-info h5, .plan-info h1 {
-  color: white;
-}
-
-.plan-info {
 }
 
 /************** PANEL SLIDE ***************/

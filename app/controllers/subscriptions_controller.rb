@@ -11,16 +11,31 @@ class SubscriptionsController < ApplicationController
     plan_id = params[:plan]
     @plan_id = params[:plan]
     if plan_id == '1040'
-      @plan_description = "Weekly Subscription"
-      @data_amount = "15.00"
+      @plan_description = "Basic Weekly Plan"
+      @data_amount = "50.00"
     elsif plan_id == '1050'
-      @plan_description = "Monthly Subscription"
-      @data_amount = "49.00"
+      @plan_description = "Basic Monthly Plan"
+      @data_amount = "150.00"
     elsif plan_id == '1060'
-      @plan_description = "Yearly Subscription"
-      @data_amount = "499.00"
+      @plan_description = "Basic Quarterly Plan"
+      @data_amount = "400.00"
+    elsif plan_id == '1070'
+      @plan_description = "Basic Yearly Plan"
+      @data_amount = "1300"
+    elsif plan_id == '2040'
+      @plan_description = "Premium Weekly Plan"
+      @data_amount = "150.00"
+    elsif plan_id == '2050'
+      @plan_description = "Premium Monthly Plan"
+      @data_amount = "500.00"
+    elsif plan_id == '2060'
+      @plan_description = "Premium Quarterly Plan"
+      @data_amount = "1500"
+    elsif plan_id == '2070'
+      @plan_description = "Premium Yearly Plan"
+      @data_amount = "5000"
     else
-      flash[:notice] = "Error in Payment, please try again."
+      flash[:notice] = "Please Select a Plan First."
     end
   end
 
@@ -28,6 +43,25 @@ class SubscriptionsController < ApplicationController
     # Get Plan ID and Stripe Token
     plan_id = params[:plan_id]
     token = params[:stripeToken]
+
+    # For updating the current_user Package
+    if plan_id == '1040'
+      package = 'Basic Weekly'
+    elsif plan_id == '1050'
+      package = 'Basic Monthly'
+    elsif plan_id == '1060'
+      package = 'Basic Quarterly'
+    elsif plan_id == '1070'
+      package = 'Basic Yearly'
+    elsif plan_id == '2040'
+      package = 'Premium Weekly'
+    elsif plan_id == '2050'
+      package = 'Premium Monthly'
+    elsif plan_id == '2060'
+      package = 'Premium Quarterly'
+    elsif plan_id == '2070'
+      package = 'Premium Yearly'
+    end
 
     # Create a Stripe Customer
     begin
@@ -44,7 +78,8 @@ class SubscriptionsController < ApplicationController
 
       options = {
         stripeid: customer.id,
-        stripe_subscription_id: subscription.id
+        stripe_subscription_id: subscription.id,
+        package: package
       }
 
       options.merge!(
@@ -95,7 +130,7 @@ class SubscriptionsController < ApplicationController
     subscription = customer.subscriptions.retrieve(current_user.stripe_subscription_id)
     subscription.delete
 
-    current_user.update(stripe_subscription_id: nil)
+    current_user.update(stripe_subscription_id: nil, package: nil)
 
     redirect_to root_path
     flash[:notice] = "Your subscription has been cancelled"
@@ -106,9 +141,9 @@ class SubscriptionsController < ApplicationController
 
   private
     def select_plan
-      unless params[:plan] && (params[:plan] == '1040' || params[:plan] == '1050' || params[:plan] == '1060')
+      unless params[:plan] && (params[:plan] == '1040' || params[:plan] == '1050' || params[:plan] == '1060' || params[:plan] == '1070' || params[:plan] == '2040' || params[:plan] == '2050' || params[:plan] == '2060' || params[:plan] == '2070')
+        redirect_to subscription_path
         flash[:notice] = "Please select the membership plan you wish to buy."
-        redirect_to subscription_index_path
       end
     end
 

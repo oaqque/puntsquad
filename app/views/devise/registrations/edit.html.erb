@@ -3,7 +3,7 @@
     <div class="col-md-6 col-md-offset-1">
       <div class="panel panel-default panel-top">
         <div class="panel-heading text-center">
-          <h2>Account Settings</h2>
+          <h3>Account Settings</h3>
         </div>
         <div class="panel-body">
           <h3>Update Account Details</h3>
@@ -40,11 +40,171 @@
           </div>
           <% end %>
       </div>
+      <% if current_user.package? %>
+      <div class="panel panel-default">
+        <div class="panel-heading text-center ">
+          <h3>Subscription Settings</h3>
+        </div>
+        <div class="panel-body">
+          <h4>
+            Current Package: <%= current_user.package %>
+          </h4>
+          <% if current_user.package != 'Premium Yearly' %><h5>Upgrade your Subscription Package</h5><% end %>
+          <% if current_user.package == 'Basic Weekly' %>
+            <%= form_tag package_path, method: :put do %>
+              <div class="form-group">
+                <div class="radio">
+                  <label><input type="radio" name="package" value="1050">Basic Monthly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="1060">Basic Quarterly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="1070">Basic Yearly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2040">Premium Weekly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
+            <% end %>
+          <% end %>
+
+          <% if current_user.package == 'Basic Monthly' %>
+            <%= form_tag package_path, method: :put do %>
+              <div class="form-group">
+                <div class="radio">
+                  <label><input type="radio" name="package" value="1060">Basic Quarterly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="1070">Basic Yearly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2040">Premium Weekly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
+            <% end %>
+          <% end %>
+
+          <% if current_user.package == 'Basic Quarterly' %>
+            <%= form_tag package_path, method: :put do %>
+              <div class="form-group">
+                <div class="radio">
+                  <label><input type="radio" name="package" value="1070">Basic Yearly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2040">Premium Weekly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
+            <% end %>
+          <% end %>
+
+          <% if current_user.package == 'Basic Yearly' %>
+            <%= form_tag package_path, method: :put do %>
+              <div class="form-group">
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2040">Premium Weekly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
+            <% end %>
+          <% end %>
+
+          <% if current_user.package == 'Premium Weekly' %>
+            <%= form_tag package_path, method: :put do %>
+              <div class="form-group">
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
+            <% end %>
+          <% end %>
+
+          <% if current_user.package == 'Premium Monthly' %>
+            <%= form_tag package_path, method: :put do %>
+              <div class="form-group">
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
+            <% end %>
+          <% end %>
+
+          <% if current_user.package == 'Premium Quarterly' %>
+            <%= form_tag package_path, method: :put do %>
+              <div class="form-group">
+                <div class="radio">
+                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
+            <% end %>
+          <% end %>
+        </div>
+        <% if current_user.package != 'Premium Yearly' %>
+          <div class="panel-footer">
+            <h5>Details:</h5>
+            <p>
+              If you are part way through your subscription and choose to upgrade, the excess money you have paid for the subscription will be credited from your next bill.
+            </p>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
     </div>
     <div class="col-md-4">
       <div class="panel panel-default panel-top">
         <div class="panel-heading text-center">
-          <h3>Subscription Details</h3>
+          <h3>Payment Details</h3>
         </div>
         <div class="panel-body">
           <% if current_user.card_last4? %>
@@ -87,7 +247,6 @@
                     </div>
                   </div>
               </div>
-              <input type="hidden" name="plan_id" value="<%= @plan_id %>" />
               <button type="submit" class="btn btn-block btn-primary">Update Card</button>
 
             <% end %>
