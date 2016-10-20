@@ -53,6 +53,8 @@ gem 'aws-sdk', '< 2.0'
 gem 'will_paginate', '~> 3.1.0'
 # Bootstrap Gem for will_paginate
 gem 'will_paginate-bootstrap'
+# Handling Stripe Webhooks
+gem 'stripe_event'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
