@@ -50,10 +50,10 @@
 .current-profit-number {
   font-family: 'Lobster', cursive;
   @media (min-width: $screen-md-max) {
-    font-size: 15em;
+    font-size: 13em;
   }
   @media (max-width: $screen-md-max) {
-    font-size: 10em;
+    font-size: 9em;
   }
   @media (max-width: $screen-xs-max) {
     font-size: 6em;
