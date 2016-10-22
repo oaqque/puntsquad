@@ -49,7 +49,15 @@
 
 .current-profit-number {
   font-family: 'Lobster', cursive;
-  font-size: 10vh;
+  @media (min-width: $screen-md-max) {
+    font-size: 15em;
+  }
+  @media (max-width: $screen-md-max) {
+    font-size: 10em;
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: 6em;
+  }
 }
 
 .current-profit-units {
