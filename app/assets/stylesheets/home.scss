@@ -43,9 +43,13 @@
   background-color: $dark-grey;
 }
 
-.current-profit h1, .current-profit h2 {
-  color: white;
+.current-profit h1 {
+  color: $primary-color;
 }
+
+ .current-profit h2 {
+   color: white;
+ }
 
 .current-profit-number {
   font-family: 'Lobster', cursive;
@@ -58,6 +62,7 @@
   @media (max-width: $screen-xs-max) {
     font-size: 6em;
   }
+
 }
 
 .current-profit-units {
