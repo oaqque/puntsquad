@@ -33,6 +33,46 @@
   max-height: 30vh;
 }
 
+/************* CURRENT PROFIT WELL ****************/
+.current-profit {
+}
+
+.current-profit .well {
+  border: 0;
+  border-radius: 7px;
+  background-color: $dark-grey;
+}
+
+.current-profit h1, .current-profit h2 {
+  color: white;
+}
+
+.current-profit-number {
+  font-family: 'Lobster', cursive;
+  font-size: 10vh;
+}
+
+.current-profit-units {
+  font-family: 'Lobster', cursive;
+}
+
+/************* WHAT WE DO ****************/
+
+.what-we-do-title {
+  color: $dark-grey;
+}
+
+.what-we-do h3 {
+  color: white;
+}
+
+.what-we-do .well {
+  border: 0;
+  border-radius: 7px;
+  background-color: $dark-grey;
+  color: white;
+}
+
 /************** PLAN INFO ***************/
 
 .plans h1, .plans h2, .plans h3 {
@@ -102,53 +142,14 @@
   }
 }
 
-/************** PANEL SLIDE ***************/
-
-.panel-slide {
-  height: 300px;
-  border: 0px;
-  border-radius: 0px;
-  overflow: hidden;
-  position: relative;
-  padding: 10px;
-  margin-bottom: 10px;
-  transition: 0.3s;
-  border-bottom: 15px solid $primary-color;
-}
-
-.what-we-do .col-md-12 {
+/************** TRAIL AREA ***************/
+.trial .well {
   background-color: $dark-grey;
-}
-
-.panel-slide p {
+  border-radius: 5px;
+  border: 0;
   color: white;
 }
 
-.panel-slide p, .panel-slide a {
-  transform: translate3d(0px, -395px, 0px);
-  transition: 0.3s;
-
-}
-
-.panel-slide:hover p, .panel-slide:hover a {
-  transform: translate3d(0px, -95px, 0px);
-  transition: 0.3s;
-}
-
-.panel-slide img, .panel-slide h3 {
-  transform: translate3d(0px, 45px, 0px);
-  transition: 0.3s;
+.trial h1, .trial h5 {
   color: white;
-}
-
-.panel-slide:hover img, .panel-slide:hover h3 {
-  transform: translate3d(0px, 345px, 0px);
-  transition: 0.3s;
-}
-
-.panel-slide:hover {
-  background-color: $dark-grey;
-  transition: 0.3s;
-  background-image: none;
-  opacity: 0.99;
 }

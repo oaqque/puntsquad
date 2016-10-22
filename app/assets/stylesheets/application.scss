@@ -19,6 +19,7 @@
 @import "bets";
 @import "home";
 @import "results";
+@import url('https://fonts.googleapis.com/css?family=Lobster');
 /************** NAVIGATION ***************/
 .navbar {
   border: 0;
@@ -103,7 +104,7 @@
 
 /************** FOOTER ***************/
 .footer {
-  margin-top: 50px;
+  margin-top: 15px;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -231,11 +232,7 @@ h2,
 h3 {
   color: $primary-color;
 }
-//    WELLS
-.well {
-  background-color: white;
-  border-color: $light-grey;
-}
+
 //    ALERTS
 .alert-notice {
   color: $alert-color;
