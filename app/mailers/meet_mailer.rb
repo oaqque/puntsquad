@@ -7,6 +7,4 @@ class MeetMailer < ActionMailer::Base
     mail(:to => user.email, :subject => "Your bets from #{name} are now ready")
   end
 
-  def payment_failure(email)
-  end
 end

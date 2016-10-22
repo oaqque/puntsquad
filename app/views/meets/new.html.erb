@@ -5,10 +5,10 @@
       <div class="well">
         <%= form_for @meet do |f| %>
           <div class="form-group">
-            <%= f.label :name %>
+            <%= f.label "Meet Update" %>
             <%= f.text_field :name, class: 'form-control' %>
           </div>
-          <%= f.submit 'Send Email', class: 'btn btn-default' %>
+          <%= f.submit 'Send Meet Update Email', class: 'btn btn-default' %>
         <% end %>
       </div>
     </div>
