@@ -1,9 +1,11 @@
-<div class="row text-center current-profit">
+<div class="row text-center">
   <div class="col-md-12">
-    <div class="well">
-      <h1 class="current-profit-number"><strong>+</strong><%= @total_profit.round %>%</h1>
-      <h2 class="current-profit-units">return on betting roll 2016</h2>
-    </div>
+    <%= link_to results_path, class: 'current-profit' do %>
+      <div class="well">
+        <h1 class="current-profit-number"><strong>+</strong><%= @total_profit.round %>%</h1>
+        <h2 class="current-profit-units">return on betting roll 2016</h2>
+      </div>
+    <% end %>
   </div>
 </div>
 

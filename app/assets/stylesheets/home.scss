@@ -34,7 +34,23 @@
 }
 
 /************* CURRENT PROFIT WELL ****************/
+
 .current-profit {
+  opacity: 1;
+  transition: ease-in 0.5s;
+}
+
+.current-profit :hover {
+  opacity: 0.9;
+  transition: ease-in 0.3s;
+}
+
+.current-profit :active {
+  text-decoration: none;
+}
+
+.current-profit :visited {
+  text-decoration: none;
 }
 
 .current-profit .well {
