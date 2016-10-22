@@ -18,7 +18,6 @@
           <table class="table">
             <tr>
               <th>Game</th>
-              <th>Sport</th>
               <th>Bet Placed</th>
               <th>Units Placed</th>
               <th>Odds</th>
@@ -28,27 +27,6 @@
             <tr>
               <td>
                 <strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong>
-              </td>
-              <td>
-                <% if bet.sport == 1 %>
-                <%= link_to "Basketball", results_by_sport_path(:sport=>bet.sport) %>
-                <% elsif bet.sport == 2 %>
-                <%= link_to "NRL", results_by_sport_path(:sport=>bet.sport) %>
-                <% elsif bet.sport == 3 %>
-                <%= link_to "Super Rugby", results_by_sport_path(:sport=>bet.sport) %>
-                <% elsif bet.sport == 4 %>
-                <%= link_to "AFL", results_by_sport_path(:sport=>bet.sport) %>
-                <% elsif bet.sport == 5 %>
-                <%= link_to "eSports", results_by_sport_path(:sport=>bet.sport) %>
-                <% elsif bet.sport == 6 %>
-                <%= link_to "Ice Hockey", results_by_sport_path(:sport=>bet.sport) %>
-                <% elsif bet.sport == 7 %>
-                <%= link_to "Horse Racing", results_by_sport_path(:sport=>bet.sport) %>
-                <% elsif bet.sport == 8 %>
-                <%= link_to "Tennis", results_by_sport_path(:sport=>bet.sport) %>
-                <% elsif bet.sport == 9 %>
-                <%= link_to "NFL", results_by_sport_path(:sport=>bet.sport) %>
-                <% end %>
               </td>
               <td><%= bet.bet_placed %></td>
               <td><%= bet.units_placed %></td>
@@ -233,7 +211,7 @@
           <p><%= link_to "See More", edit_user_registration_path, class: 'btn btn-default' %></p>
         </br/>
         <% else %>
-          <p><%= link_to "Subscribe Now", "#", class: 'btn btn-success' %></p>
+          <p><%= link_to "Subscribe Now", "#", class: 'btn btn-default disabled' %></p>
         <% end %>
       </div>
     </div>

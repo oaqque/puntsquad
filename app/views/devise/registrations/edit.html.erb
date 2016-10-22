@@ -1,274 +1,54 @@
 <div class="container">
-  <div clas="row">
-    <div class="col-md-6 col-md-offset-1">
-      <div class="panel panel-default panel-top">
-        <div class="panel-heading text-center">
-          <h3>Account Settings</h3>
-        </div>
-        <div class="panel-body">
-          <h3>Update Account Details</h3>
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-            <%= devise_error_messages! %>
+    <div clas="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default panel-top">
+                <div class="panel-heading text-center">
+                    <h3>Account Settings</h3>
+                </div>
+                <div class="panel-body">
+                    <h3>Update Account Details</h3>
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                    <%= devise_error_messages! %>
 
-            <div class="field form-group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, class: "form-control" %>
-            </div>
-
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
-
-            <div class="field">
-              <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-              <%= f.password_field :password, autocomplete: "off", class: "form-control"  %>
-            </div>
-
-            <div class="field">
-              <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
-            </div>
-
-            <div class="field">
-              <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-              <%= f.password_field :current_password, autocomplete: "off", class: "form-control"  %>
-            </div>
-            <br />
-            <div class="actions">
-              <%= f.submit "Update", class: "btn btn-primary btn-block" %>
-            </div>
-          </div>
-          <% end %>
-      </div>
-      <% if current_user.package? %>
-      <div class="panel panel-default">
-        <div class="panel-heading text-center ">
-          <h3>Subscription Settings</h3>
-        </div>
-        <div class="panel-body">
-          <h4>
-            Current Package: <%= current_user.package %>
-          </h4>
-          <% if current_user.package != 'Premium Yearly' %><h5>Upgrade your Subscription Package</h5><% end %>
-          <% if current_user.package == 'Basic Weekly' %>
-            <%= form_tag package_path, method: :put do %>
-              <div class="form-group">
-                <div class="radio">
-                  <label><input type="radio" name="package" value="1050">Basic Monthly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="1060">Basic Quarterly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="1070">Basic Yearly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2040">Premium Weekly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
-            <% end %>
-          <% end %>
-
-          <% if current_user.package == 'Basic Monthly' %>
-            <%= form_tag package_path, method: :put do %>
-              <div class="form-group">
-                <div class="radio">
-                  <label><input type="radio" name="package" value="1060">Basic Quarterly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="1070">Basic Yearly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2040">Premium Weekly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
-            <% end %>
-          <% end %>
-
-          <% if current_user.package == 'Basic Quarterly' %>
-            <%= form_tag package_path, method: :put do %>
-              <div class="form-group">
-                <div class="radio">
-                  <label><input type="radio" name="package" value="1070">Basic Yearly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2040">Premium Weekly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
-            <% end %>
-          <% end %>
-
-          <% if current_user.package == 'Basic Yearly' %>
-            <%= form_tag package_path, method: :put do %>
-              <div class="form-group">
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2040">Premium Weekly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
-            <% end %>
-          <% end %>
-
-          <% if current_user.package == 'Premium Weekly' %>
-            <%= form_tag package_path, method: :put do %>
-              <div class="form-group">
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2050">Premium Monthly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
-            <% end %>
-          <% end %>
-
-          <% if current_user.package == 'Premium Monthly' %>
-            <%= form_tag package_path, method: :put do %>
-              <div class="form-group">
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2060">Premium Quarterly Package</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
-            <% end %>
-          <% end %>
-
-          <% if current_user.package == 'Premium Quarterly' %>
-            <%= form_tag package_path, method: :put do %>
-              <div class="form-group">
-                <div class="radio">
-                  <label><input type="radio" name="package" value="2070">Premium Yearly Package</label>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-block btn-primary">Change Plan</button>
-            <% end %>
-          <% end %>
-        </div>
-        <% if current_user.package != 'Premium Yearly' %>
-          <div class="panel-footer">
-            <h5>Details:</h5>
-            <p>
-              If you are part way through your subscription and choose to upgrade, the excess money you have paid for the subscription will be credited from your next bill.
-            </p>
-          </div>
-        <% end %>
-      </div>
-      <% end %>
-    </div>
-    <div class="col-md-4">
-      <div class="panel panel-default panel-top">
-        <div class="panel-heading text-center">
-          <h3>Payment Details</h3>
-        </div>
-        <div class="panel-body">
-          <% if current_user.card_last4? %>
-            <h4>Your Current Card on File</h4>
-            <div>
-              <%= current_user.card_type %> **** **** **** <%= current_user.card_last4 %>
-            </div>
-            <div>
-              Expires <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %>
-            </div>
-          <% else %>
-            <h4>No Current Subscription Data</h4>
-          <% end %>
-          <% if current_user.subscribed? %>
-            <h3>Update Card</h3>
-            <%= form_tag card_path, method: :put, id: "payment-form" do %>
-              <span class="payment-errors"></span>
-
-              <div class="form-row form-group">
-                <label>Card Number</label>
-                <input type="text" maxlength="16" data-stripe="number" class="form-control" placeholder="4242 4242 4242 4242" />
-              </div>
-
-              <div class="form-row form-group">
-                <label>CVC</label>
-                <input type="text" maxlength="3" data-stripe="cvc" class="form-control" placeholder="123" />
-              </div>
-
-              <div class="form-row form-group">
-                  <label>
-                    <span>Expiration (MM/YYYY)</span>
-
-                  </label>
-                  <div class="row">
-                    <div class="col-xs-3">
-                      <input type="text" maxlength="2" data-stripe="exp-month" class="form-control" placeholder="MM" />
+                    <div class="field form-group">
+                        <%= f.label :email %><br/>
+                        <%= f.email_field :email, autofocus: true, class: "form-control" %>
                     </div>
-                    <div class="col-xs-4">
-                      <input type="text" maxlength="4" data-stripe="exp-year" class="form-control" placeholder="YYYYY"/>
+
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <div>Currently waiting confirmation for:
+                        <%= resource.unconfirmed_email %></div>
+                    <% end %>
+
+                    <div class="field">
+                        <%= f.label :password %>
+                        <i>(leave blank if you don't want to change it)</i><br/>
+                        <%= f.password_field :password, autocomplete: "off", class: "form-control"  %>
                     </div>
-                  </div>
-              </div>
-              <button type="submit" class="btn btn-block btn-primary">Update Card</button>
 
-            <% end %>
-          <% end %>
+                    <div class="field">
+                        <%= f.label :password_confirmation %><br/>
+                        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
+                    </div>
+
+                    <div class="field">
+                        <%= f.label :current_password %>
+                        <i>(we need your current password to confirm your changes)</i><br/>
+                        <%= f.password_field :current_password, autocomplete: "off", class: "form-control"  %>
+                    </div>
+                    <br/>
+                    <div class="actions">
+                        <%= f.submit "Update", class: "btn btn-primary btn-block" %>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <h4>Unhappy?</h4>
+
+                    <p><%= button_to "Delete my Account", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
+
+                </div>
+                <% end %>
+            </div>
         </div>
-        <% if current_user.subscribed? %>
-          <div class="panel-footer">
-            <h4>Unhappy?</h4>
-
-            <p><%= button_to "Cancel my Subscription", subscription_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
-
-          </div>
-        <% else %>
-        <div class="panel-footer">
-          <h4>Unhappy?</h4>
-
-          <p><%= button_to "Delete my Account", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
-
-        </div>
-        <% end %>
-      </div>
     </div>
-
-  </div>
 </div>
