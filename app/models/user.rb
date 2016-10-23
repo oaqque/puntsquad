@@ -4,8 +4,4 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  def subscribed?
-    stripe_subscription_id?
-  end
-
 end

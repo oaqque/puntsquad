@@ -162,17 +162,6 @@
         </div>
       </div>
     </div>
-    <!--
-    <div class="col-md-8">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h3 class="text-center">Current Bets</h3>
-        </div>
-        <p>Current bets are only available for paying subscribers.</p>
-        <%= link_to "Join Now", subscription_path, class: 'btn btn-lg btn-primary'%>
-        <br />
-      </div>
-    </div> -->
 
     <div class="col-md-4">
       <div class="panel panel-default text-center">
@@ -205,14 +194,9 @@
         </div>
         <h4><%= current_user.email %></h4>
         <p>
-          Subscription Status: <% if current_user.subscribed? %><span class="label label-success">Subscribed</span><% else %><span class="label label-danger">Unsubscribed</span><% end %>
+          Subscription Status: <span class="label label-danger">Unsubscribed</span>
         </p>
-        <% if current_user.subscribed? %>
-          <p><%= link_to "See More", edit_user_registration_path, class: 'btn btn-default' %></p>
-        </br/>
-        <% else %>
-          <p><%= link_to "Subscribe Now", "#", class: 'btn btn-default disabled' %></p>
-        <% end %>
+        <p><%= link_to "Subscribe Now", "#", class: 'btn btn-default disabled' %></p>
       </div>
     </div>
   </div>
