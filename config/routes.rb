@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  mount StripeEvent::Engine, at: '/stripe/webhook' # provide a custom path
-
-  post 'webhooks' => 'subscribers#webhooks'
   resources :posts
   devise_for :users, controllers: {registrations: 'users/registrations'}
 
@@ -14,8 +11,6 @@ Rails.application.routes.draw do
 
   resources :bets
   resources :contacts
-  resource :subscription
-  resource :card
   resource :package
   get '/bettingguide' => 'home#betting_guide'
 
