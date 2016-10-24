@@ -40,41 +40,16 @@
         <div class="panel-body">
           <%= area_chart @bets.group_by_day(:date_of_bet).order("day asc").sum(:profit_or_loss).map { |x,y| { x => (@sum += y)} }.reduce({}, :merge), xtitle: "Date", ytitle: "Units", colors: ["337ab7", "#000"], label: "Units:", id: "result-graph", height: "400px", library: {backgroundColor: "fff"}  %>
         </div>
+        <div class="panel-footer">
+          <h5>Understanding the Results</h5>
+          <p>
+            If you want to learn more about what these results mean and how ROI is calculated take a look at our comprehensive <%= link_to bettingguide_path do %> Betting Explained Guide<% end %>.
+          </p>
+        </div>
       </div>
     </div>
     <div class="col-md-3">
       <%= render 'archive' %>
-    </div>
-  </div>
-  <h2 class="page-header text-center">Understanding the Results</h2>
-  <div class="row text-center">
-
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3>Reading the Results</h3>
-        </div>
-        <div class="panel-body">
-          <h1><i class="fa fa-question fa-2x"></i><i class="fa fa-question fa-4x"></i><i class="fa fa-question fa-2x"></i></h1>
-          <p>At Punt Squad we provide a database of statistics and information to log our bets and display them in a manner that makes it easy for you to follow our progress. Our results are measured in terms of the number of units we place on games and then the number of units returned.</p>
-          <p>You can sort through the archives and look at statistics from individual months or days.</p>
-          <p>If you want a more detailed analysis of our betting and results, take a look at our <%= link_to "Blog", "" %>. We provide weekly updates on the units we place in order to further explain outcomes.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3>What is ROI?</h3>
-        </div>
-        <div class="panel-body">
-          <h1><i class="fa fa-percent fa-4x"></i></h1>
-          <p>The best indication of long-term success is the Return on Investment or ROI. This common performance measure is used to evaluate the efficiency of our tips.</p>
-          <p>To Calculate ROI we use the formula: </p>
-          <p>ROI = net profit / cost of investment</p>
-          <p>What this means is that for every Unit you are placing down, the ROI is the percentage profit you are making over a long period of time.</p>
-        </div>
-      </div>
     </div>
   </div>
 </div>
