@@ -14,12 +14,12 @@
             <div class="panel-body">
               <h3>Hey <%= @email %>!</h3>
               <p>
-                We're excited that you've chosen to join us in our punting journey, welcome to the team! Now we know you're excited as well, and you must have a lot of questions for us. Before you fire off any of those questions to our staff, make sure you take a looking at our <%= link_to bettingguide_path do %>comprehensive betting guide first<% end %>.
+                We're excited that you've chosen to join us in our punting journey, welcome to the team! Now we know you're excited as well, and you must have a lot of questions for us. Before you fire off any of those questions to our staff, make sure you take a looking at our <%= link_to 'comprehensive betting guide', bettingguide_path %>.
               </p>
               <p>Once you've done that, you can confirm your account email through the link below:</p>
               <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
               <p>
-                Enjoy! 
+                Enjoy!
               </p>
             </div>
           </div>
