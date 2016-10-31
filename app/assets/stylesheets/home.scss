@@ -100,6 +100,9 @@
   border-radius: 7px;
   background-color: $dark-grey;
   color: white;
+  @media (min-width: $screen-md-max) {
+    height: 350px;
+  }
 }
 
 /************** PLAN INFO ***************/
@@ -175,7 +178,7 @@
   background-color: #fff;
 }
 
-/************** TRAIL AREA ***************/
+/************** TRIAL AREA ***************/
 .trial .well {
   background-color: $dark-grey;
   border-radius: 5px;
