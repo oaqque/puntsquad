@@ -41,13 +41,13 @@
                         <%= f.submit "Update", class: "btn btn-primary btn-block" %>
                     </div>
                 </div>
+                <% end %>
                 <div class="panel-footer">
                     <h4>Unhappy?</h4>
 
                     <p><%= button_to "Delete my Account", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
 
                 </div>
-                <% end %>
             </div>
         </div>
     </div>
