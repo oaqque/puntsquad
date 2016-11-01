@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   resources :meets
 
+  # Mount route for Maktoub
+  mount Maktoub::Engine => '/maktoub'
+
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

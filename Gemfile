@@ -53,6 +53,9 @@ gem 'aws-sdk', '< 2.0'
 gem 'will_paginate', '~> 3.1.0'
 # Bootstrap Gem for will_paginate
 gem 'will_paginate-bootstrap'
+# Maktoub is a Ruby on Rails engine for email newsletters
+gem 'maktoub'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
