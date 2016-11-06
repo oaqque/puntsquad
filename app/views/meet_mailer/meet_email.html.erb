@@ -14,11 +14,8 @@
             <div class="panel-body">
               <h3>Hi, <%= @user.email %></h3>
               <p>
-                This email was sent to notify you that the bets from <%= "#{ @name }" %> for <%= Date.today %> are now available and ready to be placed. Click <a href="http://www.puntsquad.com">here</a> for more. 
+                This email was sent to notify you that the bets from <%= "#{ @name }" %> for <%= Date.today %> are now available and ready to be placed. Click <a href="http://www.puntsquad.com">here</a> for more.
               </p>
-            </div>
-            <div class="panel-footer">
-              <%= asm_group_unsubscribe_url %> | <%= asm_preferences_url %>
             </div>
           </div>
         </div>
