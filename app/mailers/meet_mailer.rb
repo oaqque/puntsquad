@@ -4,7 +4,7 @@ class MeetMailer < ActionMailer::Base
   def meet_email(name, user)
     @name = name
     @user = user
-    mail(:to => 'oaqque@me.com', :subject => "Your bets from #{name} are now ready")
+    mail(:to => user.email, :subject => "Your bets from #{name} are now ready")
     headers['X-SMTPAPI'] = '{"asm_group_id": 1503, "asm_groups_to_display": [1503, 1507]}'
   end
 
