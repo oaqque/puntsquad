@@ -22,6 +22,8 @@
             <h3 class="text-center">Tennis</h3>
           <% elsif @bet.sport == 9 %>
             <h3 class="text-center">NFL</h3>
+          <% elsif @bet.sport == 10 %>
+            <h3 class="text-center">Cricket</h3>
           <% end %>
           <ul class="list-unstyled list-group">
             <li class="list-group-item"><strong>Bet Placed:</strong> <%= @bet.bet_placed %></li>
