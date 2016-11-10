@@ -14,7 +14,7 @@ Maktoub.app_name = "PuntSquad" # your app name
 require "ostruct"
 Maktoub.subscribers_extractor do
   User.all.map do |i|
-    users << OpenStruct.new({name: i.email, email: i.email})
+    OpenStruct.new({name: i.email, email: i.email})
   end
 end
 
