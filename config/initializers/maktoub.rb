@@ -11,12 +11,12 @@ Maktoub.app_name = "PuntSquad" # your app name
 # pass a block to subscribers_extractor that returns an object that  reponds to :name and :email
 # (fields can be configured as shown below)
 
-# require "ostruct"
-# Maktoub.subscribers_extractor do
-#   (1..5).map do |i|
-#     users << OpenStruct.new({name: "tester#{i}", email: "test#{i}@example.com"})
-#   end
-# end
+require "ostruct"
+Maktoub.subscribers_extractor do
+  User.all.map do |i|
+    users << OpenStruct.new({name: i.email, email: i.email})
+  end
+end
 
 # uncomment lines below to change subscriber fields that contain email and
 # Maktoub.email_field = :address
