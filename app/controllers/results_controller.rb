@@ -102,7 +102,7 @@ class ResultsController < ApplicationController
     end
 
     #Grab Bet's from Today
-    @bets_by_day = @bets_by_day.paginate(:page => params[:page], per_page: 50)
+    @bets_by_day = @bets_by_day.paginate(:page => params[:page], per_page: 20)
 
     #Find Today's Date
     @today = @bets_by_day.first.date_of_bet
@@ -142,7 +142,7 @@ class ResultsController < ApplicationController
     @sum = 0
 
     #Listing Last 10 bets_by_sport
-    @latest_bets = @bets_by_sport.order('date_of_bet DESC').paginate(:page => params[:page], per_page: 100).order("resolved ASC, date_of_bet DESC, game ASC, updated_at ASC")
+    @latest_bets = @bets_by_sport.order('date_of_bet DESC').paginate(:page => params[:page], per_page: 20).order("resolved ASC, date_of_bet DESC, game ASC, updated_at ASC")
 
   end
 end
