@@ -2,40 +2,53 @@
   <div class="panel-heading">
     <h3>Archive</h3>
   </div>
-  <ul class="list-group">
-    <% @archive_by_month.each do |month, posts| %>
-    <li class="list-group-item"><%= link_to "#{month.strftime('%B %Y')}", results_by_year_and_month_path(:year=> month.strftime('%Y'), :month => month.strftime('%-m')) %></li>
-    <% end %>
-  </ul>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3>Sports</h3>
+  <div class="panel-body">
+    <p>
+      Take a peek at our past results for some detailed statistics and results! If you've got anymore questions feel free to send us a message.
+    </p>
+    <h5>Monthly Review</h5>
+    <div class="dropdown">
+      <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="monthArchive" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Select a Month
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="monthArchive">
+        <% @archive_by_month.each do |month, posts| %>
+        <li><%= link_to "#{month.strftime('%B %Y')}", results_by_year_and_month_path(:year=> month.strftime('%Y'), :month => month.strftime('%-m')) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <h5>Sports Review</h5>
+    <div class="dropdown">
+      <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="sportArchive" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Select a Sport
+        <span class="caret"></span>
+      </button>
+    <ul class="dropdown-menu" aria-labelledby="sportArchive">
+      <% @archive_by_sport.each do |sport, posts| %>
+      <% if sport == 1 %>
+      <li><%= link_to "Basketball", results_by_sport_path(:sport=>sport) %></li>
+      <% elsif sport == 2 %>
+      <li><%= link_to "NRL", results_by_sport_path(:sport=>sport) %></li>
+      <% elsif sport == 3 %>
+      <li><%= link_to "Super Rugby", results_by_sport_path(:sport=>sport) %></li>
+      <% elsif sport == 4 %>
+      <li><%= link_to "AFL", results_by_sport_path(:sport=>sport) %></li>
+      <% elsif sport == 5 %>
+      <li><%= link_to "eSports", results_by_sport_path(:sport=>sport) %></li>
+      <% elsif sport == 6 %>
+      <li><%= link_to "Ice Hockey", results_by_sport_path(:sport=>sport) %></li>
+      <% elsif sport == 7 %>
+      <li><%= link_to "Horse Racing", results_by_sport_path(:sport=>sport) %></li>
+      <% elsif sport == 8 %>
+      <li><%= link_to "Tennis (discontinued)", results_by_sport_path(:sport=>sport) %></li>
+      <% elsif sport == 9 %>
+      <li><%= link_to "NFL", results_by_sport_path(:sport=>sport) %></li>
+      <% elsif sport == 10 %>
+      <li><%= link_to "Cricket", results_by_sport_path(:sport=>sport) %></li>
+      <% end %>
+      <% end %>
+    </ul>
+    </div>
   </div>
-  <ul class="list-group">
-    <% @archive_by_sport.each do |sport, posts| %>
-    <% if sport == 1 %>
-    <li class="list-group-item"><%= link_to "Basketball", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 2 %>
-    <li class="list-group-item"><%= link_to "NRL", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 3 %>
-    <li class="list-group-item"><%= link_to "Super Rugby", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 4 %>
-    <li class="list-group-item"><%= link_to "AFL", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 5 %>
-    <li class="list-group-item"><%= link_to "eSports", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 6 %>
-    <li class="list-group-item"><%= link_to "Ice Hockey", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 7 %>
-    <li class="list-group-item"><%= link_to "Horse Racing", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 8 %>
-    <li class="list-group-item"><%= link_to "Tennis (discontinued)", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 9 %>
-    <li class="list-group-item"><%= link_to "NFL", results_by_sport_path(:sport=>sport) %></li>
-    <% elsif sport == 10 %>
-    <li class="list-group-item"><%= link_to "Cricket", results_by_sport_path(:sport=>sport) %></li>
-    <% end %>
-    <% end %>
-  </ul>
 </div>
