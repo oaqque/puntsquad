@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">Select a Package</h1>
+    <div class="row plans text-center">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default plan-info">
+
+          <div class="panel-heading text-center">
+            <h2>Basic Plan</h2>
+            <h5>Sports Only</h5>
+          </div>
+
+          <div class="panel-body">
+            <ul class="list-unstyled plan-info-list">
+              <li>
+                <i class="fa fa-trophy"></i>
+                Daily Value Picks</li>
+              <li>
+                <i class="fa fa-bar-chart"></i>
+                Detailed Result Analysis</li>
+              <li>
+                <i class="fa fa-envelope-o"></i>
+                Daily Email Updates</li>
+              <li>
+                <i class="fa fa-line-chart"></i>
+                All Sports Tips</li>
+            </ul>
+            <div class="line-break"></div>
+            <p>
+              * Free subscription guarantee for Quarterly and Yearly packages if we do not record a profit over the cycle.
+            </p>
+            <div class="line-break"></div>
+            <div class="row">
+              <div class="col-sm-3">
+                <h3>Weekly</h3>
+                <h2>$50</h2>
+                <h5>per Week</h5>
+              </div>
+              <div class="col-sm-3">
+                <h3>Monthly</h3>
+                <h2>$150</h2>
+                <h5>per Month</h5>
+              </div><div class="col-sm-3">
+                <h3>Quarterly*</h3>
+                <h2>$400</h2>
+                <h5>per Quarter</h5>
+              </div><div class="col-sm-3">
+                <h3>Yearly*</h3>
+                <h2>$1300</h2>
+                <h5>per Year</h5>
+              </div>
+            </div>
+            <div class="line-break"></div>
+            <div class="row">
+              <div class="col-sm-3">
+                <%= link_to "Select", payments_confirmation_path(:plan_id=>1), class: 'btn btn-primary btn-lg btn-block' %>
+              </div>
+              <div class="col-sm-3">
+                <%= link_to "Select", payments_confirmation_path(:plan_id=>2), class: 'btn btn-primary btn-lg btn-block' %>
+              </div>
+              <div class="col-sm-3">
+                <%= link_to "Select", payments_confirmation_path(:plan_id=>3), class: 'btn btn-primary btn-lg btn-block' %>
+              </div>
+              <div class="col-sm-3">
+                <%= link_to "Select", payments_confirmation_path(:plan_id=>4), class: 'btn btn-primary btn-lg btn-block' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

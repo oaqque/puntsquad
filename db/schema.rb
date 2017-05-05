@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161023032039) do
+ActiveRecord::Schema.define(version: 20170505114716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 20161023032039) do
     t.string "name"
   end
 
+  create_table "plans", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.boolean  "recurring"
+    t.string   "period"
+    t.integer  "cycles"
+    t.integer  "duration"
+    t.integer  "plan_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
@@ -71,6 +83,7 @@ ActiveRecord::Schema.define(version: 20161023032039) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "plan_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

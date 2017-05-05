@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get '/results/admin' => 'results#admin'
   get '/results/by_sport/:sport' => 'results#by_sport', :as => :results_by_sport
 
+  get '/payments' => 'payments#index'
+  get '/payments/confirmation' => 'payments#confirmation'
+  get '/payments/checkout', to: 'payments#checkout'
+
   resources :bets
   resources :contacts
   resource :package
