@@ -14,11 +14,13 @@ class PaymentsController < ApplicationController
   def paypal_url(return_path, plan_id)
     plan = Plan.find(plan_id)
     values = {
-        business: "billing@puntsquad.com",
-        no_shipping: 1,
+        business: "merchant-success@puntsquad.com",
+        no_shipping: 0,
         return: "#{Rails.application.secrets.app_host}#{return_path}",
+        rm: 2,
         notify_url: "#{Rails.application.secrets.app_host}/hook",
-        item_name: plan.name
+        item_name: plan.name,
+        currency_code: "AUD",
     }
     values = if plan.recurring
                 values.merge(
@@ -27,13 +29,7 @@ class PaymentsController < ApplicationController
                     p3: plan.duration,
                     t3: plan.period.first,
                     srt: plan.cycles,
-                )
-              else
-                values.merge(
-                    cmd: "_xclick",
-                    amount: plan.price,
-                    item_number: plan.id,
-                    quantity: '1'
+                    no_note: 1
                 )
               end
 

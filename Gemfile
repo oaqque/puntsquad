@@ -55,8 +55,6 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 # Maktoub is a Ruby on Rails engine for email newsletters
 gem 'maktoub'
-# PayPal Recurring Gem
-gem 'paypal-sdk-rest'
 
 
 # Use ActiveModel has_secure_password
