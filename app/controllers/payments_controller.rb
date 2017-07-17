@@ -28,7 +28,6 @@ class PaymentsController < ApplicationController
                     a3: plan.price,
                     p3: plan.duration,
                     t3: plan.period.first,
-                    srt: plan.cycles,
                     no_note: 1
                 )
               end
