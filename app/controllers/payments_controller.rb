@@ -40,6 +40,7 @@ class PaymentsController < ApplicationController
   def success
   end
 
-  def cancel
+  def cancelled_payment
   end
+  
 end

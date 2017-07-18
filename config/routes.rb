@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/payments' => 'payments#index'
   get '/payments/confirmation' => 'payments#confirmation'
   get '/payments/checkout', to: 'payments#checkout'
+  get '/payments/success', to: 'payments#success'
+  get '/payments/cancelled_payment', to: 'payments#cancelled_payment'
 
   resources :bets
   resources :contacts
