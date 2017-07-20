@@ -1,12 +1,27 @@
 <div class="container">
   <br/>
   <div class="well">
-    <div class="row">
-      <h1 div class="text-center">Congratulations!</h1>
+    <div class="row text-center">
+      <h1>Your subscription was successful!</h1>
+      <h4>Thank you so much for subscribing. An email has been sent to you confirming your purchase.</h4>
     </div>
     <div class="row">
-      <div class="col-md-6 col-md-offset-3"><h4 class="text-center">Your subscription was successful and you now have full access when viewing our past <%= link_to "results", results_path %> as well as all the tips for upcoming games in your <%= link_to "dashboard", root_path %>. </h4></div>
-
+      <div class="col-md-6 col-md-offset-3">
+        <div class="invoice">
+          <h4>Invoice</h4>
+          <ul>
+            <li><b>Plan</b>: Sport Package (Monthly)</li>
+            <li><b>Price</b>: $49</li>
+            <li><b>Full Name</b>: Bainy Zhang</li>
+            <li><b>Email</b>: bainyrulz69@gmail.com</li>
+            <li><b>Payment Status</b>: Completed</li>
+            <li><b>PayPal Transaction ID</b>: ISB4X10d3D1</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <%= link_to "Visit your Dashboard", root_path, class: "btn btn-primary btn-lg" %>
     </div>
   </div>
 </div>

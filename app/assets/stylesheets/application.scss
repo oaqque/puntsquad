@@ -19,6 +19,7 @@
 @import "bets";
 @import "home";
 @import "results";
+@import "payments";
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Taviraj');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -213,6 +214,7 @@
 }
 .well {
   border-radius: 0;
+  padding: 30px;
 }
 .container .jumbotron {
   border-radius: 0;

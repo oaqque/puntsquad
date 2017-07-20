@@ -17,7 +17,8 @@ class PaymentsController < ApplicationController
         business: "merchant-success@puntsquad.com", # Your PayPal ID
         no_shipping: 1,                             # Do not prompt for an address
         return: "http://puntsquad.com",             # Return path after successful payment
-        cancel_return: "http://puntsquad.com",                          # Return path after cancelled payment
+        cancel_return: "http://puntsquad.com#{payments_cancelled_payment_path}",
+                                                    # Return path after cancelled payment
         rm: 2,                                      # Post Method and all payment variables included
         notify_url: "#{Rails.application.secrets.app_host}/hook", #
         item_name: plan.name,                       # Description of item_name
@@ -42,5 +43,5 @@ class PaymentsController < ApplicationController
 
   def cancelled_payment
   end
-  
+
 end
