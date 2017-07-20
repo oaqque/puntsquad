@@ -2,7 +2,7 @@
   <div class="row">
     <h1 class="text-center">Select a Package</h1>
     <div class="row plans text-center">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-12">
         <div class="panel panel-default plan-info">
 
           <div class="panel-heading text-center">
@@ -53,22 +53,21 @@
             <div class="line-break"></div>
             <div class="row">
               <div class="col-sm-3">
-                <%= link_to "Select", payments_confirmation_path(:plan_id=>1), class: 'btn btn-primary btn-lg btn-block' %>
+                <%= link_to "Pay with PayPal", payments_checkout_path(:plan_id=>1), class: 'btn btn-primary btn-lg btn-block' %>
               </div>
               <div class="col-sm-3">
-                <%= link_to "Select", payments_confirmation_path(:plan_id=>2), class: 'btn btn-primary btn-lg btn-block' %>
+                <%= link_to "Pay with PayPal", payments_checkout_path(:plan_id=>2), class: 'btn btn-primary btn-lg btn-block' %>
               </div>
               <div class="col-sm-3">
-                <%= link_to "Select", payments_confirmation_path(:plan_id=>3), class: 'btn btn-primary btn-lg btn-block' %>
+                <%= link_to "Pay with PayPal", payments_checkout_path(:plan_id=>3), class: 'btn btn-primary btn-lg btn-block' %>
               </div>
               <div class="col-sm-3">
-                <%= link_to "Select", payments_confirmation_path(:plan_id=>4), class: 'btn btn-primary btn-lg btn-block' %>
+                <%= link_to "Pay with PayPal", payments_checkout_path(:plan_id=>4), class: 'btn btn-primary btn-lg btn-block' %>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
