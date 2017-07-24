@@ -22,7 +22,7 @@
               <th>Odds</th>
               <th>Bookmaker</th>
             </tr>
-            <% if current_user.plan_id? %>
+            <% if current_user.plan_id? || current_user.try(:admin?)%>
             <% for bet in @today_horse_bets do %>
             <tr>
               <td>
@@ -91,7 +91,7 @@
               <th>Odds</th>
               <th>Bookmaker</th>
             </tr>
-            <% if current_user.plan_id? %>
+            <% if current_user.plan_id? || current_user.try(:admin?)%>
             <% for bet in @today_bets do %>
             <tr>
               <td>

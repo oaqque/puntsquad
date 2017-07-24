@@ -33,7 +33,7 @@
               <th>Profit/Loss</th>
               <th>Bookmaker</th>
             </tr>
-            <% if current_user.plan_id? %>
+            <% if current_user.plan_id? || current_user.try(:admin?)%>
             <% for bet in @bets_by_day %>
               <tr>
                 <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
