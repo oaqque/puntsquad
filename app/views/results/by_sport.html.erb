@@ -74,6 +74,7 @@
               <th>Bookmaker</th>
 
             </tr>
+            <% if current_user.plan_id? %>
             <% for bet in @latest_bets do %>
               <tr>
                 <td><strong><%= link_to "#{bet.game}", bet_path(:id => bet.id)%></strong></td>
@@ -122,6 +123,7 @@
                   <% end %>
                 </td>
               </tr>
+            <% end %>
             <% end %>
           </table>
           <div class="panel panel-body text-center">

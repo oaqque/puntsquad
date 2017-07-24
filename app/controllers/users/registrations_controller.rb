@@ -12,6 +12,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def edit
+    @invoices = Payment.where(user_id: current_user.id)
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)

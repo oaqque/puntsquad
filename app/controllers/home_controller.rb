@@ -28,6 +28,22 @@ class HomeController < ApplicationController
       end
     end
 
+    # Subscription Information
+    if user_signed_in?
+      if current_user.plan_id == 1
+        @plan_name = 'Sports Package (Weekly)'
+      elsif current_user.plan_id == 2
+        @plan_name = 'Sports Package (Monthly)'
+      elsif current_user.plan_id == 3
+        @plan_name = 'Sports Package (Quarterly)'
+      elsif current_user.plan_id == 4
+        @plan_name = 'Sports Package (Yearly)'
+      else
+        @plan_name = 'No current Plan'
+      end
+    end
+
+
   end
 
   def betting_guide

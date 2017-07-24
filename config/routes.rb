@@ -10,12 +10,11 @@ Rails.application.routes.draw do
   get '/results/by_sport/:sport' => 'results#by_sport', :as => :results_by_sport
 
   get '/payments' => 'payments#index'
-  get '/payments/confirmation' => 'payments#confirmation'
   get '/payments/checkout' => 'payments#checkout'
-  get '/payments/success' => 'payments#success'
   get '/payments/cancelled_payment' => 'payments#cancelled_payment'
+  get '/payments/success/' => 'payments#success'
 
-  post '/payments/:id' => 'payments#show'
+  post '/payments/success/' => 'payments#success'
   post '/hook' => 'registrations#hook'
 
 

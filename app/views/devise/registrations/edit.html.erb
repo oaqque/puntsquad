@@ -1,6 +1,6 @@
 <div class="container">
     <div clas="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-6 <% if current_user.plan_id == nil %> col-md-offset-3 <% end %>">
             <div class="panel panel-default panel-top">
                 <div class="panel-heading text-center">
                     <h3>Account Settings</h3>
@@ -46,9 +46,38 @@
                     <h4>Unhappy?</h4>
 
                     <p><%= button_to "Delete my Account", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
-
                 </div>
             </div>
         </div>
+        <% if current_user.plan_id? %>
+        <div class="col-md-6">
+          <div class="panel panel-default panel-top">
+            <div class='panel-heading'>
+              <h3>Payment History</h3>
+            </div>
+            <div class="panel-body">
+              <p>For more information on your transactions please visit <%= link_to "PayPal", "http://paypal.com" %> and search for the below transaction ID's. If you need any other assistance, feel free to contact us!</p>
+              <% for invoice in @invoices do %>
+              <ul class="invoice">
+                <li><b>Transaction ID:</b> <%= invoice.transaction_id %></li>
+                <li><b>Date of Purchase:</b> <%= invoice.purchased_at.strftime("%d/%m/%Y") %></li>
+                <li><b>Status:</b> <%= invoice.status %></li>
+              </ul>
+              <% end %>
+            </div>
+            <div class="panel-footer">
+              <h5>Cancelling your Subscription</h5>
+              <p>Unfortunately we have not yet completely implemented the ability to cancel subscriptions directly from the site. We are working hard to remedy this problem. <b>You can still cancel your subscription by following these steps:</b></p>
+              <ol>
+                <li>Visit <%= link_to "PayPal", "http://paypal.com" %></li>
+                <li>Log in and click <b>Profile</b> and select <b>Profile and Settings</b></li>
+                <li>Click <b>My Money</b></li>
+                <li>Click <b>Update</b> next to "Preapproved Payments"</li>
+                <li>Select the Payment you would like to cancel, then click <b>Cancel</b></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <% end %>
     </div>
 </div>
