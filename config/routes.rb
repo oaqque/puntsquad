@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'payments/cancelled_payment' => 'payments#cancelled_payment'
   get '/payments/success/' => 'payments#success'
 
-  post '/payments/success/' => 'payments#success'
+  post 'payments/success/' => 'payments#success'
   post '/hook' => 'payments#hook'
 
 
