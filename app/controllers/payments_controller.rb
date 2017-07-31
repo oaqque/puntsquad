@@ -1,9 +1,9 @@
 require "uri"
 require "net/http"
 require 'multi_json'
-protect_from_forgery except: [:hook]
 
 class PaymentsController < ApplicationController
+  protect_from_forgery except: [:hook]
   def index
     if current_user.plan_id?
       flash[:success] = "You're already subscribed!"
