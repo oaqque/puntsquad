@@ -194,7 +194,7 @@
           <h3>Subscriptions</h3>
         </div>
         <h4><%= current_user.email %></h4>
-        <% if current_user.plan_id? %>
+        <% if current_user.plan_id? || current_user.try(:admin?)%>
         <p>
           <b>Subscription Status:</b> <br/><span class="label label-success">Subscribed</span>
         </p>

@@ -1,6 +1,7 @@
 require "uri"
 require "net/http"
 require 'multi_json'
+protect_from_forgery except: [:hook]
 
 class PaymentsController < ApplicationController
   def index
@@ -11,7 +12,12 @@ class PaymentsController < ApplicationController
   end
 
   def checkout
-    redirect_to paypal_url(params[:plan_id], payments_success_path)
+    @payment = Payment.new()
+    if @payment.save
+      redirect_to paypal_url(params[:plan_id], payments_success_path)
+    else
+      render new: true
+    end
   end
 
   def paypal_url(plan_id, return_path)
@@ -41,9 +47,14 @@ class PaymentsController < ApplicationController
     "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
   end
 
-  protect_from_forgery except: [:hook]
-
   def hook
+    params.permit!
+    status = params[:payment_status]
+    if status == "Completed"
+      @payment = Payments.find params[:invoice]
+      @payment.update_attributes notification_params: params, status: status, transaction_id: params[:txn_id], purchased_at: Time.now
+    end
+    render nothing: true
   end
 
   def success
@@ -75,47 +86,8 @@ class PaymentsController < ApplicationController
 
     @response = responseHash
 
-    if params[:st] == "Completed"
-      add_payment(@response["txn_id"], current_user.id)
-      @plan_id = get_plan_id(@response["transaction_subject"])
-      set_subscribed(current_user.id, @plan_id)
-    else
-      flash[:danger] = "Something went wrong! Please contact support for help if needed."
-      redirect_to root_path
-    end
-
   end
 
   def cancelled_payments
-  end
-
-  def add_payment(transaction_id, user_id)
-    if Payment.exists?(transaction_id: transaction_id)
-    else
-      @payment = Payment.new(transaction_id: transaction_id, status: 'Completed', purchased_at: Time.now, user_id: user_id)
-      @payment.save
-    end
-  end
-
-  def get_plan_id(plan_name)
-    if plan_name == 'SPORTS PACKAGE (1 Week)'
-      @plan_id = 1
-    elsif plan_name == 'SPORTS PACKAGE (1 Month)'
-      @plan_id = 2
-    elsif plan_name == 'SPORTS PACKAGE (1 Quarter)'
-      @plan_id = 3
-    elsif plan_name == 'SPORTS PACKAGE (1 Year)'
-      @plan_id = 4
-    end
-    @plan_id
-  end
-
-  def set_subscribed(user_id, plan_id)
-    if User.exists?(user_id)
-      @user = User.find(user_id)
-      @user.update_attributes plan_id: plan_id
-      @user.save
-    end
-  end
-
+  en
 end

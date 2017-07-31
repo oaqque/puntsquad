@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/payments/success/' => 'payments#success'
 
   post '/payments/success/' => 'payments#success'
-  post '/hook' => 'registrations#hook'
+  post '/hook' => 'payments#hook'
 
 
   resources :bets
