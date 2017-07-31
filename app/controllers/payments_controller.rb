@@ -89,5 +89,5 @@ class PaymentsController < ApplicationController
   end
 
   def cancelled_payments
-  en
+  end
 end
